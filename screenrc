@@ -1,0 +1,12 @@
+# .screenrc
+# Chris Bracken - 24 March 2005
+
+startup_message off
+defscrollback 4096
+escape ``
+defutf8 on
+defencoding UTF-8
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.kg}%-w%{+b ..g}%n %t%{-}%+w %=%{..g} %H %{..g} %Y-%m-%d "
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
