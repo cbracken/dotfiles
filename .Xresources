@@ -1,0 +1,6 @@
+XTerm*faceName: Ubuntu Mono
+XTerm*faceSize: 12
+XTerm*vt100*geometry: 100x50
+UXTerm*faceName: Ubuntu Mono
+UXTerm*faceSize: 12
+UXTerm*vt100*geometry: 100x50
