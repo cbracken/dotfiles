@@ -79,3 +79,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# Disable Ubuntu Menu Proxy (I don't like it and causes gvim to write errors to stderr)
+UBUNTU_MENUPROXY=0
+
+# Use ibus for Japanese input
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
