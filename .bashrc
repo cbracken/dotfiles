@@ -66,8 +66,13 @@ xterm*|rxvt*)
     ;;
 esac
 
+# aliases
 if [ -f ~/.aliases ]; then
     . ~/.aliases
+fi
+# color
+if [ -f ~/.colors ]; then
+  . ~/.colors
 fi
 
 # enable programmable completion features (you don't need to enable

@@ -1,3 +1,5 @@
+# .zshrc
+
 # history
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -38,8 +40,12 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# Aliases
+# aliases
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+# color
+if [ -f ~/.colors ]; then
+  . ~/.colors
+fi
