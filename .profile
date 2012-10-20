@@ -10,15 +10,17 @@ umask 022
 
 export EDITOR=/usr/bin/vim
 
-# if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+  # bash doesn't read .bashrc in login shells, do it manually
+  if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+  fi
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+
+# update PATH variable for use with MacPorts
+[ -d /opt/local/sbin ] && PATH="/opt/local/sbin:$PATH"
+[ -d /opt/local/bin ] && PATH="/opt/local/bin:$PATH"
+[ -d /opt/local/libexec/gnubin ] && PATH="/opt/local/libexec/gnubin:$PATH"
