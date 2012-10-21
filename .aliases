@@ -1,15 +1,7 @@
 # ~/.aliases
 
-case $(uname -s) in
-  Darwin)
-    dircolors='/opt/local/libexec/gnubin/dircolors'
-  ;;
-  Linux)
-    dircolors='/usr/bin/dircolors'
-  ;;
-esac
-if [ -x "$dircolors" ]; then
-  test -r ~/.dircolors && eval "$($dircolors -b ~/.dircolors)" || eval "$($dircolors -b)"
+if [ -x `which dircolors` ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
