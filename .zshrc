@@ -11,6 +11,8 @@ setopt extendedglob
 
 # vi-mode
 bindkey -v
+bindkey -M vicmd 'q' push-line
+bindkey -M viins 'jj' vi-cmd-mode
 
 # completion
 zstyle :compinstall filename '/Users/cbracken/.zshrc'
