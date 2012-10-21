@@ -11,7 +11,6 @@ setopt extendedglob
 
 # vi-mode
 bindkey -v
-bindkey '^R' history-incremental-search-backward
 
 # completion
 zstyle :compinstall filename '/Users/cbracken/.zshrc'
