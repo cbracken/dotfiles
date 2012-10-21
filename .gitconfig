@@ -8,3 +8,7 @@
 	name = Chris Bracken
 [alias]
 	lol = log --oneline --graph --decorate
+[diff]
+	mnemonicprefix = true
+[merge]
+	stat = true
