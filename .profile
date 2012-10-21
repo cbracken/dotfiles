@@ -24,3 +24,9 @@ fi
 [ -d /opt/local/sbin ] && PATH="/opt/local/sbin:$PATH"
 [ -d /opt/local/bin ] && PATH="/opt/local/bin:$PATH"
 [ -d /opt/local/libexec/gnubin ] && PATH="/opt/local/libexec/gnubin:$PATH"
+
+# login message
+if [ -x `which fortune` ]; then
+  fortune
+  echo ""
+fi
