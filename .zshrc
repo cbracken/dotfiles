@@ -51,3 +51,8 @@ fi
 if [ -f ~/.colors ]; then
   . ~/.colors
 fi
+
+# functions
+if [ -f ~/.sh_functions ]; then
+  . ~/.sh_functions
+fi

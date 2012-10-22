@@ -77,9 +77,9 @@ fi
 if [ -f ~/.colors ]; then
   . ~/.colors
 fi
-
-if [ -f ~/.bash_functions ]; then
-  . ~/.bash_functions
+# functions
+if [ -f ~/.sh_functions ]; then
+  . ~/.sh_functions
 fi
 
 # enable programmable completion features (you don't need to enable
