@@ -1,6 +1,7 @@
 # ~/.aliases
 
-if [ -x `which dircolors` ]; then
+# add color
+if [[ -x /usr/bin/dircolors || -x /opt/local/libexec/gnubin/dircolors ]]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
   alias grep='grep --color=auto'

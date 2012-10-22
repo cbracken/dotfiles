@@ -26,7 +26,9 @@ fi
 [ -d /opt/local/libexec/gnubin ] && PATH="/opt/local/libexec/gnubin:$PATH"
 
 # login message
-if [ -x `which fortune` ]; then
-  fortune
-  echo ""
+if [ -x /usr/games/fortune ]; then
+  /usr/games/fortune
+elif [ -x /opt/local/bin/fortune ]; then
+  /opt/local/bin/fortune
 fi
+echo
