@@ -17,13 +17,18 @@ if [ -n "$BASH_VERSION" ]; then
   fi
 fi
 
+# add to path if not already there
+path_add() {
+  [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$1:$PATH"
+}
+
 # set PATH so it includes user's private bin if it exists
-[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+path_add("$HOME/bin")
 
 # update PATH variable for use with MacPorts
-[ -d /opt/local/sbin ] && PATH="/opt/local/sbin:$PATH"
-[ -d /opt/local/bin ] && PATH="/opt/local/bin:$PATH"
-[ -d /opt/local/libexec/gnubin ] && PATH="/opt/local/libexec/gnubin:$PATH"
+path_add("/opt/local/sbin")
+path_add("/opt/local/bin")
+path_add("/opt/local/libexec/gnubin")
 
 # login message
 if [ -x /usr/games/fortune ]; then
