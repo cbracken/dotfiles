@@ -3,7 +3,6 @@
 
 startup_message off
 defscrollback 4096
-escape ``
 vbell off
 defutf8 on
 defencoding UTF-8
