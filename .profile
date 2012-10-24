@@ -23,12 +23,12 @@ path_add() {
 }
 
 # set PATH so it includes user's private bin if it exists
-path_add("$HOME/bin")
+path_add "$HOME/bin"
 
 # update PATH variable for use with MacPorts
-path_add("/opt/local/sbin")
-path_add("/opt/local/bin")
-path_add("/opt/local/libexec/gnubin")
+path_add "/opt/local/sbin"
+path_add "/opt/local/bin"
+path_add "/opt/local/libexec/gnubin"
 
 # login message
 if [ -x /usr/games/fortune ]; then
