@@ -19,7 +19,13 @@ zstyle :compinstall filename '/Users/cbracken/.zshrc'
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
+# current git branch (for prompt)
+git_branch() {
+  echo $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+}
+
 # prompt
+setopt prompt_subst
 autoload -Uz colors && colors
 
 # uncomment for a colored prompt, if the terminal has the capability
@@ -37,8 +43,10 @@ fi
 
 if [ "$color_prompt" = yes ]; then
   PROMPT="%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$reset_color%}%# "
+  RPROMPT=$'%{$fg[yellow]%}$(git_branch)%{$reset_color%}'
 else
   PROMPT="%T %n@%m:%c%# "
+  RPROMPT=$'$(git_branch)'
 fi
 unset color_prompt force_color_prompt
 
