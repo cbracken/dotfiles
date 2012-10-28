@@ -9,6 +9,7 @@
 umask 022
 
 export EDITOR=/usr/bin/vim
+export GNUPGHOME=/Volumes/Personal/.gnupg
 
 if [ -n "$BASH_VERSION" ]; then
   # bash doesn't read .bashrc in login shells, do it manually
@@ -29,6 +30,14 @@ path_add "$HOME/bin"
 path_add "/opt/local/sbin"
 path_add "/opt/local/bin"
 path_add "/opt/local/libexec/gnubin"
+
+# start gpg-agent
+if [ -f "$HOME/.gpg-agent-info" ] && kill -0 `cut -d: -f 2 "$HOME/.gpg-agent-info"` 2>/dev/null; then
+  . "$HOME/.gpg-agent-info"
+  export GPG_AGENT_INFO
+elif [ -x /opt/local/bin/gpg-agent ]; then
+  eval $(/opt/local/bin/gpg-agent --daemon --write-env-file "$HOME/.gpg-agent-info")
+fi
 
 # login message
 if [ -x /usr/games/fortune ]; then
