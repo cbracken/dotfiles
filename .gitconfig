@@ -6,6 +6,7 @@
   pretty = format:%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %s
 [user]
 	name = Chris Bracken
+	email = chris@bracken.jp
 [alias]
 	lol = log --oneline --graph --decorate
 [diff]
