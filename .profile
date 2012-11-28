@@ -9,7 +9,7 @@
 umask 022
 
 export EDITOR=/usr/bin/vim
-export GNUPGHOME=/Volumes/Personal/.gnupg
+export GNUPGHOME="$HOME/.gnupg"
 
 if [ -n "$BASH_VERSION" ]; then
   # bash doesn't read .bashrc in login shells, do it manually
