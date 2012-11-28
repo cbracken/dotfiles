@@ -69,6 +69,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+# path additions
+if [ -f ~/.paths ]; then
+  . ~/.paths
+fi
 # aliases
 if [ -f ~/.aliases ]; then
     . ~/.aliases

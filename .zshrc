@@ -50,6 +50,11 @@ else
 fi
 unset color_prompt force_color_prompt
 
+# path additions
+if [ -f ~/.paths ]; then
+  . ~/.paths
+fi
+
 # aliases
 if [ -f ~/.aliases ]; then
   . ~/.aliases

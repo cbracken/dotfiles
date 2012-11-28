@@ -9,7 +9,7 @@
 umask 022
 
 export EDITOR=/usr/bin/vim
-export GNUPGHOME="$HOME/.gnupg"
+export GNUPGHOME=/Volumes/Personal/.gnupg
 
 if [ -n "$BASH_VERSION" ]; then
   # bash doesn't read .bashrc in login shells, do it manually
@@ -17,19 +17,6 @@ if [ -n "$BASH_VERSION" ]; then
     . "$HOME/.bashrc"
   fi
 fi
-
-# add to path if not already there
-path_add() {
-  [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$1:$PATH"
-}
-
-# set PATH so it includes user's private bin if it exists
-path_add "$HOME/bin"
-
-# update PATH variable for use with MacPorts
-path_add "/opt/local/sbin"
-path_add "/opt/local/bin"
-path_add "/opt/local/libexec/gnubin"
 
 # start gpg-agent
 if [ -f "$HOME/.gpg-agent-info" ] && kill -0 `cut -d: -f 2 "$HOME/.gpg-agent-info"` 2>/dev/null; then
