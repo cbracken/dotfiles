@@ -1,9 +1,9 @@
 # shells
 install-zsh:
-	cp .aliases .colors .profile .sh_functions .zprofile .zshrc ~/
+	cp .aliases .colors .paths .profile .sh_functions .zprofile .zshrc ~/
 
 install-bash:
-	cp .aliases .bash_logout .bashrc .colors .profile .sh_functions ~/
+	cp .aliases .bash_logout .bashrc .colors .paths .profile .sh_functions ~/
 
 # program config
 install-irssi:
