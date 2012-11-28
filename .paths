@@ -1,0 +1,22 @@
+# add to path if not already there
+path_remove() {
+  PATH=`echo $PATH | sed "s:$1::;s/::/:/;s/:$//"`
+}
+
+path_prepend() {
+  path_remove "$1"
+  export PATH="$1:$PATH"
+}
+
+path_append() {
+  path_remove "$1"
+  export PATH="$PATH:$1"
+}
+
+# set PATH so it includes user's private bin if it exists
+path_prepend "$HOME/bin"
+
+# update PATH variable for use with MacPorts
+path_prepend "/opt/local/sbin"
+path_prepend "/opt/local/bin"
+path_prepend "/opt/local/libexec/gnubin"
