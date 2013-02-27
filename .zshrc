@@ -50,6 +50,10 @@ else
 fi
 unset color_prompt force_color_prompt
 
+if [ "$COLORTERM" = "gnome-terminal" ]; then
+  export TERM=xterm-256color
+fi
+
 # path additions
 if [ -f ~/.paths ]; then
   . ~/.paths
