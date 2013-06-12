@@ -16,6 +16,9 @@ path_append() {
 # set PATH so it includes user's private bin if it exists
 path_prepend "$HOME/bin"
 
+# add Dart SDK
+path_prepend "/Applications/Dart/dart-sdk/bin"
+
 # update PATH variable for use with brew
 path_prepend "/usr/homebrew/sbin"
 path_prepend "/usr/homebrew/bin"
