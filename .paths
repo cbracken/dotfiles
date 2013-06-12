@@ -16,7 +16,7 @@ path_append() {
 # set PATH so it includes user's private bin if it exists
 path_prepend "$HOME/bin"
 
-# update PATH variable for use with MacPorts
-path_prepend "/opt/local/sbin"
-path_prepend "/opt/local/bin"
-path_prepend "/opt/local/libexec/gnubin"
+# update PATH variable for use with brew
+path_prepend "/usr/homebrew/sbin"
+path_prepend "/usr/homebrew/bin"
+path_prepend "/usr/homebrew/opt/coreutils/libexec/gnubin"
