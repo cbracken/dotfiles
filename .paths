@@ -5,12 +5,16 @@ path_remove() {
 
 path_prepend() {
   path_remove "$1"
-  export PATH="$1:$PATH"
+  if [ -d "$1" ]; then
+    export PATH="$1:$PATH"
+  fi
 }
 
 path_append() {
   path_remove "$1"
-  export PATH="$PATH:$1"
+  if [ -d "$1" ]; then
+    export PATH="$PATH:$1"
+  fi
 }
 
 # set PATH so it includes user's private bin if it exists
