@@ -2,6 +2,8 @@
   command = git-vimdiff
 [color]
   ui = auto
+[core]
+  excludesfile = ~/.gitignore_global
 [format]
   pretty = format:%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %s
 [user]

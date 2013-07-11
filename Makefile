@@ -6,6 +6,9 @@ install-bash:
 	cp .aliases .bash_logout .bashrc .colors .paths .profile .sh_functions ~/
 
 # program config
+install-git:
+	cp -r .gitconfig .gitignore_global ~/
+
 install-irssi:
 	cp -r .irssi ~/
 
