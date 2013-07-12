@@ -18,14 +18,6 @@ if [ -n "$BASH_VERSION" ]; then
   fi
 fi
 
-# start gpg-agent
-if [ -f "$HOME/.gpg-agent-info" ] && kill -0 `cut -d: -f 2 "$HOME/.gpg-agent-info"` 2>/dev/null; then
-  . "$HOME/.gpg-agent-info"
-  export GPG_AGENT_INFO
-elif [ -x /opt/local/bin/gpg-agent ]; then
-  eval $(/opt/local/bin/gpg-agent --daemon --write-env-file "$HOME/.gpg-agent-info")
-fi
-
 # login message
 if [ -x /usr/games/fortune ]; then
   /usr/games/fortune
