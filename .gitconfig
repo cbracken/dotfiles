@@ -12,6 +12,8 @@
   pretty = format:%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %s
 [merge]
   stat = true
+[push]
+  default = simple
 [user]
   name = Chris Bracken
   email = chris@bracken.jp
