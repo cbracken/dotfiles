@@ -1,5 +1,6 @@
 [alias]
-  lol = log --oneline --graph --decorate
+  lol = log --oneline --decorate
+  lola = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %d %s'
 [color]
   ui = auto
 [core]
@@ -8,8 +9,6 @@
   mnemonicprefix = true
 [diff "vimdiff"]
   command = git-vimdiff
-[format]
-  pretty = format:%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %s
 [merge]
   stat = true
 [push]
