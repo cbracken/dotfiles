@@ -5,6 +5,10 @@ install-zsh:
 install-bash:
 	cp .aliases .bash_logout .bashrc .colors .paths .profile .sh_functions ~/
 
+install-fontconf:
+	cp .fonts.conf ~/
+	fc-cache -f -v
+
 # program config
 install-git:
 	cp -r .gitconfig .gitignore_global ~/
