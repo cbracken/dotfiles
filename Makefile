@@ -13,6 +13,9 @@ install-fontconf:
 install-git:
 	cp -r .gitconfig .gitignore_global ~/
 
+install-astyle:
+	cp .astylerc ~/
+
 install-irssi:
 	cp -r .irssi ~/
 

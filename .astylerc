@@ -1,0 +1,12 @@
+--style=stroustrup            # Stroustrup-style braces
+--indent=spaces=2             # 2-space indent
+--indent-preprocessor         # Indent macro continuation lines
+--min-conditional-indent=0    # Don't indent 2nd-line of conditional expr
+--pad-oper                    # Pad operators
+--pad-header                  # Pad between for, if, while and paren
+--unpad-paren                 # Remove useless padding in/around parens
+--align-pointer=name          # Align * and & with var/param name
+--convert-tabs                # Eliminate all tabs
+# --close-templates             # C++11 templates
+# --max-code-length=80          # 80-col max
+--lineend=linux               # \n
