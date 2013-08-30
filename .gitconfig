@@ -13,6 +13,8 @@
   stat = true
 [push]
   default = simple
+[rebase]
+	autosquash = true
 [user]
   name = Chris Bracken
   email = chris@bracken.jp
