@@ -5,6 +5,9 @@ install-zsh:
 install-bash:
 	cp .aliases .bash_logout .bashrc .colors .paths .profile .sh_functions ~/
 
+install-x:
+	cp .Xdefaults ~/
+
 install-fontconf:
 	cp .fonts.conf ~/
 	fc-cache -f -v
