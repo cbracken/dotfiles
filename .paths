@@ -27,4 +27,4 @@ path_prepend "/usr/homebrew/opt/coreutils/libexec/gnubin"
 
 # Chromium and Dart development
 path_prepend "$HOME/src/depot_tools"
-path_prepend "$HOME/src/third_party/dart-sdk/bin"
+path_prepend "$DART_SDK/bin"

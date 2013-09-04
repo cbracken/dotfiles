@@ -10,6 +10,7 @@ umask 022
 
 export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
+export DART_SDK="$HOME/src/third_party/dart-sdk"
 
 if [ -n "$BASH_VERSION" ]; then
   # bash doesn't read .bashrc in login shells, do it manually
