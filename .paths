@@ -22,6 +22,7 @@ path_prepend "$HOME/bin"
 
 # Push /usr/local/bin to the front of PATH
 path_prepend "/usr/local/bin"
+path_prepend "/usr/homebrew/opt/coreutils/libexec/gnubin"
 
 # Chromium and Dart development
 path_prepend "$HOME/src/depot_tools"
