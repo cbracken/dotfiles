@@ -21,7 +21,7 @@ path_append() {
 path_prepend "$HOME/bin"
 
 # Go development
-path_prepend "/usr/local/Cellar/go/1.2/libexec/bin"
+path_prepend "/usr/local/Cellar/go/1.2.1/libexec/bin"
 
 # Chromium and Dart development
 path_prepend "$HOME/src/depot_tools"
