@@ -1,6 +1,5 @@
 [alias]
-  lol = log --oneline --decorate
-  lola = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %d %s'
+  lol = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %C(yellow)%d%C(reset) %s'
 [color]
   ui = auto
 [core]
