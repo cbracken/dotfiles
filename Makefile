@@ -14,7 +14,7 @@ install-fontconf:
 
 # program config
 install-git:
-	cp -r .gitconfig .gitignore_global ~/
+	cp -r .gitconfig .gitignore_global .tigrc ~/
 
 install-astyle:
 	cp .astylerc ~/
