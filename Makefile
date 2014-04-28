@@ -6,7 +6,7 @@ install-bash:
 	cp .aliases .bash_logout .bashrc .colors .paths .profile .sh_functions ~/
 
 install-x:
-	cp .Xdefaults ~/
+	cp .Xdefaults .Xmodmap ~/
 
 install-fontconf:
 	cp .fonts.conf ~/
