@@ -50,7 +50,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
-if [ "$COLORTERM" = "gnome-terminal" ]; then
+if [ "$COLORTERM" = "gnome-terminal" -o "$TERM_PROGRAM" = "iTerm.app" ]; then
   export TERM=xterm-256color
 fi
 
