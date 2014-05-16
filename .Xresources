@@ -1,6 +1,26 @@
-XTerm*faceName: Ubuntu Mono
-XTerm*faceSize: 12
-XTerm*vt100*geometry: 100x50
-UXTerm*faceName: Ubuntu Mono
-UXTerm*faceSize: 12
-UXTerm*vt100*geometry: 100x50
+! URxvt
+URxvt.depth: 32
+URxvt.foreground: grey
+URxvt.background: #0f0f0f
+URxvt.font: xft:Source Code Pro:size=10:antialias=false:autohint=false,\
+            xft:Takao Gothic:size=10:antialias=false:autohint=false
+URxvt.geometry: 100x50
+URxvt.scrollBar: false
+URxvt.color0: #2e3436
+URxvt.color1: #cc0000
+URxvt.color2: #4e9a06
+URxvt.color3: #c4a000
+URxvt.color4: #3465a4
+URxvt.color5: #75507b
+URxvt.color6: #06989a
+URxvt.color7: #d3d7cf
+URxvt.color8: #555753
+URxvt.color9: #ef2929
+URxvt.color10: #8ae234
+URxvt.color11: #fce94f
+URxvt.color12: #729fcf
+URxvt.color13: #ad7fa8
+URxvt.color14: #34e2e2
+URxvt.color15: #eeeeec
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
