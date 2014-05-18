@@ -229,12 +229,14 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
+    awful.key({ modkey,           }, "F11",   function () awful.util.spawn("amixer set Master 3-") end),
+    awful.key({ modkey,           }, "F12",   function () awful.util.spawn("amixer set Master 3+") end),
     awful.key({ modkey,           }, "Return",function () awful.util.spawn(terminal) end),
     awful.key({ modkey,           }, "p",     function () awful.util.spawn("dmenu_run") end),
     awful.key({ modkey, "Shift"   }, "m",     function () awful.util.spawn(terminal .. " -e mutt") end),
     awful.key({ modkey, "Shift"   }, "i",     function () awful.util.spawn(terminal .. " -e profanity") end),
     awful.key({ modkey, "Control" }, "r",     awesome.restart),
-    awful.key({ modkey, "Shift"   }, "q",     awesome.quit),
+    awful.key({ modkey, "Shift"   }, "q",     function () awful.util.spawn("gnome-session-quit") end),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),

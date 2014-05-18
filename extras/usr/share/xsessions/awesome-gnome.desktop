@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Awesome GNOME
+Comment=Highly configurable framework window manager with GNOME integration
+TryExec=awesome
+Exec=gnome-session --session=awesome
+Type=Application
+X-LightDM-DesktopName=Awesome GNOME
+X-Ubuntu-Gettext-Domain=gnome-session-3.0
