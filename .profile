@@ -13,6 +13,7 @@ export GNUPGHOME="$HOME/.gnupg"
 export DART_SDK="$HOME/src/third_party/dart-sdk"
 export GOROOT=`go env GOROOT`
 export GOPATH="$HOME/src/go"
+export TERMINAL=urxvt
 
 if [ -n "$BASH_VERSION" ]; then
   # bash doesn't read .bashrc in login shells, do it manually
