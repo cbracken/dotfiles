@@ -22,6 +22,11 @@ if [ -n "$BASH_VERSION" ]; then
   fi
 fi
 
+# Remap caps lock to ctrl
+if [ -n "$DISPLAY" ] && [ -x "`which setxkbmap`" ]; then
+  setxkbmap -option ctrl:nocaps
+fi
+
 # login message
 if [ -x /usr/games/fortune ]; then
   /usr/games/fortune
