@@ -30,6 +30,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Lock, suspend
+set $lock_screen gnome-screensaver-command --lock
+bindsym Mod1+Mod4+l exec $lock_screen
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -131,3 +135,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# lock screen on idle
+exec --no-startup-id xautolock -time 10 -locker "$lock_screen"
