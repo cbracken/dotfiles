@@ -23,7 +23,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Remap caps lock to ctrl
-if [ -n "$DISPLAY" ] && [ -x "`which setxkbmap`" ]; then
+if [ $(uname) != "Darwin" ] && [ -n "$DISPLAY" ] && [ -x "`which setxkbmap`" ]; then
   setxkbmap -option ctrl:nocaps
 fi
 
