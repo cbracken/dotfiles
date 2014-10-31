@@ -33,6 +33,7 @@ bindsym $mod+Shift+q kill
 # Lock, suspend
 set $lock_screen gnome-screensaver-command --lock
 bindsym Mod1+Mod4+l exec $lock_screen
+bindsym Mod1+Mod4+s exec dbus-send --system --dest=org.freedesktop.UPower --type=method_call
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
