@@ -1,13 +1,13 @@
 [alias]
   lol = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %C(yellow)%d%C(reset) %s'
+  vimdiff = difftool
 [color]
   ui = auto
 [core]
   excludesfile = ~/.gitignore_global
 [diff]
   mnemonicprefix = true
-[diff "vimdiff"]
-  command = git-vimdiff
+  tool = vimdiff
 [merge]
   stat = true
 [push]
