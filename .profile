@@ -11,7 +11,7 @@ umask 022
 export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
 export DART_SDK="$HOME/src/third_party/dart-sdk"
-export GOROOT=`go env GOROOT`
+export GOROOT="$(go env GOROOT)"
 export GOPATH="$HOME/src/go"
 export TERMINAL=urxvt
 
@@ -23,14 +23,15 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Remap caps lock to ctrl
-if [ $(uname) != "Darwin" ] && [ -n "$DISPLAY" ] && [ -x "`which setxkbmap`" ]; then
+if [[ "$(uname)" != "Darwin" && -n "$DISPLAY" && -x "$(which setxkbmap)" ]]
+then
   setxkbmap -option ctrl:nocaps
 fi
 
 # login message
-if [ -x /usr/games/fortune ]; then
+if [ -x "/usr/games/fortune" ]; then
   /usr/games/fortune
-elif [ -x /opt/local/bin/fortune ]; then
+elif [ -x "/opt/local/bin/fortune" ]; then
   /opt/local/bin/fortune
 fi
 echo

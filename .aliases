@@ -2,13 +2,16 @@
 # ~/.aliases
 
 # add color
-if [[ -x /usr/bin/dircolors || -x /usr/homebrew/opt/coreutils/libexec/gnubin/dircolors ]]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if [[ -x '/usr/bin/dircolors' || \
+      -x '/usr/homebrew/opt/coreutils/libexec/gnubin/dircolors' ]]; then
+  if [[ -r "~/.dircolors" ]]; then
+    eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  fi
   alias ls='ls -F --color=auto'
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
-elif [[ `uname` == 'Darwin' ]]; then
+elif [[ "$(uname)" == 'Darwin' ]]; then
   alias ls='ls -FG'
 fi
 
