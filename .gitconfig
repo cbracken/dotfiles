@@ -13,7 +13,7 @@
 [push]
   default = simple
 [rebase]
-	autosquash = true
+  autosquash = true
 [user]
   name = Chris Bracken
   email = chris@bracken.jp
