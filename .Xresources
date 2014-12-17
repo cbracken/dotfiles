@@ -2,8 +2,8 @@
 URxvt.depth: 32
 URxvt.foreground: grey
 URxvt.background: #0f0f0f
-URxvt.font: xft:Source Code Pro:size=10:antialias=false:autohint=false,\
-            xft:Takao Gothic:size=10:antialias=false:autohint=false
+URxvt.font: -misc-fixed-medium-r-normal--13-120-75-75-c-70-iso8859-1
+URxvt.boldFont: -misc-fixed-bold-r-normal--13-120-75-75-c-70-iso8859-1
 URxvt.geometry: 100x50
 URxvt.scrollBar: false
 URxvt.color0: #2e3436
