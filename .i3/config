@@ -31,9 +31,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Lock, suspend
-set $lock_screen gnome-screensaver-command --lock
-bindsym Mod1+Mod4+l exec $lock_screen
-bindsym Mod1+Mod4+s exec dbus-send --system --dest=org.freedesktop.UPower --type=method_call
+set $lock_screen dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+bindsym Control+Mod1+l exec $lock_screen
+bindsym Control+Mod1+s exec dbus-send --system --dest=org.freedesktop.UPower --type=method_call
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
