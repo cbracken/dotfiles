@@ -45,6 +45,8 @@ bindsym $mod+d exec dmenu_run
 # audio volume
 bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 1 -- '-5%'
 bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 1 -- '+5%'
+bindsym Control+$mod+F11 exec /usr/bin/pactl set-sink-volume 1 -- '-5%'
+bindsym Control+$mod+F12 exec /usr/bin/pactl set-sink-volume 1 -- '+5%'
 
 # change focus
 bindsym $mod+h focus left
