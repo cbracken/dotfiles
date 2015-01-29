@@ -143,5 +143,8 @@ bar {
         status_command i3status
 }
 
+# make CapsLock key to Ctrl
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+
 # lock screen on idle
 exec --no-startup-id xautolock -time 10 -locker "$lock_screen"
