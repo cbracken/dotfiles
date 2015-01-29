@@ -15,6 +15,9 @@ export GOROOT="$(go env GOROOT)"
 export GOPATH="$HOME/src/go"
 export TERMINAL=urxvt
 
+# gnome keyring
+export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+
 if [ -n "$BASH_VERSION" ]; then
   # bash doesn't read .bashrc in login shells, do it manually
   if [ -f "$HOME/.bashrc" ]; then
