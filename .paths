@@ -28,6 +28,7 @@ path_prepend "$GOROOT/bin"
 path_prepend "$GOPATH/bin"
 
 # Chromium and Dart development
+path_prepend "$HOME/.pub-cache/bin"
 path_prepend "$HOME/src/depot_tools"
 path_prepend "$DART_SDK/bin"
 
