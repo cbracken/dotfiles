@@ -1,5 +1,6 @@
 [alias]
   lol = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset) %C(yellow)%d%C(reset) %s'
+  logstats = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%cn%C(reset): %s' --stat
   vimdiff = difftool
 [color]
   ui = auto
