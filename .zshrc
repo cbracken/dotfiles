@@ -15,7 +15,7 @@ bindkey -M vicmd 'q' push-line
 bindkey -M viins 'jj' vi-cmd-mode
 
 # completion
-zstyle :compinstall filename '/Users/cbracken/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
