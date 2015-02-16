@@ -1,7 +1,9 @@
+*.a
 *.class
+*.dylib
 *.elc
-*.pyc
 *.o
+*.pyc
 *.so
 *.sw?
 *~
