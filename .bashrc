@@ -89,6 +89,10 @@ fi
 if [ -f ~/.sh_functions ]; then
   . ~/.sh_functions
 fi
+# tools
+if [ -f ~/.tools ]; then
+  . ~/.tools
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

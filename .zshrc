@@ -73,3 +73,8 @@ fi
 if [ -f ~/.sh_functions ]; then
   . ~/.sh_functions
 fi
+
+# tools
+if [ -f ~/.tools ]; then
+  . ~/.tools
+fi
