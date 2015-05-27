@@ -21,7 +21,10 @@ zstyle ':completion:*' menu select
 
 # current git branch (for prompt)
 git_branch() {
-  echo $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  if [[ -n $branch ]]; then
+    echo " ($branch)"
+  fi
 }
 
 # prompt
@@ -42,11 +45,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-  PROMPT="%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$reset_color%}%# "
-  RPROMPT=$'%{$fg[yellow]%}$(git_branch)%{$reset_color%}'
+  PROMPT='%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$fg[yellow]%}$(git_branch)%{$reset_color%}%# '
 else
-  PROMPT="%T %n@%m:%c%# "
-  RPROMPT=$'$(git_branch)'
+  PROMPT="%T %n@%m:%c$(git_branch)%# "
 fi
 unset color_prompt force_color_prompt
 
