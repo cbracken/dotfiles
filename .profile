@@ -11,8 +11,6 @@ umask 022
 export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
 export DART_SDK="$HOME/src/third_party/dart-sdk"
-export GOROOT="$(go env GOROOT)"
-export GOPATH="$HOME/src/go"
 export TERMINAL=urxvt
 
 # gnome keyring
