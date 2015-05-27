@@ -34,4 +34,5 @@ path_prepend "$DART_SDK/bin"
 
 # Push /usr/local/bin to the front of PATH
 path_prepend "/usr/local/bin"
+path_prepend "/usr/homebrew/bin"
 path_prepend "/usr/homebrew/opt/coreutils/libexec/gnubin"
