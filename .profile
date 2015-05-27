@@ -14,7 +14,9 @@ export DART_SDK="/usr/lib/dart"
 export TERMINAL=urxvt
 
 # gnome keyring
-export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+if [[ $(which gnome-keyring-daemon) == 0 ]]; then
+  export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+fi
 
 if [ -n "$BASH_VERSION" ]; then
   # bash doesn't read .bashrc in login shells, do it manually
