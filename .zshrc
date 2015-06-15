@@ -55,6 +55,11 @@ if [[ "$COLORTERM" == "gnome-terminal" ]] || \
 fi
 unset term_bin
 
+# g4d support
+if [[ -f "/etc/bash_completion.d/g4d" ]]; then
+  source /etc/bash_completion.d/g4d
+fi
+
 # Load path additions.
 if [ -f ~/.paths ]; then
   . ~/.paths
