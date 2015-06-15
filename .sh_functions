@@ -1,2 +1,7 @@
 # -*- mode: shell-script; -*- vim: set filetype=sh
 # Custom shell functions
+
+# Sets xterm title to $1.
+function set_xtitle {
+  echo -n "\033]0;${1}\007"
+}
