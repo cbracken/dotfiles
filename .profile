@@ -13,6 +13,9 @@ export GNUPGHOME="$HOME/.gnupg"
 export DART_SDK="/usr/lib/dart"
 export TERMINAL=urxvt
 
+# Make the week start on Monday, like it's meant to.
+export LC_TIME=en_GB.UTF-8
+
 # gnome keyring
 if [[ $(which gnome-keyring-daemon) == 0 ]]; then
   export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
