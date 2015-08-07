@@ -60,7 +60,8 @@ else
 fi
 unset color_prompt force_color_prompt
 
-if [ "$COLORTERM" = "gnome-terminal" ]; then
+if [ "$COLORTERM" = "gnome-terminal" ] || \
+   [ "$(tput colors 2>/dev/null || echo 0)" = "256" ]; then
   export TERM=xterm-256color
 fi
 
