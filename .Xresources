@@ -3,7 +3,7 @@ URxvt.depth: 32
 URxvt.foreground: grey
 URxvt.background: #0f0f0f
 URxvt.font: xft:Ricty:pixelsize=13:antialias=true:hinting=true
-URxvt.boldFont: xft:Ricty:pixelsize=13:antialias=true:hinting=true
+URxvt.boldFont: xft:Ricty:bold:pixelsize=13:antialias=true:hinting=true
 URxvt.geometry: 100x50
 URxvt.scrollBar: false
 URxvt.cursorColor: orange
