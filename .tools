@@ -4,5 +4,5 @@
 # go version manager
 if [[ -f ~/.gvm/scripts/gvm ]]; then
   . ~/.gvm/scripts/gvm
-  gvm use go1.5 2>&1 > /dev/null
+  gvm use go1.5.1 2>&1 > /dev/null
 fi
