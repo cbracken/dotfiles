@@ -52,8 +52,8 @@ fi
 unset color_prompt force_color_prompt
 
 if [[ "$COLORTERM" = "gnome-terminal" ]] || \
-   [[ ${$(</proc/$PPID/cmdline):t} == gnome-terminal* ]] || \
-   [[ "$TERM_PROGRAM" = "iTerm.app" ]]; then
+   [[ "$TERM_PROGRAM" = "iTerm.app" ]] || \
+   [[ ${$(</proc/$PPID/cmdline):t} == gnome-terminal* ]]; then
   export TERM=xterm-256color
 fi
 
