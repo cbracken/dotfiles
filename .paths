@@ -29,6 +29,7 @@ path_prepend "$DART_SDK/bin"
 path_prepend "/usr/local/bin"
 
 # MacPorts
+path_prepend "/opt/local/sbin"
 path_prepend "/opt/local/bin"
 
 # User's personal bin dir if it exists
