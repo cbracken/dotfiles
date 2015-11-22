@@ -4,10 +4,12 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory
+
+# write history command-by-command, don't overwrite
+setopt INC_APPEND_HISTORY
 
 # extended glob
-setopt extendedglob
+setopt EXTENDED_GLOB
 
 # vi-mode
 bindkey -v
