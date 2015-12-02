@@ -2,8 +2,8 @@
 URxvt.depth: 32
 URxvt.foreground: grey
 URxvt.background: #0f0f0f
-URxvt.font: -misc-fixed-medium-r-normal--13-120-75-75-c-70-iso8859-1
-URxvt.boldFont: -misc-fixed-bold-r-normal--13-120-75-75-c-70-iso8859-1
+URxvt.font: -misc-fixed-medium-r-*--13-120-75-75-c-*-iso8859-1
+URxvt.boldFont: -misc-fixed-bold-r-*--13-120-75-75-c-*-iso8859-1
 URxvt.geometry: 100x50
 URxvt.scrollBar: false
 URxvt.cursorColor: orange
