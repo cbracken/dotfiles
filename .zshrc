@@ -53,9 +53,16 @@ else
 fi
 unset color_prompt force_color_prompt
 
+# If procfs is available, get the terminal executable
+term_bin=""
+if [[ -e /proc/$PPID/cmdline ]]; then
+  term_bin="${$(</proc/$PPID/cmdline):t}"
+fi
+
 if [[ "$COLORTERM" = "gnome-terminal" ]] || \
    [[ "$TERM_PROGRAM" = "iTerm.app" ]] || \
-   [[ ${$(</proc/$PPID/cmdline):t} == gnome-terminal* ]]; then
+   [[ "$term_bin" == gnome-terminal* ]] || \
+   [[ "$term_bin" == urxvt* ]]; then
   export TERM=xterm-256color
 fi
 
