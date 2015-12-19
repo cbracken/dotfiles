@@ -24,8 +24,10 @@ path_append() {
 path_prepend "/usr/local/bin"
 
 # MacPorts
-path_prepend "/opt/local/sbin"
-path_prepend "/opt/local/bin"
+if [[ "$(uname)" == "Darwin" ]]; then
+  path_prepend "/opt/local/sbin"
+  path_prepend "/opt/local/bin"
+fi
 
 # User's personal bin dir if it exists
 path_prepend "$HOME/bin"
