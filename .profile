@@ -10,7 +10,6 @@ umask 022
 
 export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
-export DART_SDK="/usr/lib/dart"
 export TERMINAL=urxvt
 
 # gnome keyring
