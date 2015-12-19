@@ -5,3 +5,8 @@
 if [[ -f ~/.gvm/scripts/gvm ]]; then
   . ~/.gvm/scripts/gvm
 fi
+
+# dart version manager
+if [[ -f ~/.dvm/scripts/dvm ]]; then
+  . ~/.dvm/scripts/dvm
+fi
