@@ -95,3 +95,11 @@ fi
 if [ -f ~/.tools ]; then
   . ~/.tools
 fi
+
+# login message
+if [ -x "/usr/games/fortune" ]; then
+  /usr/games/fortune
+elif [ -x "/opt/local/bin/fortune" ]; then
+  /opt/local/bin/fortune
+fi
+echo

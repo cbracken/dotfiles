@@ -25,11 +25,3 @@ if [[ "$(uname)" != "Darwin" && -n "$DISPLAY" && -x "$(which setxkbmap)" ]]
 then
   setxkbmap -option ctrl:nocaps
 fi
-
-# login message
-if [ -x "/usr/games/fortune" ]; then
-  /usr/games/fortune
-elif [ -x "/opt/local/bin/fortune" ]; then
-  /opt/local/bin/fortune
-fi
-echo

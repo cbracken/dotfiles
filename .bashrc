@@ -114,3 +114,11 @@ UBUNTU_MENUPROXY=0
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
+
+# login message
+if [ -x "/usr/games/fortune" ]; then
+  /usr/games/fortune
+elif [ -x "/opt/local/bin/fortune" ]; then
+  /opt/local/bin/fortune
+fi
+echo
