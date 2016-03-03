@@ -8,10 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 umask 022
 
-export EDITOR=/usr/bin/vim
-export GNUPGHOME="$HOME/.gnupg"
-export TERMINAL=urxvt
-
 # gnome keyring
 if [[ $(which gnome-keyring-daemon) == 0 ]]; then
   export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)

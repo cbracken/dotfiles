@@ -1,5 +1,10 @@
 # .zshrc
 
+# environment vars
+export EDITOR=/usr/bin/vim
+export GNUPGHOME="$HOME/.gnupg"
+export TERMINAL=urxvt
+
 # history
 HISTFILE=~/.histfile
 HISTSIZE=1000
