@@ -19,9 +19,3 @@ if [ -n "$BASH_VERSION" ]; then
     . "$HOME/.bashrc"
   fi
 fi
-
-# Remap caps lock to ctrl
-if [[ "$(uname)" != "Darwin" && -n "$DISPLAY" && -x "$(which setxkbmap)" ]]
-then
-  setxkbmap -option ctrl:nocaps
-fi
