@@ -65,7 +65,6 @@ if [[ -e /proc/$PPID/cmdline ]]; then
 fi
 
 if [[ "$COLORTERM" = "gnome-terminal" ]] || \
-   [[ "$TERM_PROGRAM" = "iTerm.app" ]] || \
    [[ "$term_bin" == gnome-terminal* ]] || \
    [[ "$term_bin" == urxvt* ]]; then
   export TERM=xterm-256color
