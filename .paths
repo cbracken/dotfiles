@@ -29,5 +29,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
   path_prepend "/opt/local/bin"
 fi
 
+# Homebrew
+if [[ "$(uname)" == "Darwin" ]]; then
+  path_prepend "$HOME/.homebrew/bin"
+fi
+
 # User's personal bin dir if it exists
 path_prepend "$HOME/bin"
