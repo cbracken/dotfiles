@@ -5,6 +5,10 @@ export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
 export TERMINAL=urxvt
 
+# p4 config
+export P4CONFIG=.p4config
+export P4EDITOR=vim
+
 # history
 HISTFILE=~/.histfile
 HISTSIZE=1000
