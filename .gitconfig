@@ -6,6 +6,7 @@
   ui = auto
 [core]
   excludesfile = ~/.gitignore_global
+	editor = vim
 [diff]
   mnemonicprefix = true
   tool = vimdiff
