@@ -1,4 +1,0 @@
-[GNOME Session]
-Name=Awesome
-RequiredComponents=unity-settings-daemon;awesome;
-DesktopName=Awesome
