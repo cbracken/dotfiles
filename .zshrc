@@ -104,5 +104,7 @@ if [ -x "/usr/games/fortune" ]; then
   /usr/games/fortune
 elif [ -x "/opt/local/bin/fortune" ]; then
   /opt/local/bin/fortune
+elif [ -x "$HOME/.homebrew/bin/fortune" ]; then
+  "$HOME/.homebrew/bin/fortune"
 fi
 echo
