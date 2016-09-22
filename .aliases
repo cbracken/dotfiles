@@ -18,12 +18,6 @@ fi
 # suppress gvim noise
 alias gvim='gvim 2> /dev/null'
 
-# Alias vim on OS X
-if [[ $(uname) == Darwin && \
-      -x /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
-  alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-fi
-
 # more ls aliases
 alias ll='ls -l'
 alias la='ls -Al'
