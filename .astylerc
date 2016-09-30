@@ -7,6 +7,6 @@
 --unpad-paren                 # Remove useless padding in/around parens
 --align-pointer=name          # Align * and & with var/param name
 --convert-tabs                # Eliminate all tabs
-# --close-templates             # C++11 templates
+--close-templates             # C++11 templates
 # --max-code-length=80          # 80-col max
 --lineend=linux               # \n
