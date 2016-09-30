@@ -10,3 +10,6 @@
 --close-templates             # C++11 templates
 --max-code-length=80          # 80-col max
 --lineend=linux               # \n
+--align-method-colon          # ObjC: Align colons in method decls
+--pad-method-prefix           # ObjC: Insert a space after the -/+ prefix
+--pad-method-colon=none       # ObjC: No padding before/after colons in calls
