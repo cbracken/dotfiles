@@ -1,7 +1,7 @@
 # -*- mode: shell-script; -*- vim: set filetype=sh
 # ~/.aliases
 
-# add color
+# add colour
 if [[ -x '/usr/bin/dircolors' || \
       -x '/usr/homebrew/opt/coreutils/libexec/gnubin/dircolors' ]]; then
   if [[ -r "~/.dircolors" ]]; then
