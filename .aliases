@@ -3,7 +3,7 @@
 
 # add colour
 if [[ -x '/usr/bin/dircolors' || \
-      -x '/usr/homebrew/opt/coreutils/libexec/gnubin/dircolors' ]]; then
+      -x '$HOME/.homebrew/opt/coreutils/libexec/gnubin/dircolors' ]]; then
   if [[ -r "~/.dircolors" ]]; then
     eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   fi
