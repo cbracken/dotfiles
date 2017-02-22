@@ -4,6 +4,7 @@
 export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
 export TERMINAL=urxvt
+export GREP_OPTIONS="--color=auto -n"
 
 # p4 config
 export P4CONFIG=.p4config
