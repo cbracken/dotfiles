@@ -20,9 +20,3 @@ fi
 if [[ -f ~/.nvm/nvm.sh ]]; then
   . ~/.nvm/nvm.sh
 fi
-
-# Chromium depot_tools
-path_prepend "$HOME/src/depot_tools"
-
-# Flutter SDK
-path_prepend "$HOME/src/flutter/flutter/bin"
