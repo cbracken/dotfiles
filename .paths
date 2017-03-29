@@ -3,7 +3,7 @@
 
 # add to path if not already there
 path_remove() {
-  PATH=$(echo $PATH | sed "s:$1::;s/::/:/;s/:$//")
+  PATH=$(echo $PATH | sed "s:^$1\:::;s:\:$1\::\::;s:\:$1::")
 }
 
 path_prepend() {
