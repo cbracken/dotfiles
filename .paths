@@ -1,11 +1,12 @@
 # -*- mode: shell-script; -*- vim: set filetype=sh
 # ~/.paths
 
-# add to path if not already there
+# Cleanly remove $1 from $PATH
 path_remove() {
   PATH=$(echo $PATH | sed "s:^$1\:::;s:\:$1\::\::;s:\:$1::")
 }
 
+# Move/add $1 to the start of $PATH
 path_prepend() {
   path_remove "$1"
   if [ -d "$1" ]; then
@@ -13,6 +14,7 @@ path_prepend() {
   fi
 }
 
+# Move/add $1 to the end of $PATH
 path_append() {
   path_remove "$1"
   if [ -d "$1" ]; then
