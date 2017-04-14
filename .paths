@@ -22,12 +22,6 @@ path_append() {
   fi
 }
 
-# Chromium depot_tools
-path_prepend "$HOME/src/depot_tools"
-
-# Flutter SDK
-path_prepend "$HOME/src/flutter/flutter/bin"
-
 # Push /usr/local/bin to the front of PATH
 path_prepend "/usr/local/bin"
 
@@ -42,8 +36,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
   path_prepend "$HOME/.homebrew/bin"
 fi
 
-# Goma
+# Fuchsia/Flutter
 path_prepend "$GOMA_DIR"
+path_prepend "$HOME/src/depot_tools"
+path_prepend "$HOME/src/flutter/engine/src/buildtools/toolchain/clang+llvm-x86_64-darwin/bin"
+path_prepend "$HOME/src/flutter/flutter/bin"
 
 # User's personal bin dir if it exists
 path_prepend "$HOME/bin"
