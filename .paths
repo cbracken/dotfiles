@@ -39,7 +39,7 @@ fi
 # Fuchsia/Flutter
 path_prepend "$GOMA_DIR"
 path_prepend "$HOME/src/depot_tools"
-path_prepend "$HOME/src/flutter/engine/src/buildtools/toolchain/clang+llvm-x86_64-darwin/bin"
+#path_prepend "$HOME/src/flutter/engine/src/buildtools/toolchain/clang+llvm-x86_64-darwin/bin"
 path_prepend "$HOME/src/flutter/flutter/bin"
 
 # User's personal bin dir if it exists
