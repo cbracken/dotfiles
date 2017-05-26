@@ -1,11 +1,6 @@
 # -*- mode: shell-script; -*- vim: set filetype=sh
 # ~/.tools
 
-# iTerm2 shell integration
-if [[ -f ~/.iterm2_shell_integration.zsh ]]; then
-  . ~/.iterm2_shell_integration.zsh
-fi
-
 # go version manager
 if [[ -f ~/.gvm/scripts/gvm ]]; then
   . ~/.gvm/scripts/gvm
