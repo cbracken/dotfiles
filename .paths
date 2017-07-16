@@ -36,6 +36,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
   path_prepend "$HOME/.homebrew/bin"
 fi
 
+# Ruby gems
+if which ruby >/dev/null && which gem >/dev/null; then
+  path_prepend "$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
+fi
+
 # Fuchsia/Flutter
 path_prepend "$GOMA_DIR"
 path_prepend "$HOME/src/depot_tools"
