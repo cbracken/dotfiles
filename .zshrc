@@ -35,7 +35,7 @@ zstyle ':completion:*' menu select
 git_branch() {
   local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
   if [[ -n $branch ]]; then
-    echo " ($branch)"
+    echo -n " ($branch)"
   fi
 }
 
