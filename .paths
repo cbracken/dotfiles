@@ -3,7 +3,13 @@
 
 # Cleanly remove $1 from $PATH
 path_remove() {
-  PATH=$(echo $PATH | sed "s:^$1\:::;s:\:$1\::\::;s:\:$1::")
+  if [ -n "$ZSH_VERSION" ]; then
+    local paths=("${(s/:/)PATH}")
+    paths=("${(@)paths:#$1}")
+    export PATH="${(j/:/)paths}"
+  else
+    PATH=$(echo $PATH | sed "s:^$1\:::;s:\:$1\::\::;s:\:$1::")
+  fi
 }
 
 # Move/add $1 to the start of $PATH
