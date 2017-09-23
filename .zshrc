@@ -23,7 +23,7 @@ setopt EXTENDED_GLOB
 
 # vi-mode
 bindkey -v
-bindkey -M vicmd 'q' push-line
+bindkey '^Y' push-line
 bindkey '^R' history-incremental-search-backward
 
 # completion
