@@ -1,25 +1,25 @@
 # .zshrc
 
-# environment vars
+# Environment vars
 export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
 export GOMA_DIR="$HOME/src/goma"
 export GPG_TTY="$(tty)"
 export GREP_OPTIONS="--color=auto"
 
-# p4 config
+# P4 config
 export P4CONFIG=.p4config
 export P4EDITOR=vim
 
-# history
+# History
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-# write history command-by-command, don't overwrite
+# Write history command-by-command, don't overwrite.
 setopt INC_APPEND_HISTORY
 
-# extended glob
+# Treat '#', '~', and '^' as part of patte4rns for filename generation.
 setopt EXTENDED_GLOB
 
 # vi-mode
@@ -27,12 +27,12 @@ bindkey -v
 bindkey '^Y' push-line
 bindkey '^R' history-incremental-search-backward
 
-# completion
+# Completion
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
-# current git branch (for prompt)
+# Current git branch (for prompt)
 git_branch() {
   local branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
   if [[ -n $branch ]]; then
@@ -40,7 +40,7 @@ git_branch() {
   fi
 }
 
-# prompt
+# Prompt
 setopt prompt_subst
 autoload -Uz colors && colors
 
@@ -64,7 +64,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# If procfs is available, get the terminal executable
+# If procfs is available, get the terminal executable.
 term_bin=""
 if [[ -e /proc/$PPID/cmdline ]]; then
   term_bin="${$(</proc/$PPID/cmdline):t}"
@@ -76,27 +76,27 @@ if [[ "$COLORTERM" = "gnome-terminal" ]] || \
   export TERM=xterm-256color
 fi
 
-# path additions
+# Load path additions.
 if [ -f ~/.paths ]; then
   . ~/.paths
 fi
 
-# aliases
+# Load aliases.
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
-# color
+# Load colour support.
 if [ -f ~/.colors ]; then
   . ~/.colors
 fi
 
-# functions
+# Load custom functions.
 if [ -f ~/.sh_functions ]; then
   . ~/.sh_functions
 fi
 
-# tools
+# Load tools.
 if [ -f ~/.tools ]; then
   . ~/.tools
 fi
