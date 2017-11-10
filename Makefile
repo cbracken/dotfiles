@@ -1,29 +1,48 @@
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+mkfile_dir  := $(patsubst %/,%,$(dir $(mkfile_path)))
+
 # shells
 install-zsh:
-	cp .aliases .colors .paths .profile .sh_functions .zprofile .zshrc ~/
+	ln -s "$(mkfile_dir)/.aliases" ~/
+	ln -s "$(mkfile_dir)/.colors" ~/
+	ln -s "$(mkfile_dir)/.paths" ~/
+	ln -s "$(mkfile_dir)/.sh_functions" ~/
+	ln -s "$(mkfile_dir)/.zshenv" ~/
+	ln -s "$(mkfile_dir)/.zprofile" ~/
+	ln -s "$(mkfile_dir)/.zshrc" ~/
+	ln -s "$(mkfile_dir)/.zlogin" ~/
 
 install-bash:
-	cp .aliases .bash_logout .bashrc .colors .paths .profile .sh_functions ~/
+	ln -s "$(mkfile_dir)/.aliases" ~/
+	ln -s "$(mkfile_dir)/.colors" ~/
+	ln -s "$(mkfile_dir)/.paths" ~/
+	ln -s "$(mkfile_dir)/.sh_functions" ~/
+	ln -s "$(mkfile_dir)/.profile" ~/
+	ln -s "$(mkfile_dir)/.bashrc" ~/
+	ln -s "$(mkfile_dir)/.bash_logout" ~/
 
 install-x:
-	cp .Xdefaults .Xmodmap ~/
+	ln -s "$(mkfile_dir)/.Xdefaults" ~/
+	ln -s "$(mkfile_dir)/.Xmodmap" ~/
 
 install-fontconf:
-	cp .fonts.conf ~/
+	ln -s "$(mkfile_dir)/.fonts.conf" ~/
 	fc-cache -f -v
 
 # program config
 install-git:
-	cp -r .gitconfig .gitignore_global .tigrc ~/
+	ln -s "$(mkfile_dir)/.gitconfig" ~/
+	ln -s "$(mkfile_dir)/.gitignore_global" ~/
+	ln -s "$(mkfile_dir)/.tigrc" ~/
 
 install-astyle:
-	cp .astylerc ~/
+	ln -s "$(mkfile_dir)/.astylerc" ~/
 
 install-irssi:
-	cp -r .irssi ~/
+	ln -s "$(mkfile_dir)/.irssi" ~/
 
 install-tmux:
-	cp .tmux.conf ~/
+	ln -s "$(mkfile_dir)/.tmux.conf" ~/
 
 install-screen:
-	cp .screenrc ~/
+	ln -s "$(mkfile_dir)/.screenrc" ~/
