@@ -12,15 +12,6 @@ install-zsh:
 	ln -s "$(mkfile_dir)/.zshrc" ~/
 	ln -s "$(mkfile_dir)/.zlogin" ~/
 
-install-bash:
-	ln -s "$(mkfile_dir)/.aliases" ~/
-	ln -s "$(mkfile_dir)/.colors" ~/
-	ln -s "$(mkfile_dir)/.paths" ~/
-	ln -s "$(mkfile_dir)/.sh_functions" ~/
-	ln -s "$(mkfile_dir)/.profile" ~/
-	ln -s "$(mkfile_dir)/.bashrc" ~/
-	ln -s "$(mkfile_dir)/.bash_logout" ~/
-
 install-x:
 	ln -s "$(mkfile_dir)/.Xdefaults" ~/
 	ln -s "$(mkfile_dir)/.Xmodmap" ~/
