@@ -1,4 +1,4 @@
-# -*- mode: shell-script; -*- vim: set filetype=sh
+# -*- mode: shell-script; -*- vim: set filetype=sh:
 # Custom shell functions
 
 # Sets xterm title to $1.

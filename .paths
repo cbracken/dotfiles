@@ -1,4 +1,4 @@
-# -*- mode: shell-script; -*- vim: set filetype=sh
+# -*- mode: shell-script; -*- vim: set filetype=sh:
 # ~/.paths
 
 # Cleanly remove $1 from $PATH
