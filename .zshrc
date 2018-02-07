@@ -32,6 +32,14 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
+# The Dart VM conflates echo (echo typed characters) and echonl (echo
+# newlines). Until fixed, turn off echonl after every command.
+#
+# See: https://github.com/dart-lang/sdk/issues/30318
+precmd() {
+  stty -echonl
+}
+
 # Current git branch (for prompt)
 git_branch() {
   local branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
