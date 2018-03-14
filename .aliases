@@ -27,3 +27,6 @@ alias l='ls -C'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+# ag colour
+alias ag='ag --color-line-number "30;33" --color-path "30;32" --color-match "1;31"'
