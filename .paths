@@ -42,6 +42,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
   path_prepend "$HOME/.homebrew/bin"
 fi
 
+# Rust
+path_prepend "$HOME/.cargo/bin"
+
 # Ruby gems
 if which ruby >/dev/null && which gem >/dev/null; then
   path_prepend "$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
