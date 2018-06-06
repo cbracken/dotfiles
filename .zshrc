@@ -51,14 +51,7 @@ git_branch() {
 # Prompt
 setopt prompt_subst
 autoload -Uz colors && colors
-if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  # We have color support; assume it's compliant with Ecma-48
-  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-  # a case would tend to support setf rather than setaf.)
-  PROMPT='%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$fg[yellow]%}$(git_branch)%{$reset_color%}%# '
-else
-  PROMPT="%T %n@%m:%c$(git_branch)%# "
-fi
+PROMPT='%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$fg[yellow]%}$(git_branch)%{$reset_color%}%# '
 
 # If procfs is available, get the terminal executable.
 term_bin=""
