@@ -65,9 +65,13 @@ term_bin=""
 if [[ -e /proc/$PPID/cmdline ]]; then
   term_bin="${$(</proc/$PPID/cmdline):t}"
 fi
+
+# Set TERM for known terminals, and as a fallback when specified term is
+# unavailable.
 if [[ "$COLORTERM" == "gnome-terminal" ]] || \
    [[ "$term_bin" == gnome-terminal* ]] || \
-   [[ "$term_bin" == urxvt* ]]; then
+   [[ "$term_bin" == urxvt* ]] || \
+   [[ "$TERM" == "xterm-256color-italic" && ! $(tput -T$TERM longname > /dev/null 2>&1) ]]; then
   export TERM=xterm-256color
 fi
 unset term_bin
