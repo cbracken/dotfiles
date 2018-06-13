@@ -5,7 +5,6 @@ export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
 export GOMA_DIR="$HOME/src/goma"
 export GPG_TTY="$(tty)"
-export GREP_OPTIONS="--color=auto"
 
 # P4 config
 export P4CONFIG=.p4config
