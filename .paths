@@ -54,5 +54,8 @@ fi
 path_prepend "$HOME/src/depot_tools"
 path_prepend "$HOME/src/flutter/flutter/bin"
 
+# Google Cloud SDK
+path_prepend "$HOME/src/google-cloud-sdk/bin"
+
 # User's personal bin dir if it exists
 path_prepend "$HOME/bin"
