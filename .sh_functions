@@ -3,5 +3,5 @@
 
 # Sets xterm title to $1.
 function tt {
-  echo -n "\033]0;${@}\007"
+  echo -n "\033]0;$*\007"
 }
