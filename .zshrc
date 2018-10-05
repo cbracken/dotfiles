@@ -4,7 +4,10 @@
 export EDITOR=/usr/bin/vim
 export GNUPGHOME="$HOME/.gnupg"
 export GOMA_DIR="$HOME/src/goma"
-export GPG_TTY="$(tty)"
+
+# Set tty used for GPG pinentry
+GPG_TTY="$(tty)"
+export GPG_TTY
 
 # P4 config
 export P4CONFIG=.p4config
@@ -33,7 +36,8 @@ zstyle ':completion:*' menu select
 
 # Current git branch (for prompt)
 git_branch() {
-  local branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+  local branch
+  branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
   if [[ -n $branch ]]; then
     echo -n " ($branch)"
   fi
