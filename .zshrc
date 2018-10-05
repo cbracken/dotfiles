@@ -21,7 +21,7 @@ SAVEHIST=10000
 # Write history command-by-command, don't overwrite.
 setopt INC_APPEND_HISTORY
 
-# Treat '#', '~', and '^' as part of patte4rns for filename generation.
+# Treat '#', '~', and '^' as part of patterns for filename generation.
 setopt EXTENDED_GLOB
 
 # vi-mode
