@@ -59,7 +59,7 @@ fi
 if [[ "$COLORTERM" == "gnome-terminal" ]] || \
    [[ "$term_bin" == gnome-terminal* ]] || \
    [[ "$term_bin" == urxvt* ]] || \
-   [[ "$TERM" == "xterm-256color-italic" && ! $(tput -T$TERM longname > /dev/null 2>&1) ]]; then
+   [[ "$TERM" == "xterm-256color-italic" && ! $(tput -T"$TERM" longname > /dev/null 2>&1) ]]; then
   export TERM=xterm-256color
 fi
 unset term_bin
