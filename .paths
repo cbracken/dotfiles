@@ -52,7 +52,7 @@ fi
 
 # Ruby gems
 if which ruby >/dev/null && which gem >/dev/null; then
-  path_prepend "$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
+  path_prepend "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 fi
 
 # Rust
