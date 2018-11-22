@@ -1,7 +1,7 @@
 # .zshrc
 
 # Environment vars
-export EDITOR=/usr/bin/vim
+export EDITOR=vim
 export GNUPGHOME="$HOME/.gnupg"
 export GOMA_DIR="$HOME/src/goma"
 
