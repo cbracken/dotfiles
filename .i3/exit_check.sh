@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Use dmenu to check if the user wants to exit i3.
 
