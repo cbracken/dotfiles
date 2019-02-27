@@ -25,15 +25,16 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # Lock, suspend
-set $lock_screen dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
-bindsym Control+Mod1+l exec $lock_screen
-bindsym Control+Mod1+s exec dbus-send --system --dest=org.freedesktop.UPower --type=method_call
+set $lock_screen i3lock -d -c 000000
+exec --no-startup-id xautolock -time 10 -locker "$lock_screen"
+bindsym Control+$mod+l exec $lock_screen
+# bindsym Control+$mod+s exec dbus-send --system --dest=org.freedesktop.UPower --type=method_call
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec PATH=$HOME/bin:$PATH dmenu_run
