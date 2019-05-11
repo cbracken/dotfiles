@@ -40,6 +40,7 @@ fi
 # Fuchsia/Flutter
 path_prepend "$HOME/src/depot_tools"
 path_prepend "$HOME/src/flutter/flutter/bin"
+path_prepend "$HOME/src/flutter/flutter/bin/cache/dart-sdk/bin"
 path_prepend "$HOME/src/fuchsia/.jiri_root/bin"
 if [[ -e "$HOME/src/fuchsia/.jiri_root/scripts/fx-env.sh" ]]; then
   source "$HOME/src/fuchsia/.jiri_root/scripts/fx-env.sh"
