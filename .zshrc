@@ -4,6 +4,7 @@
 export EDITOR=vim
 export GNUPGHOME="$HOME/.gnupg"
 export GOMA_DIR="$HOME/src/goma"
+export GEM_HOME="$HOME/.gem"
 
 # Set tty used for GPG pinentry
 GPG_TTY="$(tty)"
