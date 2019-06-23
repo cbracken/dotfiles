@@ -31,6 +31,9 @@ bindkey '^Y' push-line
 bindkey '^R' history-incremental-search-backward
 
 # Completion
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  fpath=($HOME/.homebrew/share/zsh/site-functions $fpath)
+fi
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
