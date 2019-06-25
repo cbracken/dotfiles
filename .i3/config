@@ -30,6 +30,9 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# start compton compositor
+exec --no-startup-id compton --config ~/.config/compton.conf -b
+
 # Lock, suspend
 set $lock_screen i3lock -d -c 000000
 exec --no-startup-id xautolock -time 10 -locker "$lock_screen"
