@@ -5,8 +5,8 @@ xterm*font: *-fixed-*-*-*-20-*
 URxvt.depth: 32
 URxvt.foreground: grey
 URxvt.background: #0f0f0f
-URxvt.font: -*-fixed-medium-*-*-20-*
-URxvt.boldFont: -*-fixed-bold-*-*-20-*
+URxvt.font: -*-fixed-medium-*-*-20-*,xft:Kochi Gothic:antialias=false
+URxvt.boldFont: -*-fixed-bold-*-*-20-*:Kochi Gothic:antialias=false
 URxvt.geometry: 100x50
 URxvt.scrollBar: false
 URxvt.cursorColor: orange
