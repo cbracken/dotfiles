@@ -1,5 +1,6 @@
 # Remap caps lock to ctrl.
 if [[ -x "$(which setxkbmap)" ]]; then
+  setxkbmap jp
   setxkbmap -option ctrl:nocaps
 fi
 
@@ -9,9 +10,12 @@ if [[ -x "$(which xmodmap)" ]]; then
 fi
 
 # Use ibus for Japanese IME.
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=xim
+export XMODIFIERS=@im=fcitx
+
+/usr/local/bin/mozc start
+fcitx -r -d
 
 xrdb -load $HOME/.Xresources
 /usr/local/bin/i3
