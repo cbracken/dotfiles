@@ -1,20 +1,23 @@
 # .zshrc
 
-# Environment vars
+# Environment vars.
 export EDITOR=vim
 export GNUPGHOME="$HOME/.gnupg"
 export GOMA_DIR="$HOME/src/goma"
 export GEM_HOME="$HOME/.gem"
 
-# Set tty used for GPG pinentry
+# Start ssh-agent.
+eval $(ssh-agent -s)
+
+# Set tty used for GPG pinentry.
 GPG_TTY="$(tty)"
 export GPG_TTY
 
-# P4 config
+# P4 config.
 export P4CONFIG=.p4config
 export P4EDITOR=vim
 
-# History
+# History.
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -25,12 +28,12 @@ setopt INC_APPEND_HISTORY
 # Treat '#', '~', and '^' as part of patterns for filename generation.
 setopt EXTENDED_GLOB
 
-# vi-mode
+# vi-mode.
 bindkey -v
 bindkey '^Y' push-line
 bindkey '^R' history-incremental-search-backward
 
-# Completion
+# Completion.
 if [[ "$(uname -s)" == "Darwin" ]]; then
   fpath=($HOME/.homebrew/share/zsh/site-functions $fpath)
 fi
@@ -38,7 +41,7 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
-# Current git branch (for prompt)
+# Current git branch (for prompt).
 git_branch() {
   local branch
   branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
@@ -47,7 +50,7 @@ git_branch() {
   fi
 }
 
-# Prompt
+# Prompt.
 setopt prompt_subst
 autoload -Uz colors && colors
 PROMPT='%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$fg[yellow]%}$(git_branch)%{$reset_color%}%# '
