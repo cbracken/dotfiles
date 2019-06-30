@@ -6,9 +6,6 @@ export GNUPGHOME="$HOME/.gnupg"
 export GOMA_DIR="$HOME/src/goma"
 export GEM_HOME="$HOME/.gem"
 
-# Start ssh-agent.
-eval $(ssh-agent -s) > /dev/null
-
 # Set tty used for GPG pinentry.
 GPG_TTY="$(tty)"
 export GPG_TTY
