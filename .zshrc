@@ -7,8 +7,7 @@ export GOMA_DIR="$HOME/src/goma"
 export GEM_HOME="$HOME/.gem"
 
 # Set tty used for GPG pinentry.
-GPG_TTY="$(tty)"
-export GPG_TTY
+export GPG_TTY="$(tty)"
 
 # P4 config.
 export P4CONFIG=.p4config
