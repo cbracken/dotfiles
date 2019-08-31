@@ -18,6 +18,11 @@
   default = simple
 [rebase]
   autosquash = true
+[sendemail]
+  smtpserver = smtp.gmail.com
+  smtpuser = chris@bracken.jp
+  smtpencryption = tls
+  smtpserverport = 587
 [user]
   name = Chris Bracken
   email = chris@bracken.jp
