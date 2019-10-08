@@ -11,6 +11,10 @@ setopt INC_APPEND_HISTORY
 # Treat '#', '~', and '^' as part of patterns for filename generation.
 setopt EXTENDED_GLOB
 
+# Increase open file descriptor, per-user process limits for Goma builds.
+ulimit -n 16384
+ulimit -u 2048
+
 # vi-mode.
 bindkey -v
 bindkey '^Y' push-line
