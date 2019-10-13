@@ -7,10 +7,11 @@ install-zsh:
 	ln -s "$(mkfile_dir)/.colors" ~/
 	ln -s "$(mkfile_dir)/.paths" ~/
 	ln -s "$(mkfile_dir)/.sh_functions" ~/
-	ln -s "$(mkfile_dir)/.zshenv" ~/
-	ln -s "$(mkfile_dir)/.zprofile" ~/
-	ln -s "$(mkfile_dir)/.zshrc" ~/
 	ln -s "$(mkfile_dir)/.zlogin" ~/
+	ln -s "$(mkfile_dir)/.zlogout" ~/
+	ln -s "$(mkfile_dir)/.zprofile" ~/
+	ln -s "$(mkfile_dir)/.zshenv" ~/
+	ln -s "$(mkfile_dir)/.zshrc" ~/
 
 install-x:
 	ln -s "$(mkfile_dir)/.Xdefaults" ~/
