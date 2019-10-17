@@ -29,13 +29,19 @@ bindkey -v
 bindkey '^Y' push-line
 bindkey '^R' history-incremental-search-backward
 
-# Completion.
+# Add zsh completion definition dirs.
 if [[ "$(uname -s)" == "Darwin" ]]; then
   fpath=($HOME/.homebrew/share/zsh/site-functions $fpath)
 fi
-zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit && compinit
+
+# Specify where compinstall writes cfg commands. Default, but saves checks.
+zstyle ':compinstall' filename "$HOME/.zshrc"
+
+# Use menu-style autocompletion.
 zstyle ':completion:*' menu select
+
+# Initialize completion for current session.
+autoload -Uz compinit && compinit
 
 # Current git branch (for prompt).
 git_branch() {
