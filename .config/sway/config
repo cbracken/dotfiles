@@ -27,6 +27,9 @@ set $term urxvt
 # Note: it's recommended that you pass the final command to sway
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
+# Set lock screen handler
+set $lock_screen swaylock -c 000000
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -40,19 +43,14 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 ### Idle configuration
 #
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-set $lock_screen swaylock -c 000000
-bindsym Control+$mod+l exec $lock_screen
+# Lock screen after 300 seconds of inactivity, then turn off displays after
+# another 300 seconds, and turn screens back on when resumed. Also lock screen
+# before the computer goes to sleep.
+exec swayidle -w \
+         timeout 300 '$lock_screen' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep '$lock_screen'
 
 ### Input configuration
 #
@@ -94,6 +92,9 @@ input * {
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+
+    # Lock the screen
+    bindsym Control+$mod+l exec $lock_screen
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec ~/.config/sway/exit_check.sh
