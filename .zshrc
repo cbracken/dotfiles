@@ -12,8 +12,8 @@ setopt INC_APPEND_HISTORY
 setopt EXTENDED_GLOB
 
 # Increase open file descriptor, per-user process limits for Goma builds.
-ulimit -n 16384
-ulimit -u 2048
+ulimit -n 32768
+ulimit -u 32768
 
 # vi-mode.
 bindkey -v
