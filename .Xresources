@@ -10,6 +10,7 @@ URxvt.boldFont: xft:DejaVu Sans Mono:size=13,xft:IPAGothic:size=14
 URxvt.geometry: 100x50
 URxvt.scrollBar: false
 URxvt.cursorColor: orange
+URxvt.cutchars: ",│`|&=:\"' ()[]{}<>"
 URxvt.color0: #2e3436
 URxvt.color1: #cc0000
 URxvt.color2: #4e9a06
