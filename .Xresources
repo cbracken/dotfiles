@@ -5,8 +5,8 @@ xterm*font: *-fixed-*-*-*-20-*
 URxvt.depth: 32
 URxvt.foreground: grey
 URxvt.background: #0f0f0f
-URxvt.font: xft:DejaVu Sans Mono:size=13
-URxvt.boldFont: xft:DejaVu Sans Mono:size=13
+URxvt.font: xft:DejaVu Sans Mono:size=13,xft:IPAGothic:size=14
+URxvt.boldFont: xft:DejaVu Sans Mono:size=13,xft:IPAGothic:size=14
 URxvt.geometry: 100x50
 URxvt.scrollBar: false
 URxvt.cursorColor: orange
