@@ -28,4 +28,5 @@ URxvt.color13: #ad7fa8
 URxvt.color14: #34e2e2
 URxvt.color15: #eeeeec
 URxvt.inputMethod: ibus
+URxvt.imLocale: ja_JP.UTF-8
 URxvt.preeditType: OverTheSpot
