@@ -9,6 +9,9 @@
 # Configure Xresources settings.
 exec xrdb ~/.Xresources
 
+# Window title font
+font pango:IPAGothic 14, DejaVu Sans Mono 12
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -25,7 +28,7 @@ set $term alacritty
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | dmenu -fn "DejaVu Sans Mono-16" | xargs swaymsg exec --
 
 # Set lock screen handler
 set $lock_screen swaylock -c 000000
@@ -219,10 +222,12 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
+    pango_markup disabled
+    font pango:IPAGothic 16, DejaVu Sans Mono 14
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command while date +'%Y-%m-%d %k:%M'; do sleep 1; done
 
     colors {
         statusline #ffffff
