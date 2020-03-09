@@ -12,6 +12,11 @@ export LC_MONETARY=ja_JP.UTF-8
 export LC_NUMERIC=en_AU.UTF-8
 export LC_TIME=en_AU.UTF-8
 
+# Use ibus for Japanese IME.
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 # If a local perl5 directory exists, add PERL5LIB.
 if [[ -d "$HOME/.perl5/lib/perl5" ]]; then
   export PERL5LIB="$HOME/.perl5/lib/perl5:$PERL5LIB"

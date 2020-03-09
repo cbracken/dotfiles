@@ -9,6 +9,9 @@
 # Configure Xresources settings.
 exec xrdb ~/.Xresources
 
+# Start up ibus IME daemon.
+exec ibus-daemon --xim
+
 # Window title font
 font pango:IPAGothic 14, DejaVu Sans Mono 12
 
@@ -215,6 +218,18 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+#
+# Input manager:
+#
+bindsym $mod+i mode "j: japanese; e: english"
+
+mode "j: japanese; e: english" {
+    bindsym j exec ibus engine mozc-jp; mode "default"
+    bindsym e exec ibus engine xkb:jp::jpn; mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 #
 # Status Bar:
