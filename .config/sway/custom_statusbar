@@ -1,0 +1,12 @@
+#!/bin/sh
+
+ibus=$(ibus engine 2> /dev/null)
+time=$(date +"%a %Y-%m-%d %k:%M")
+
+if [ "${ibus}" = "mozc-jp" ]; then
+  ibus="JA"
+else
+  ibus="EN"
+fi
+
+echo "${time} ⋯ ${ibus}"
