@@ -5,6 +5,7 @@ umask 022
 
 # Set language to Australian English, currency to Japanese Yen.
 export LANG=en_AU.UTF-8
+export LANGUAGE=en_AU.UTF-8
 export LC_COLLATE=en_AU.UTF-8
 export LC_CTYPE=en_AU.UTF-8
 export LC_MESSAGES=en_AU.UTF-8
