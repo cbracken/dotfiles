@@ -1,12 +1,17 @@
 #!/bin/sh
 
-ibus=$(ibus engine 2> /dev/null)
-time=$(date +"%a %Y-%m-%d %k:%M")
+# Kanji of the day.
+kotd="$(kotd) ⋯ "
 
+# Day of week in Japanese.
+time=$(LC_TIME=ja_JP.UTF-8 date +"%Y-%m-%d %k:%M (%a)")
+
+# Current ibus input method.
+ibus=$(ibus engine 2> /dev/null)
 if [ "${ibus}" = "mozc-jp" ]; then
   ibus="JA"
 else
   ibus="EN"
 fi
 
-echo "${time} ⋯ ${ibus}"
+echo "${kotd}${time} ⋯ ${ibus}"
