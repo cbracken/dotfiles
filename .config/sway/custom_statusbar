@@ -6,12 +6,4 @@ kotd="$(kotd) ⋯ "
 # Day of week in Japanese.
 time=$(LC_TIME=ja_JP.UTF-8 date +"%Y-%m-%d %k:%M (%a)")
 
-# Current ibus input method.
-ibus=$(ibus engine 2> /dev/null)
-if [ "${ibus}" = "mozc-jp" ]; then
-  ibus="JA"
-else
-  ibus="EN"
-fi
-
-echo "${kotd}${time} ⋯ ${ibus}"
+echo "${kotd}${time}"
