@@ -12,6 +12,9 @@ exec xrdb ~/.Xresources
 # Start up ibus IME daemon.
 exec ibus-daemon --xim
 
+# Start up Dunst notification system
+exec dunst
+
 # Window title font
 font pango:IPAGothic 14, DejaVu Sans Mono 12
 
