@@ -63,4 +63,5 @@ path_prepend "$HOME/.cargo/bin"
 path_prepend "$HOME/src/google-cloud-sdk/bin"
 
 # User's personal bin dir if it exists
+path_prepend "$HOME/.local/bin"
 path_prepend "$HOME/bin"
