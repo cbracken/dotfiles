@@ -18,6 +18,11 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
+# If a local python3 directory exists, add PYTHONPATH.
+if [[ -d "$HOME/.local/lib/python3" ]]; then
+  export PYTHONPATH="$HOME/.local/lib/python3:$PYTHONPATH"
+fi
+
 # If a local perl5 directory exists, add PERL5LIB.
 if [[ -d "$HOME/.perl5/lib/perl5" ]]; then
   export PERL5LIB="$HOME/.perl5/lib/perl5:$PERL5LIB"
