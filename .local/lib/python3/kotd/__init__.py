@@ -103,8 +103,8 @@ def get_words():
                 english = map(jengfn, w['senses'])
                 pos = list(filter(lambda p: p and p != "Wikipedia definition", chain(*map(jposfn, w['senses']))))[:2]
                 pos = sorted(set(map(transform, pos)))
-                japanese = sorted(list(set(japanese))[:3])
-                english = sorted(list(set(e.lower() for e in chain(*english)))[:3])
+                japanese = sorted(list(set(japanese)))[:3]
+                english = sorted(list(set(e.lower() for e in chain(*english))))[:3]
                 words.append(f"{c}: {', '.join(japanese)} [{', '.join(pos)}]: {', '.join(english)}")
                 # </div>
 
