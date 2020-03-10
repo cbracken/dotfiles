@@ -13,11 +13,13 @@ class CircularList:
     def __getitem__(self, key):
         assert isinstance(key, int) or isinstance(key, slice)
         if isinstance(key, slice):
-            key = slice(
-                key.start % len(self.src) if key.start else None,
-                key.stop % len(self.src) if key.stop else None,
-                key.step)
-            return self.src[key]
+            start = key.start % len(self.src) if key.start is not None else 0
+            stop = key.stop if key.stop is not None else len(self.src)
+            if stop > 0:
+                stop = (stop - 1) % len(self.src) + 1
+            if start <= stop:
+                return self.src[slice(start, stop, key.step)]
+            return self.src[stop + 1:len(self.src)] + self.src[0:start]
         return self.src[key % len(self.src)]
 
 rtk = CircularList("""
