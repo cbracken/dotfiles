@@ -264,18 +264,6 @@ bindsym $mod+r mode "resize"
 
 
 ############################################################
-# Key bindings: Input manager
-
-bindsym $mod+i mode "j: japanese; e: english"
-
-mode "j: japanese; e: english" {
-    bindsym j exec ibus engine mozc-jp; mode "default"
-    bindsym e exec ibus engine xkb:jp::jpn; mode "default"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-############################################################
 # Status Bar
 #
 # Read `man 5 sway-bar` for more information about this section.
