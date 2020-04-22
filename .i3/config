@@ -22,7 +22,7 @@ exec --no-startup-id setxkbmap -layout jp -option ctrl:nocaps
 exec --no-startup-id xmodmap -e "pointer = 1 2 3 5 4 6 7 8 9 10 11 12"
 
 # Set desktop background.
-exec --no-startup-id xsetroot -solid "#333333"
+exec --no-startup-id xsetroot -solid "#111111"
 
 # Start compton compositor.
 exec --no-startup-id compton --config ~/.config/compton.conf -b
