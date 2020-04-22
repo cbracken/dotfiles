@@ -15,6 +15,9 @@ set $mod Mod4
 # is used in the bar {} block below. ISO 10646 = Unicode
 font pango:IPAGothic 12, DejaVu Sans Mono 10
 
+# Use Japanese keyboard layout with caps-lock as control.
+exec --no-startup-id setxkbmap -layout jp -option ctrl:nocaps
+
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -147,9 +150,6 @@ bar {
 
 # Set desktop background
 exec --no-startup-id xsetroot -solid "#333333"
-
-# make CapsLock key to Ctrl
-exec --no-startup-id setxkbmap -option ctrl:nocaps
 
 # lock screen on idle
 exec --no-startup-id xautolock -time 10 -locker "$lock_screen"
