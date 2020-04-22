@@ -6,5 +6,4 @@ export XMODIFIERS=@im=ibus
 # Start ibus daemon.
 ibus-daemon --xim &
 
-xrdb -load $HOME/.Xresources
 /usr/local/bin/i3
