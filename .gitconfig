@@ -12,6 +12,15 @@
 [diff]
   mnemonicprefix = true
   tool = vimdiff
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+[gpg]
+  program = gpg
+[grep]
+  lineNumber = true
 [merge]
   stat = true
 [pull]
@@ -29,12 +38,3 @@
   name = Chris Bracken
   email = chris@bracken.jp
   signingkey = 9EF6957AF673652E4AB5542DBBE45868CBE8A8FE
-[filter "lfs"]
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-[grep]
-  lineNumber = true
-[gpg]
-  program = gpg
