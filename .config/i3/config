@@ -93,7 +93,7 @@ bindsym $mod+Shift+r restart
 bindsym Control+$mod+l exec $lock_screen
 
 # Exit i3 (logs you out of your X session).
-bindsym $mod+Shift+e exec ~/.i3/exit_check.sh
+bindsym $mod+Shift+e exec ~/.config/i3/exit_check.sh
 
 
 ############################################################
