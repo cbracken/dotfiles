@@ -31,7 +31,7 @@ exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id dunst
 
 # Set the window title font.
-font pango:IPAGothic 12, DejaVu Sans Mono 10
+font pango:IPAGothic 9, DejaVu Sans Mono 9
 
 
 ############################################################
