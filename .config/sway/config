@@ -9,7 +9,7 @@
 # Startup
 
 # Configure Xresources settings.
-exec xrdb ~/.Xresources
+exec xrdb ~/.config/Xresources
 
 # Start up ibus IME daemon.
 exec ibus-daemon --xim

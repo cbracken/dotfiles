@@ -13,7 +13,7 @@
 # Startup
 
 # Configure Xresources settings.
-exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id xrdb ~/.config/Xresources
 
 # Use Japanese keyboard layout with caps-lock as control.
 exec --no-startup-id setxkbmap -layout jp -option ctrl:nocaps
