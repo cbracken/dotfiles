@@ -1,0 +1,15 @@
+# Images
+image/jpg; eog %s
+image/jpeg; eog %s
+image/pjpeg; eog %s
+image/png; eog %s
+image/gif; eog %s
+
+# PDFs
+application/pdf; evince %s
+
+# HTML
+text/html; w3m -I %{charset} -dump %s; nametemplate=%s.html; copiousoutput
+
+# GPG
+application/pgp-encrypted; gpg --decrypt; copiousoutput

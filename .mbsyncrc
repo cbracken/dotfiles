@@ -1,0 +1,91 @@
+# mbsync config
+
+# NOTES:
+# * Use PipelineDepth to throttle so we don't go over GMail's query quota.
+#   See: https://sourceforge.net/p/isync/mailman/message/35458365/
+#
+# * If account is configured with Japanese as primary, use the following:
+#
+# 下書き         '[Gmail]/&Tgtm+DBN-'            '[Gmail]/Drafts'
+# 送信済みメール '[Gmail]/&kAFP4W4IMH8w4TD8MOs-' '[Gmail]/Sent Mail'
+# スター付き     '[Gmail]/&MLkwvzD8TtgwTQ-'      '[Gmail]/Starred'
+# ゴミ箱         '[Gmail]/&MLQw33ux-'            '[Gmail]/Bin'
+# すべてのメール '[Gmail]/&MFkweTBmMG4w4TD8MOs-' '[Gmail]/All Mail'
+# 迷惑メール     '[Gmail]/&j,dg0TDhMPww6w-'      '[Gmail]/Spam'
+# 重要           '[Gmail]/&kc2JgQ-'              '[Gmail]/Important'
+
+######################################################################
+# chris@bracken.jp
+
+IMAPAccount bracken_jp
+Host imap.gmail.com
+Port 993
+User chris@bracken.jp
+PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mbsync.bracken_jp.gpg"
+AuthMechs LOGIN
+SSLType IMAPS
+PipelineDepth 50
+#CertificateFile ~/.homebrew/etc/openssl/cert.pem
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+CertificateFile /usr/local/share/certs/ca-root-nss.crt
+
+# Create bracken.jp remote
+IMAPStore bracken_jp-remote
+Account bracken_jp
+
+# Create bracken.jp local
+MaildirStore bracken_jp-local
+Path ~/Mail/chris-bracken.jp/
+Inbox ~/Mail/chris-bracken.jp/INBOX
+Flatten "."
+
+Channel bracken_jp-default
+Master :bracken_jp-remote:
+Slave :bracken_jp-local:
+Patterns "INBOX"
+Create Slave
+Expunge Both
+SyncState *
+
+Channel bracken_jp-drafts
+Master :bracken_jp-remote:"[Gmail]/Drafts"
+Slave :bracken_jp-local:"drafts"
+Create Slave
+Expunge Both
+SyncState *
+
+Channel bracken_jp-sent
+Master :bracken_jp-remote:"[Gmail]/Sent Mail"
+Slave :bracken_jp-local:"sent"
+Create Slave
+Expunge Both
+SyncState *
+
+Channel bracken_jp-starred
+Master :bracken_jp-remote:"[Gmail]/Starred"
+Slave :bracken_jp-local:"flagged"
+Create Slave
+Expunge Both
+SyncState *
+
+Channel bracken_jp-trash
+Master :bracken_jp-remote:"[Gmail]/Bin"
+Slave :bracken_jp-local:"trash"
+Create Slave
+Expunge Both
+SyncState *
+
+Channel bracken_jp-archive
+Master :bracken_jp-remote:"[Gmail]/All Mail"
+Slave :bracken_jp-local:"archive"
+Create Slave
+Expunge Both
+SyncState *
+
+Group bracken_jp
+Channel bracken_jp-default
+Channel bracken_jp-drafts
+Channel bracken_jp-sent
+Channel bracken_jp-starred
+Channel bracken_jp-trash
+Channel bracken_jp-archive

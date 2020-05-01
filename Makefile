@@ -28,6 +28,19 @@ install-x:
 	ln -s "$(REPO_DIR)/.Xdefaults" ~/
 	ln -s "$(REPO_DIR)/.Xmodmap" ~/
 
+install-mutt:
+	ln -s $(REPO_DIR)/.mbsyncrc ~/
+	ln -s $(REPO_DIR)/.msmtprc ~/
+	ln -s $(REPO_DIR)/.muttrc ~/
+	ln -s $(REPO_DIR)/.notmuch-config ~/
+	ln -s $(REPO_DIR)/.urlview ~/
+	chmod 600 ~/.msmtprc
+	mkdir -p ~/.config
+	ln -s $(REPO_DIR)/.config/mutt ~/.config/mutt
+	mkdir -p ~/.cache/mutt/headers
+	mkdir -p ~/.cache/mutt/bodies
+	mkdir -p ~/.cache/mutt/tmp
+
 install-fontconf:
 	ln -s "$(REPO_DIR)/.fonts.conf" ~/
 	fc-cache -f -v
