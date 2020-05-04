@@ -34,6 +34,7 @@
   smtpuser = chris@bracken.jp
   smtpencryption = tls
   smtpserverport = 587
+  annotate = true
 [user]
   name = Chris Bracken
   email = chris@bracken.jp
