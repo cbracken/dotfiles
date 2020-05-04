@@ -1,5 +1,11 @@
+# OS-related noise
 .DS_Store
-.idea
+
+# Editor backup files
+*.sw?
+*~
+
+# Build outputs
 *.a
 *.class
 *.dylib
@@ -7,5 +13,3 @@
 *.o
 *.pyc
 *.so
-*.sw?
-*~
