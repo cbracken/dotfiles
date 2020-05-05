@@ -114,6 +114,9 @@ bindsym $mod+d exec $menu
 # mouse button for dragging.
 floating_modifier $mod normal
 
+# Capture a screenshot.
+bindsym $mod+Shift+s exec flameshot gui
+
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
 

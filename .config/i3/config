@@ -83,6 +83,9 @@ bindsym $mod+d exec $menu
 # Despite the name, also works for non-floating windows.
 floating_modifier $mod
 
+# Capture a screenshot.
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
 
