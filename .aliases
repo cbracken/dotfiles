@@ -16,7 +16,7 @@ alias ag='ag --color-line-number "30;33" --color-path "30;32" --color-match "1;3
 alias h='fc -l'
 alias j=jobs
 alias m="$PAGER"
-alias ll='ls -la'
+alias ll='ls -lA'
 alias l='ls -l'
 alias g='egrep -i'
 
