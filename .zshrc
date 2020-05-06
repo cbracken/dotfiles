@@ -1,18 +1,5 @@
 # .zshrc
 
-# Environment vars.
-export EDITOR=vim
-export GNUPGHOME="$HOME/.gnupg"
-export GOMA_DIR="$HOME/src/goma"
-export GEM_HOME="$HOME/.gem"
-
-# Set tty used for GPG pinentry.
-export GPG_TTY="$(tty)"
-
-# P4 config.
-export P4CONFIG=.p4config
-export P4EDITOR=vim
-
 # History.
 HISTFILE=~/.histfile
 HISTSIZE=10000
