@@ -12,12 +12,15 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ag='ag --color-line-number "30;33" --color-path "30;32" --color-match "1;31"'
 
-# more ls aliases
-alias ll='ls -l'
-alias la='ls -Al'
-alias l='ls -C'
+# some useful aliases
+alias h='fc -l'
+alias j=jobs
+alias m="$PAGER"
+alias ll='ls -la'
+alias l='ls -l'
+alias g='egrep -i'
 
-# enable checks
-alias cp='cp -i'
+# be paranoid
+alias cp='cp -ip'
 alias mv='mv -i'
 alias rm='rm -i'
