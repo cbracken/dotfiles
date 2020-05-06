@@ -44,17 +44,14 @@ setopt prompt_subst
 autoload -Uz colors && colors
 PROMPT='%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$fg[yellow]%}$(git_branch)%{$reset_color%}%# '
 
-# If procfs is available, get the terminal executable.
+# Set TERM for known terminals, and as a fallback when specified term is
+# unavailable.
 term_bin=""
 if [[ -e /proc/$PPID/cmdline ]]; then
   term_bin="${$(</proc/$PPID/cmdline):t}"
 fi
-
-# Set TERM for known terminals, and as a fallback when specified term is
-# unavailable.
 if [[ "$COLORTERM" == "gnome-terminal" ]] || \
    [[ "$term_bin" == gnome-terminal* ]] || \
-   [[ "$term_bin" == urxvt* ]] || \
    [[ "$TERM" == "xterm-256color-italic" && ! $(tput -T"$TERM" longname > /dev/null 2>&1) ]]; then
   export TERM=xterm-256color
 fi
