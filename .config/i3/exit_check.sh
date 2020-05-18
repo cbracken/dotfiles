@@ -7,7 +7,7 @@
 unset XMODIFIERS
 
 while [ "$choice" != "no" ] && [ "$choice" != "yes" ]; do
-  choice=$(echo -e 'no\nyes' | dmenu -fn "DejaVu Sans Mono-12" -p "Really exit?")
+  choice=$(echo -e 'no\nyes' | dmenu -p "Really exit?")
 done
 if [ "$choice" = "yes" ]; then
   i3-msg exit
