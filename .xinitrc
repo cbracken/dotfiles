@@ -6,4 +6,4 @@ export XMODIFIERS=@im=ibus
 # Start ibus daemon.
 ibus-daemon --xim &
 
-/usr/local/bin/i3
+exec /usr/local/bin/i3
