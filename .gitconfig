@@ -9,6 +9,8 @@
 [core]
   excludesfile = ~/.gitignore_global
   editor = vim
+[credential]
+  helper = store
 [diff]
   mnemonicprefix = true
   tool = vimdiff
