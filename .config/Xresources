@@ -15,14 +15,14 @@ URxvt.scrollBar: false
 URxvt.cursorColor: orange
 URxvt.cutchars: ",│`|&=:\"' ()[]{}<>"
 URxvt.color0: black
-URxvt.color1: red
+URxvt.color1: red3
 URxvt.color2: forestgreen
 URxvt.color3: goldenrod
 URxvt.color4: royalblue
 URxvt.color5: darkorchid
-URxvt.color6: cyan
+URxvt.color6: cyan3
 URxvt.color7: grey
-URxvt.color8: webgrey
+URxvt.color8: grey25
 URxvt.color9: red
 URxvt.color10: green
 URxvt.color11: yellow
