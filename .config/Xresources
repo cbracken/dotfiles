@@ -6,8 +6,10 @@ URxvt.depth: 32
 URxvt.termName: xterm-256color
 URxvt.foreground: grey
 URxvt.background: #0f0f0f
-URxvt.font: xft:DejaVu Sans Mono:size=10,xft:IPAGothic:size=12
-URxvt.boldFont: xft:DejaVu Sans Mono:size=10,xft:IPAGothic:size=12
+URxvt.font: xft:DejaVuSansMono:size=10,xft:IPAGothic:size=12
+URxvt.boldFont: xft:DejaVuSansMono-Bold:size=10,xft:IPAGothic:size=12
+URxvt.italicFont: xft:DejaVuSansMono-Oblique:size=10,xft:IPAGothic:size=12
+URxvt.boldItalicFont: xft:DejaVuSansMono-BoldOblique:size=10,xft:IPAGothic:size=12
 URxvt.geometry: 100x50
 URxvt.scrollBar: false
 URxvt.cursorColor: orange
