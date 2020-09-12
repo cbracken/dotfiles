@@ -17,9 +17,7 @@ bindkey '^Y' push-line
 bindkey '^R' history-incremental-search-backward
 
 # Add zsh completion definition dirs.
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  fpath=($HOME/.homebrew/share/zsh/site-functions $fpath)
-fi
+fpath=($HOME/.local/zsh/site-functions $fpath)
 
 # Specify where compinstall writes cfg commands. Default, but saves checks.
 zstyle ':compinstall' filename "$HOME/.zshrc"
