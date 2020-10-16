@@ -24,7 +24,6 @@ export GPG_TTY="$(tty)"
 # Google stuff.
 export P4CONFIG=.p4config
 export P4EDITOR=vim
-export GOMA_DIR="$HOME/src/goma"
 export GEM_HOME="$HOME/.gem"
 
 # If a local python3 directory exists, add PYTHONPATH.
