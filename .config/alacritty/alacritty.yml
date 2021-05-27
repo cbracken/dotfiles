@@ -1,3 +1,11 @@
+env:
+  # By default, alacritty checks the local terminfo database and uses terminal
+  # type `alacritty` if present, otherwise it falls back to `xterm-256color`.
+  # That said, most remote systems don't include `alacritty` in their terminfo
+  # database, and `xterm-256color` covers most of what we need, so we set that
+  # by default.
+  TERM: xterm-256color
+
 font:
   size: 10.0
 
