@@ -137,25 +137,19 @@ bindsym $mod+Shift+e exec ~/.config/sway/exit_check.sh
 # set $volume_toggle_mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle
 #
 # Alsa:
-set $volume_up amixer -q sset Master 5%+
-set $volume_down amixer -q sset Master 5%-
-set $volume_toggle_mute amixer -q sset Master toggle
-set $volume_toggle_mic_mute amixer -q sset Mic toggle
+#set $volume_up amixer -q sset Master 5%+
+#set $volume_down amixer -q sset Master 5%-
+#set $volume_toggle_mute amixer -q sset Master toggle
+#set $volume_toggle_mic_mute amixer -q sset Mic toggle
+#
+# FreeBSD
+set $volume_up mixer -s pcm +5
+set $volume_down mixer -s pcm -5
+set $volume_toggle_mute mixer -s pcm 0
 
 # Increase and decrease volume.
 bindsym Control+$mod+F12 exec $volume_up
 bindsym Control+$mod+F11 exec $volume_down
-bindsym XF86AudioRaiseVolume exec $volume_up
-bindsym XF86AudioLowerVolume exec $volume_down
-
-# Handle media keys.
-bindsym XF86AudioMute exec $volume_toggle_mute
-bindsym XF86AudioMicMute exec $volume_toggle_mic_mute
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
 
 
 ############################################################
