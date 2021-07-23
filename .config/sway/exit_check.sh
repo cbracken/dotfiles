@@ -1,9 +1,14 @@
 #!/bin/sh
 
-# Use dmenu to check if the user wants to exit i3.
+# Use dmenu to check if the user wants to exit sway.
+
+# If dmenu isn't installed, bail out immediately.
+if [ ! -e /usr/local/bin/dmenu ]; then
+  swaymsg exit
+fi
 
 # Work around dmenu crasher when XOpenIM() returns NULL.
-# See: https://bugs.archlinux.com/task/61673
+# See: https://bugs.archlinux.org/task/61673
 unset XMODIFIERS
 
 while [ "$choice" != "no" ] && [ "$choice" != "yes" ]; do
