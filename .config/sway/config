@@ -115,7 +115,12 @@ bindsym $mod+d exec $menu
 floating_modifier $mod normal
 
 # Capture a screenshot.
-bindsym $mod+Shift+s exec flameshot gui
+set $grimshot ~/.config/sway/grimshot
+set $screenshots ~/Pictures/Screenshots
+bindsym $mod+Shift+s exec $grimshot --notify save screen \
+    $screenshots/Screenshot_$(date +"%Y-%m-%d_%H:%M:%S.png")
+bindsym $mod+Control+Shift+s exec $grimshot --notify save area \
+    $screenshots/Screenshot_$(date +"%Y-%m-%d_%H.%M.%S.png")
 
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
