@@ -1,0 +1,33 @@
+# Sort in reverse-chronological order.
+sort=-time
+
+# Overlay above fullscreen windows.
+layer=overlay
+
+# Notification width and maximum height.
+width=300
+height=110
+
+# Notification box colour.
+background-color=#2e3440
+border-color=#88c0d0
+border-size=2
+border-radius=8
+
+# Show icons.
+icons=1
+max-icon-size=64
+
+# Always timeout after 5 seconds; ignore app's requested timeout.
+default-timeout=5000
+ignore-timeout=1
+
+[urgency=low]
+border-color=#cccccc
+
+[urgency=normal]
+border-color=#d08770
+
+[urgency=high]
+border-color=#bf616a
+default-timeout=0
