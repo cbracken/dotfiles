@@ -12,8 +12,12 @@ setopt INC_APPEND_HISTORY
 setopt EXTENDED_GLOB
 
 # Increase open file descriptor, per-user process limits for Goma builds.
-ulimit -n 32768
-ulimit -u 32768
+# On Linux, set via ulimit. For macOS, follow the procedures at http://go/ma.
+if [ $(uname) = Linux ]; then
+  # Bump up max open file descriptors and processes.
+  ulimit -n 32768
+  ulimit -u 32768
+fi
 
 # vi-mode.
 bindkey -v
