@@ -51,4 +51,4 @@
 [gpg]
   program = gpg
 [http]
-  cookiefile = /Users/cbracken/.gitcookies
+  cookiefile = ~/.gitcookies
