@@ -11,7 +11,7 @@ scrolling:
 
 font:
   family: Noto Sans Mono
-  size: 14.0
+  size: 11.0
 
 selection:
   save_to_clipboard: true
