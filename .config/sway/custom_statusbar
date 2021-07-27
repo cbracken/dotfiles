@@ -1,9 +1,6 @@
 #!/bin/sh
 
-# Kanji of the day.
-kotd="$(kotd) ⋯ "
-
 # Day of week in Japanese.
 time=$(LC_TIME=ja_JP.UTF-8 date +"%Y-%m-%d %k:%M (%a)")
 
-echo "${kotd}${time}"
+echo "${time}"
