@@ -1,2 +1,5 @@
 # Ignore compiled python.
 *.pyc
+
+# Ignore GTK 2.0 theme information
+.gtk-2.0
