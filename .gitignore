@@ -1,5 +1,2 @@
-# Ignore Karabiner backups.
-.config/karabiner/automatic_backups/
-
 # Ignore compiled python.
 *.pyc
