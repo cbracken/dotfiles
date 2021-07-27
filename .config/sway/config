@@ -11,9 +11,6 @@
 # Configure Xresources settings.
 exec xrdb ~/.config/Xresources
 
-# Start up ibus IME daemon.
-exec ibus-daemon --xim
-
 # Start up Mako notification system
 exec mako
 
