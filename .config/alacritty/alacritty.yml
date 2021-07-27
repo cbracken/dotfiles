@@ -10,7 +10,7 @@ scrolling:
   history: 10000
 
 font:
-  family: Noto Mono
+  family: Noto Sans Mono
   size: 14.0
 
 selection:
