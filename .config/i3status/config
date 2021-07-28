@@ -17,5 +17,6 @@ ethernet em0 {
 }
 
 tztime local {
-  format = "%Y-%m-%d %H:%M:%S"
+  format = "%Y-%m-%d %k:%M (%a)"
+  locale = "ja_JP.UTF-8"
 }
