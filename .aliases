@@ -1,5 +1,4 @@
-# -*- mode: shell-script; -*- vim: set filetype=sh:
-# ~/.aliases
+# .aliases
 
 # add colour
 if [[ "$(uname)" == FreeBSD || "$(uname)" == Darwin ]]; then

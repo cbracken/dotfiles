@@ -1,5 +1,4 @@
-# -*- mode: shell-script; -*- vim: set filetype=sh:
-# ~/.tools
+# .tools
 
 # go version manager
 if [[ -f ~/.gvm/scripts/gvm ]]; then
