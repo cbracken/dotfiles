@@ -5,6 +5,7 @@ NAS=souko
 
 sshfs $USER@$NAS:/home      $HOME/Network/Home
 sshfs $USER@$NAS:/Archived  $HOME/Network/Archived
+sshfs $USER@$NAS:/Backups   $HOME/Network/Backups
 sshfs $USER@$NAS:/Documents $HOME/Network/Documents
 sshfs $USER@$NAS:/Media     $HOME/Network/Media
 sshfs $USER@$NAS:/Software  $HOME/Network/Software
