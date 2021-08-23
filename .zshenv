@@ -21,6 +21,9 @@ export LC_TIME=en_AU.UTF-8
 export GNUPGHOME="$HOME/.gnupg"
 export GPG_TTY="$(tty)"
 
+# Notmuch email indexer.
+export NOTMUCH_CONFIG="$HOME/.config/notmuch/config"
+
 # Google stuff.
 export P4CONFIG=.p4config
 export P4EDITOR=vim
