@@ -14,22 +14,23 @@ set reverse_alias = yes
 source $alias_file
 
 # Account Settings -----------------------------------
-# Default inbox.
-set spoolfile = "+chris-bracken.jp/INBOX"
+set my_maildir = 'chris.bracken-gmail.com'
 
 # Alternate email addresses.
 alternates chris@bracken.jp
 
-# Mailboxes to show in the sidebar.
-mailboxes +chris-bracken.jp/INBOX \
-          +chris-bracken.jp/archive \
-          +chris-bracken.jp/sent \
-          +chris-bracken.jp/drafts
+# Core mailboxes.
+set spoolfile = "+$my_maildir/INBOX"
+set mbox      = "+$my_maildir/archive"
+set postponed = "+$my_maildir/drafts"
+set record    = "+$my_maildir/sent"
 
-# Other special folders.
-set mbox      = "+chris-bracken.jp/archive"
-set postponed = "+chris-bracken.jp/drafts"
-set record    = "+chris-bracken.jp/sent"
+# Mailboxes to show in the sidebar.
+mailboxes +$my_maildir/INBOX \
+          +$my_maildir/archive \
+          +$my_maildir/sent \
+          +$my_maildir/drafts
+
 
 # Basic Options --------------------------------------
 set wait_key = no        # don't prompt for <enter> so much
@@ -70,13 +71,13 @@ bind index R       group-reply
 bind index ?       search-opposite
 bind index <space> collapse-thread
 macro index a "<limit>all\n" "show all messages (undo limit)"
-macro index o "<shell-escape>mbsync bracken_jp; notmuch new<enter>" "sync core mailboxes"
+macro index o "<shell-escape>mbsync gmail; notmuch new<enter>" "sync core mailboxes"
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
-macro index gi "<change-folder>=chris-bracken.jp/INBOX<enter>" "Go to Inbox"
-macro index ga "<change-folder>=chris-bracken.jp/archive<enter>" "Go to All Mail"
-macro index gs "<change-folder>=chris-bracken.jp/sent<enter>" "Go to Sent Mail"
-macro index gd "<change-folder>=chris-bracken.jp/drafts<enter>" "Go to Drafts"
+macro index gi "<change-folder>=$my_maildir/INBOX<enter>" "Go to Inbox"
+macro index ga "<change-folder>=$my_maildir/archive<enter>" "Go to All Mail"
+macro index gs "<change-folder>=$my_maildir/sent<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=$my_maildir/drafts<enter>" "Go to Drafts"
 macro index S "<enter-command>unset wait_key<enter><shell-escape>~/.config/mutt/mutt-notmuch-py -G ~/Mail/.tmp/search<enter><change-folder-readonly>+.tmp/search<enter>" "search mail (using notmuch)"
 
 # Pager View Options ---------------------------------

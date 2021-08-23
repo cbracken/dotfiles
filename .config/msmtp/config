@@ -1,11 +1,17 @@
 defaults
 auth on
 tls  on
-#tls_trust_file /etc/ssl/certs/ca-certificates.crt
-#tls_trust_file ~/.homebrew/etc/openssl/cert.pem
 tls_trust_file /usr/local/share/certs/ca-root-nss.crt
 
-# Gmail
+# chris.bracken@gmail.com
+account gmail
+host smtp.gmail.com
+port 587
+from chris.bracken@gmail.com
+user chris.bracken@gmail.com
+passwordeval gpg --batch -d ~/src/cfg/keyring/msmtp.gmail.gpg
+
+# chris@bracken.jp
 account bracken_jp
 host smtp.gmail.com
 port 587

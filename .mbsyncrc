@@ -10,88 +10,86 @@
 # 送信済みメール '[Gmail]/&kAFP4W4IMH8w4TD8MOs-' '[Gmail]/Sent Mail'
 # スター付き     '[Gmail]/&MLkwvzD8TtgwTQ-'      '[Gmail]/Starred'
 # ゴミ箱         '[Gmail]/&MLQw33ux-'            '[Gmail]/Bin'
-# すべてのメール '[Gmail]/&MFkweTBmMG4w4TD8MOs-' '[Gmail]/All Mail'
+# すべてのメール '[Gmail]/&MFkweTBmMG4w4TD8MOs-' '[Gmail]/All mail'
 # 迷惑メール     '[Gmail]/&j,dg0TDhMPww6w-'      '[Gmail]/Spam'
 # 重要           '[Gmail]/&kc2JgQ-'              '[Gmail]/Important'
 
 ######################################################################
-# chris@bracken.jp
+# chris.bracken@gmail.com
 
-IMAPAccount bracken_jp
+IMAPAccount gmail
 Host imap.gmail.com
 Port 993
-User chris@bracken.jp
-PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mbsync.bracken_jp.gpg"
+User chris.bracken@gmail.com
+PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mbsync.gmail.gpg"
 AuthMechs LOGIN
 SSLType IMAPS
 PipelineDepth 50
-#CertificateFile ~/.homebrew/etc/openssl/cert.pem
-#CertificateFile /etc/ssl/certs/ca-certificates.crt
 CertificateFile /usr/local/share/certs/ca-root-nss.crt
 
-# Create bracken.jp remote
-IMAPStore bracken_jp-remote
-Account bracken_jp
+# Create gmail remote
+IMAPStore gmail-remote
+Account gmail
 
-# Create bracken.jp local
-MaildirStore bracken_jp-local
-Path ~/Mail/chris-bracken.jp/
-Inbox ~/Mail/chris-bracken.jp/INBOX
+# Create gmail local
+MaildirStore gmail-local
+Path ~/Mail/chris.bracken-gmail.com/
+Inbox ~/Mail/chris.bracken-gmail.com/INBOX
 Flatten "."
 
-Channel bracken_jp-default
-Master :bracken_jp-remote:
-Slave :bracken_jp-local:
+Channel gmail-default
+Far :gmail-remote:
+Near :gmail-local:
 Patterns "INBOX"
-Create Slave
+Create Near
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
-Channel bracken_jp-drafts
-Master :bracken_jp-remote:"[Gmail]/Drafts"
-Slave :bracken_jp-local:"drafts"
-Create Slave
+Channel gmail-drafts
+Far :gmail-remote:"[Gmail]/Drafts"
+Near :gmail-local:"drafts"
+Create Near
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
-Channel bracken_jp-sent
-Master :bracken_jp-remote:"[Gmail]/Sent Mail"
-Slave :bracken_jp-local:"sent"
-Create Slave
+Channel gmail-sent
+Far :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:"sent"
+Create Near
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
-Channel bracken_jp-starred
-Master :bracken_jp-remote:"[Gmail]/Starred"
-Slave :bracken_jp-local:"flagged"
-Create Slave
+Channel gmail-starred
+Far :gmail-remote:"[Gmail]/Starred"
+Near :gmail-local:"flagged"
+Create Near
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
-Channel bracken_jp-trash
-Master :bracken_jp-remote:"[Gmail]/Bin"
-Slave :bracken_jp-local:"trash"
-Create Slave
+Channel gmail-trash
+Far :gmail-remote:"[Gmail]/Bin"
+Near :gmail-local:"trash"
+Create Near
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
-Channel bracken_jp-archive
-Master :bracken_jp-remote:"[Gmail]/All Mail"
-Slave :bracken_jp-local:"archive"
-Create Slave
+Channel gmail-archive
+Far :gmail-remote:"[Gmail]/All mail"
+Near :gmail-local:"archive"
+Create Near
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
-Group bracken_jp
-Channel bracken_jp-default
-Channel bracken_jp-drafts
-Channel bracken_jp-sent
-Channel bracken_jp-starred
-Channel bracken_jp-trash
-Channel bracken_jp-archive
+Group gmail
+Channel gmail-default
+Channel gmail-drafts
+Channel gmail-sent
+Channel gmail-starred
+Channel gmail-trash
+Channel gmail-archive
