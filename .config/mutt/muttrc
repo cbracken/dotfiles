@@ -105,7 +105,7 @@ bind pager <space> half-down
 bind pager R   group-reply
 bind pager ?   search-opposite
 bind attach <return> view-mailcap # View attachments properly.
-macro pager \Cu "|urlview<enter>" "call urlview to open links"
+macro pager \Cu "|urlscan -c<enter>" "call urlview to open links"
 
 # Header Options -------------------------------------
 ignore *                                # ignore all headers
