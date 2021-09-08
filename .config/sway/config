@@ -64,7 +64,7 @@ exec swayidle -w \
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 # Default wallpaper (more resolutions in /usr/share/backgrounds/sway/).
-output * bg /usr/local/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/Pictures/Desktops/current.png fill
 
 
 ############################################################
