@@ -11,6 +11,9 @@
 # Configure Xresources settings.
 exec xrdb ~/.config/Xresources
 
+# Launch IME.
+exec fcitx5 -d -r
+
 # Start up Mako notification system
 exec mako
 
