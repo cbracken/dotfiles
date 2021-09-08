@@ -8,14 +8,14 @@ export EDITOR=vim
 export PAGER=less
 
 # Set language to Australian English, currency to Japanese Yen.
-export LANG=en_AU.UTF-8
-export LANGUAGE=en_AU.UTF-8
-export LC_COLLATE=en_AU.UTF-8
-export LC_CTYPE=en_AU.UTF-8
-export LC_MESSAGES=en_AU.UTF-8
+export LANG=en_CA.UTF-8
+export LANGUAGE=en_CA.UTF-8
+export LC_COLLATE=en_CA.UTF-8
+export LC_CTYPE=en_CA.UTF-8
+export LC_MESSAGES=en_CA.UTF-8
 export LC_MONETARY=ja_JP.UTF-8
-export LC_NUMERIC=en_AU.UTF-8
-export LC_TIME=en_AU.UTF-8
+export LC_NUMERIC=en_CA.UTF-8
+export LC_TIME=en_CA.UTF-8
 
 # GPG directory and TTY used for pinentry.
 export GNUPGHOME="$HOME/.gnupg"
