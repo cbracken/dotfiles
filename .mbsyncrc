@@ -25,7 +25,7 @@ PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mbsync.gmail.gpg"
 AuthMechs LOGIN
 SSLType IMAPS
 PipelineDepth 50
-CertificateFile /usr/local/share/certs/ca-root-nss.crt
+CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 # Create gmail remote
 IMAPStore gmail-remote
