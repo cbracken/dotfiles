@@ -86,6 +86,14 @@ Expunge Both
 CopyArrivalDate yes
 SyncState *
 
+Channel gmail-baynet
+Far :gmail-remote:"BayNet"
+Near :gmail-local:"baynet"
+Create Near
+Expunge Both
+CopyArrivalDate yes
+SyncState *
+
 Group gmail
 Channel gmail-default
 Channel gmail-drafts
@@ -93,3 +101,4 @@ Channel gmail-sent
 Channel gmail-starred
 Channel gmail-trash
 Channel gmail-archive
+Channel gmail-baynet
