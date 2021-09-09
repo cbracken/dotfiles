@@ -41,7 +41,7 @@ set $term alacritty
 set $menu wofi --show run
 
 # Set lock screen handler.
-set $lock_screen swaylock -c 000000
+set $lock_screen swaylock -f -c 000000
 
 # Set the suspend command.
 set $suspend_system systemctl suspend
@@ -56,9 +56,7 @@ set $suspend_system systemctl suspend
 # the computer goes to sleep.
 exec swayidle -w \
          timeout 600 '$lock_screen' \
-         timeout 660 'swaymsg "output * dpms off"' \
-         timeout 720 '$suspend_system' \
-              resume 'swaymsg "output * dpms on"' \
+         timeout 660 '$suspend_system' \
          before-sleep '$lock_screen'
 
 
