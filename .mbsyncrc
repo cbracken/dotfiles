@@ -10,7 +10,7 @@
 # 送信済みメール '[Gmail]/&kAFP4W4IMH8w4TD8MOs-' '[Gmail]/Sent Mail'
 # スター付き     '[Gmail]/&MLkwvzD8TtgwTQ-'      '[Gmail]/Starred'
 # ゴミ箱         '[Gmail]/&MLQw33ux-'            '[Gmail]/Bin'
-# すべてのメール '[Gmail]/&MFkweTBmMG4w4TD8MOs-' '[Gmail]/All mail'
+# すべてのメール '[Gmail]/&MFkweTBmMG4w4TD8MOs-' '[Gmail]/All Mail'
 # 迷惑メール     '[Gmail]/&j,dg0TDhMPww6w-'      '[Gmail]/Spam'
 # 重要           '[Gmail]/&kc2JgQ-'              '[Gmail]/Important'
 
@@ -79,7 +79,7 @@ CopyArrivalDate yes
 SyncState *
 
 Channel gmail-archive
-Far :gmail-remote:"[Gmail]/All mail"
+Far :gmail-remote:"[Gmail]/All Mail"
 Near :gmail-local:"archive"
 Create Near
 Expunge Both
