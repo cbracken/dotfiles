@@ -120,7 +120,7 @@ bindsym $mod+d exec $menu
 floating_modifier $mod normal
 
 # Capture a screenshot.
-set $grimshot ~/.config/sway/grimshot
+set $grimshot ~/.local/bin/grimshot
 set $screenshots ~/Pictures/Screenshots
 bindsym $mod+Shift+s exec $grimshot --notify save screen \
     $screenshots/Screenshot_$(date +"%Y-%m-%d_%H:%M:%S.png")
