@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# Exit with usage.
+usage() {
+  echo >&2 "usage: volumectl COMMAND ARGS..."
+  echo >&2
+  echo >&2 "Commands:"
+  echo >&2 "  up AMOUNT:    Adjust output volume up by percentage"
+  echo >&2 "  down AMOUNT:  Adjust output volume down by percentage"
+  echo >&2 "  mute:         Toggle output mute"
+  echo >&2 "  muteinput:    Toggle input mute"
+}
+
+adjust_output() {
+  # Check for argument.
+  if [ $# -lt 2 ]; then
+    usage
+    exit 1
+  fi
+  SIGN="$1"
+  PERCENT="$2"
+  if [ "$(uname)" = FreeBSD ]; then
+    mixer -s pcm "${SIGN}${PERCENT}"
+  elif [ "$(uname)" = Linux ]; then
+    pactl set-sink-volume @DEFAULT_SINK@ "${SIGN}${PERCENT}%"
+  fi
+}
+
+toggle_mute_output() {
+  if [ "$(uname)" = FreeBSD ]; then
+    mixer -s pcm 0
+  elif [ "$(uname)" = Linux ]; then
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+  fi
+}
+
+toggle_mute_input() {
+  if [ "$(uname)" = Linux ]; then
+    pactl set-source-mute @DEFAULT_SINK@ toggle
+  fi
+}
+
+# Check for command.
+if [ $# -lt 1 ]; then
+  usage
+  exit 1
+fi
+
+# No-arg commands.
+COMMAND="$1"
+case "$COMMAND" in
+  up) adjust_output + $2 ;;
+  down) adjust_output - $2 ;;
+  mute) toggle_mute_output ;;
+  muteinput) toggle_mute_input ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac

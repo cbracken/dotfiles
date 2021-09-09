@@ -138,22 +138,11 @@ bindsym $mod+Shift+e exec ~/.config/sway/exit_check.sh
 ############################################################
 # Key bindings: Volume/Brightness
 
-# PulseAudio:
-set $volume_up pactl set-sink-volume @DEFAULT_SINK@ +5%
-set $volume_down pactl set-sink-volume @DEFAULT_SINK@ -5%
-set $volume_toggle_mute pactl set-sink-mute @DEFAULT_SINK@ toggle
-set $volume_toggle_mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle
-#
-# Alsa:
-#set $volume_up amixer -q sset Master 5%+
-#set $volume_down amixer -q sset Master 5%-
-#set $volume_toggle_mute amixer -q sset Master toggle
-#set $volume_toggle_mic_mute amixer -q sset Mic toggle
-#
-# FreeBSD
-#set $volume_up mixer -s pcm +5
-#set $volume_down mixer -s pcm -5
-#set $volume_toggle_mute mixer -s pcm 0
+# OS-specific behaviour in ~/.local/bin/volumectl script.
+set $volume_up volumectl up 5
+set $volume_down volumectl down 5
+set $volume_toggle_mute volumectl mute
+set $volume_toggle_mic_mute volumectl muteinput
 
 # Increase and decrease volume.
 bindsym Control+$mod+F12 exec $volume_up
