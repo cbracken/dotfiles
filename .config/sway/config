@@ -43,16 +43,21 @@ set $menu wofi --show run
 # Set lock screen handler.
 set $lock_screen swaylock -c 000000
 
+# Set the suspend command.
+set $suspend_system systemctl suspend
+
 
 ############################################################
 # Idle configuration
 
-# Lock screen after 300 seconds of inactivity, then turn off displays after
-# another 300 seconds, and turn screens back on when resumed. Also lock screen
-# before the computer goes to sleep.
+# Lock screen after 600 seconds of inactivity, then turn off displays after
+# another 60 seconds, then put the computer to sleep 60 seconds after that.
+# Turn screens back on when resumed. Also ensure the screen is locked before
+# the computer goes to sleep.
 exec swayidle -w \
-         timeout 300 '$lock_screen' \
-         timeout 600 'swaymsg "output * dpms off"' \
+         timeout 600 '$lock_screen' \
+         timeout 660 'swaymsg "output * dpms off"' \
+         timeout 720 '$suspend_system' \
               resume 'swaymsg "output * dpms on"' \
          before-sleep '$lock_screen'
 
