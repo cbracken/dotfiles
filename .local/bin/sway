@@ -1,0 +1,10 @@
+#!/bin/sh
+
+SWAY_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/sway"
+
+# sway-specific environment
+if [ -f $SWAY_CONFIG_HOME/env ]; then
+  . "$SWAY_CONFIG_HOME/env"
+fi
+
+exec systemd-cat --identifier sway dbus-run-session -- /usr/bin/sway "$@"

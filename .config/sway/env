@@ -1,0 +1,7 @@
+# Workaround for https://github.com/swaywm/sway/issues/6179
+LIBSEAT_BACKEND=logind
+
+# Use fcitx5 for IME input.
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
