@@ -1,7 +1,7 @@
 defaults
 auth on
 tls  on
-tls_trust_file /usr/local/share/certs/ca-root-nss.crt
+tls_trust_file ~/.local/share/certs/ca-certificates.crt
 
 # chris.bracken@gmail.com
 account gmail
