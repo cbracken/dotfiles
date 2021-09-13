@@ -30,12 +30,6 @@ path_append() {
 # Push /usr/local/bin to the front of PATH
 path_prepend "/usr/local/bin"
 
-# MacPorts
-if [[ "$(uname)" == "Darwin" ]]; then
-  path_prepend "/opt/local/sbin"
-  path_prepend "/opt/local/bin"
-fi
-
 # Fuchsia/Flutter
 path_prepend "$HOME/src/depot_tools"
 path_prepend "$HOME/src/flutter/flutter/bin"
