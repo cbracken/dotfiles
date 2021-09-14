@@ -1,45 +1,55 @@
-# Colors ----------------------------------------------
-# general-doesn't-fit stuff
-color normal white color233
-color error color193 color124
-color markers color142 color233
-color tilde color142 color233
-color status color130 color233
+# general ------ fg ------ bg -------------------------------------------
+color error      color231  color212
+color indicator  color231  color241
+color markers    color210  default
+color message    default   default
+color normal     default   default
+color prompt     default   default
+color search     color84   default
+color status     color141  color236
+color tilde      color231  default
+color tree       color141  default
 
-# index stuff
-color tree color244 color233
-color indicator color255 color235
-color index green color233 ~N
-color index red color233 ~D
-color index yellow color233 ~F
-color index blue color233 ~T
+# message index  fg ------ bg -------------------------------------------------
+color index      color210  default   ~D # deleted messages
+color index      color84   default   ~F # flagged messages
+color index      color117  default   ~N # new messages
+color index      color218  default   ~Q # messages which have been replied to
+color index      color215  default   ~T # tagged messages
+color index      color141  default    ~v # messages part of a collapsed thread
 
-# header stuff
-color hdrdefault color248 color233
-color header color226 color233 "^Subject"
+# message hdrs - fg ------ bg ----------------------------------------------
+color hdrdefault color117  default
+color header     color231  default  ^Subject:.*
 
-# url, email and web stuff
-color body color68 color233 "(finger|ftp|http|https|news|telnet)://[^ >]*"
-color body color111 color233 "<URL:[^ ]*>"
-color body color111 color233 "www\\.[-.a-z0-9]+\\.[a-z][a-z][a-z]?([-_./~a-z0-9]+)?"
-color body color111 color233 "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
-color body brightred color233 "^-.*"
-color body green color233 "^[+].*"
-color body brightwhite color233 "^diff .*"
-color body brightyellow color233 "^@@.*"
+# message body - fg ------ bg -------------------------------------------------
+color attachment color228  default
+color signature  color212  default
 
-# misc body stuff
-color attachment color111 color233
-color signature color244 color233
+# email addresses, email, URLs
+color body       color231  default  [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+                      # email addresses
+color body       color228  default  "(https?|ftp|gemini|gopher|news|telnet|finger)://[^ ]+)" # URLs
+color body       color228  default  "www\\.[-.a-z0-9]+\\.[a-z][a-z][a-z]?([-_./~a-z0-9]+)?"
+
+# formatted text
+color body       color231  default  (^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$)  # *bold*
+color body       color231  default  (^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)      # _underline_
+color body       color231  default  (^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)      # /italic/
 
 # quote levels
-color quoted color34   color233
-color quoted1 color142 color233
-color quoted2 color34  color233
-color quoted3 color142 color233
-color quoted4 color34  color233
-color quoted5 color142 color233
-color quoted6 color34  color233
-color quoted7 color142 color233
-color quoted8 color34  color233
-color quoted9 color142 color233
+color quoted     color34   default
+color quoted1    color142  default
+color quoted2    color34   default
+color quoted3    color142  default
+color quoted4    color34   default
+color quoted5    color142  default
+color quoted6    color34   default
+color quoted7    color142  default
+color quoted8    color34   default
+color quoted9    color142  default
+
+# diffs/patches
+color body       color9    default  "^-.*"
+color body       color2    default  "^[+].*"
+color body       color15   default "^diff .*"
+color body       color11   default "^@@.*"
