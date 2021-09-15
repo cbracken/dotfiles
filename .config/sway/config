@@ -89,9 +89,10 @@ output * bg ~/Pictures/Desktops/current.png fill
 # Read `man 5 sway-input` for more information about this section.
 
 input * {
-    # Use US keyboard layout (jp for Japanese layout) use caps as control.
+    # Use US keyboard layout (jp for Japanese layout) use caps as control,
+    # right alt as AltGr/Compose for accents.
     xkb_layout us
-    xkb_options ctrl:nocaps
+    xkb_options ctrl:nocaps,compose:ralt
 
     # Use natural mouse-wheel scrolling.
     natural_scroll enabled
