@@ -21,7 +21,7 @@ IMAPAccount gmail
 Host imap.gmail.com
 Port 993
 User chris.bracken@gmail.com
-PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mbsync.gmail.gpg"
+PassCmd "pass show Email/mbsync-gmail.com"
 AuthMechs LOGIN
 SSLType IMAPS
 PipelineDepth 50

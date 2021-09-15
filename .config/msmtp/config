@@ -9,7 +9,7 @@ host smtp.gmail.com
 port 587
 from chris.bracken@gmail.com
 user chris.bracken@gmail.com
-passwordeval gpg --batch -d ~/src/cfg/keyring/msmtp.gmail.gpg
+passwordeval pass show Email/msmtp-gmail.com
 
 # chris@bracken.jp
 account bracken_jp
@@ -17,6 +17,6 @@ host smtp.gmail.com
 port 587
 from chris@bracken.jp
 user chris@bracken.jp
-passwordeval gpg --batch -d ~/src/cfg/keyring/msmtp.bracken_jp.gpg
+passwordeval pass show Email/msmtp-bracken.jp
 
 account default : bracken_jp
