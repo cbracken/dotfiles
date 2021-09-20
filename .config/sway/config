@@ -122,7 +122,7 @@ floating_modifier $mod normal
 set $grimshot ~/.local/bin/grimshot
 set $screenshots ~/Pictures/Screenshots
 bindsym $mod+Shift+s exec $grimshot --notify save screen \
-    $screenshots/Screenshot_$(date +"%Y-%m-%d_%H:%M:%S.png")
+    $screenshots/Screenshot_$(date +"%Y-%m-%d_%H.%M.%S.png")
 bindsym $mod+Control+Shift+s exec $grimshot --notify save area \
     $screenshots/Screenshot_$(date +"%Y-%m-%d_%H.%M.%S.png")
 
