@@ -12,7 +12,7 @@ image/png; sxiv %s
 image/gif; sxiv %s
 
 # PDFs
-application/pdf; xpdf %s
+application/pdf; zathura %s
 
 # GPG
 application/pgp-encrypted; gpg --decrypt; copiousoutput
