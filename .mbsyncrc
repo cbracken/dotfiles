@@ -38,58 +38,58 @@ Inbox ~/Mail/chris.bracken-gmail.com/INBOX
 Flatten "."
 
 Channel gmail-default
-Far :gmail-remote:
-Near :gmail-local:
+Master :gmail-remote:
+Slave :gmail-local:
 Patterns "INBOX"
-Create Near
+Create Slave
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
 Channel gmail-drafts
-Far :gmail-remote:"[Gmail]/Drafts"
-Near :gmail-local:"drafts"
-Create Near
+Master :gmail-remote:"[Gmail]/Drafts"
+Slave :gmail-local:"drafts"
+Create Slave
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
 Channel gmail-sent
-Far :gmail-remote:"[Gmail]/Sent Mail"
-Near :gmail-local:"sent"
-Create Near
+Master :gmail-remote:"[Gmail]/Sent Mail"
+Slave :gmail-local:"sent"
+Create Slave
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
 Channel gmail-starred
-Far :gmail-remote:"[Gmail]/Starred"
-Near :gmail-local:"flagged"
-Create Near
+Master :gmail-remote:"[Gmail]/Starred"
+Slave :gmail-local:"flagged"
+Create Slave
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
 Channel gmail-trash
-Far :gmail-remote:"[Gmail]/Bin"
-Near :gmail-local:"trash"
-Create Near
+Master :gmail-remote:"[Gmail]/Bin"
+Slave :gmail-local:"trash"
+Create Slave
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
 Channel gmail-archive
-Far :gmail-remote:"[Gmail]/All Mail"
-Near :gmail-local:"archive"
-Create Near
+Master :gmail-remote:"[Gmail]/All Mail"
+Slave :gmail-local:"archive"
+Create Slave
 Expunge Both
 CopyArrivalDate yes
 SyncState *
 
 Channel gmail-baynet
-Far :gmail-remote:"BayNet"
-Near :gmail-local:"baynet"
-Create Near
+Master :gmail-remote:"BayNet"
+Slave :gmail-local:"baynet"
+Create Slave
 Expunge Both
 CopyArrivalDate yes
 SyncState *
