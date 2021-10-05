@@ -238,6 +238,8 @@ bindsym $mod+a focus parent
 #
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
+# Scratchpad windows are floating, so you can restore them to normal by
+# toggling the floating mode.
 
 # Move the currently focused window to the scratchpad.
 bindsym $mod+Shift+minus move scratchpad
