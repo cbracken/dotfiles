@@ -7,4 +7,18 @@ if [ -f $SWAY_CONFIG_HOME/env ]; then
   . "$SWAY_CONFIG_HOME/env"
 fi
 
-exec systemd-cat --identifier sway dbus-run-session -- /usr/bin/sway "$@"
+# locate sway binary
+for p in /usr/local/bin/sway /usr/bin/sway; do
+  [ -e "$p" ] && SWAY=/usr/local/bin/sway
+done
+if [ -z "$SWAY" ]; then
+  echo "ERROR: unable to locate sway installation" >&2
+  exit 1
+fi
+
+if [ -e "$(which systemd-cat)" ]; then
+  # If on a systemd-enabled system, connect session output to the journal.
+  exec systemd-cat --identifier sway dbus-run-session -- /usr/bin/sway "$@"
+else
+  dbus-run-session -- "$SWAY" "$@"
+fi
