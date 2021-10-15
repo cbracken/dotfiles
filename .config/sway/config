@@ -93,6 +93,8 @@ input * {
     # right alt as AltGr/Compose for accents.
     xkb_layout us
     xkb_options ctrl:nocaps,compose:ralt
+    repeat_delay 500
+    repeat_rate 25
 
     # Use natural mouse-wheel scrolling.
     natural_scroll enabled
