@@ -210,7 +210,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # Key bindings: Layout
 
 # You can "split" the current object of your focus with $mod+b or $mod+v, for
-# horizontal and vertical splits respectively.
+# horizontal and vertical splits respectively. This moves focus to the window
+# to split; to return focus to the parent container, use $mod+a.
 bindsym $mod+b splith
 bindsym $mod+v splitv
 # Ditto, but with $mod-; and $mod-Shift-;.
