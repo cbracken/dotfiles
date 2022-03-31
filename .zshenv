@@ -38,6 +38,9 @@ export GOMA_DIR="$SRC_ROOT/goma"
 export GOMA_LOCAL_OUTPUT_CACHE_DIR="$GOMA_DIR/.goma_cache"
 [[ "$(uname)" == "Darwin" ]] && export FLUTTER_GOMA_CREATE_XCODE_SYMLINKS=1
 
+# Set GOPATH.
+export GOPATH="$SRC_ROOT/go"
+
 # If a local python3 directory exists, add PYTHONPATH.
 if [[ -d "$HOME/.local/lib/python3" ]]; then
   export PYTHONPATH="$HOME/.local/lib/python3:$PYTHONPATH"
