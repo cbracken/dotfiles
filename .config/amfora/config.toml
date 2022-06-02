@@ -72,7 +72,7 @@ emoji_favicons = false
 
 # When a scrollbar appears. "never", "auto", and "always" are the only valid values.
 # "auto" means the scrollbar only appears when the page is longer than the window.
-scrollbar = "auto"
+scrollbar = "never"
 
 
 [auth]
