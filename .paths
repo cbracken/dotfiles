@@ -30,11 +30,16 @@ path_append() {
 # Push /usr/local/bin to the front of PATH
 path_prepend "/usr/local/bin"
 
-# Fuchsia/Flutter
+# Google Cloud SDK
+path_prepend "$SRC_ROOT/google-cloud-sdk/bin"
+
+# Flutter
 path_prepend "$SRC_ROOT/depot_tools"
 path_prepend "$SRC_ROOT/goma"
 path_prepend "$SRC_ROOT/flutter/flutter/bin"
 path_prepend "$SRC_ROOT/flutter/flutter/bin/cache/dart-sdk/bin"
+
+# Fuchsia
 path_prepend "$SRC_ROOT/fuchsia/.jiri_root/bin"
 if [[ -e "$SRC_ROOT/fuchsia/.jiri_root/scripts/fx-env.sh" ]]; then
   source "$SRC_ROOT/fuchsia/.jiri_root/scripts/fx-env.sh"
@@ -55,12 +60,9 @@ if which python3 >/dev/null; then
   path_prepend "$(python3 -m site --user-base)/bin"
 fi
 
-# Rust
+# Rust packages
 path_prepend "$HOME/.cargo/bin"
 
-# Google Cloud SDK
-path_prepend "$SRC_ROOT/google-cloud-sdk/bin"
-
-# User's personal bin dir if it exists
+# Personal bin directory
 path_prepend "$HOME/.local/bin"
 path_prepend "$HOME/bin"
