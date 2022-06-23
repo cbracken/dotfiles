@@ -50,6 +50,11 @@ if which ruby >/dev/null && which gem >/dev/null; then
   path_prepend "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 fi
 
+# Python modules
+if which python3 >/dev/null; then
+  path_prepend "$(python3 -m site --user-base)/bin"
+fi
+
 # Rust
 path_prepend "$HOME/.cargo/bin"
 
