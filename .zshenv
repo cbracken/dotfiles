@@ -7,16 +7,17 @@ umask 022
 export EDITOR=vim
 export PAGER=less
 
-# Set language to Australian English, date/time to Canadian English,
-# currency to Japanese Yen.
-export LANG=en_AU.UTF-8
-export LANGUAGE=en_AU.UTF-8
-export LC_COLLATE=en_AU.UTF-8
-export LC_CTYPE=en_AU.UTF-8
-export LC_MESSAGES=en_AU.UTF-8
+# Set language, date/time to Canadian French, currency to Japanese Yen.
+export LANG=fr_CA.UTF-8
+export LANGUAGE=fr_CA.UTF-8
+export LC_COLLATE=fr_CA.UTF-8
+export LC_CTYPE=fr_CA.UTF-8
+export LC_MEASUREMENT=fr_CA.UTF-8
+export LC_MESSAGES=fr_CA.UTF-8
 export LC_MONETARY=ja_JP.UTF-8
-export LC_NUMERIC=en_CA.UTF-8
-export LC_TIME=en_CA.UTF-8
+export LC_NUMERIC=fr_CA.UTF-8
+export LC_PAPER=ja_JP.UTF-8
+export LC_TIME=fr_CA.UTF-8
 
 # GPG directory and TTY used for pinentry.
 export GNUPGHOME="$HOME/.gnupg"
