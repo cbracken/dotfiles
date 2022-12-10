@@ -6,9 +6,11 @@ if [[ "$(uname)" == FreeBSD || "$(uname)" == Darwin ]]; then
 elif [[ "$(uname)" == Linux ]]; then
   alias ls='ls -F --color=auto'
 fi
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+if [[ "$(uname)" == FreeBSD || "$(uname)" == Darwin || "$(uname)" == Linux ]]; then
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+fi
 alias ag='ag --color-line-number "30;33" --color-path "30;32" --color-match "1;31"'
 
 # some useful aliases
