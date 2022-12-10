@@ -51,7 +51,7 @@ set $term alacritty
 
 # Your preferred application launcher.
 # Note: it's recommended that you pass the final command to i3.
-set $menu dmenu_path | dmenu | xargs i3-msg exec --
+set $menu dmenu_path | dmenu -fn "DejaVu Sans Mono-12" | xargs i3-msg exec --
 
 # Set lock screen handler.
 set $lock_screen i3lock -c 000000
