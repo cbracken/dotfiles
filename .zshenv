@@ -8,7 +8,7 @@ export EDITOR=vim
 export PAGER=less
 export LESS="-SFRX"
 
-# Set language, date/time to Canadian French, currency to Japanese Yen.
+# Set language, date/time, currency, etc. to Japanese.
 export LANG=ja_JP.UTF-8
 export LANGUAGE=ja_JP.UTF-8
 export LC_COLLATE=ja_JP.UTF-8
