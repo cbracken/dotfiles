@@ -6,6 +6,7 @@ umask 022
 # Basics
 export EDITOR=vim
 export PAGER=less
+export LESS="-SFRX"
 
 # Set language, date/time to Canadian French, currency to Japanese Yen.
 export LANG=ja_JP.UTF-8
