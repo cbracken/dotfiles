@@ -6,7 +6,7 @@ umask 022
 # Basics
 export EDITOR=vim
 export PAGER=less
-export LESS="-SFRX"
+export LESS="-FRX"
 
 # Set language, date/time, currency, etc. to Japanese.
 export LANG=ja_JP.UTF-8
