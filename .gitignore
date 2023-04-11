@@ -3,3 +3,11 @@
 
 # Ignore GTK 2.0 theme information
 .gtk-2.0
+
+# Ignore frequently-changing irrelevant files
+.config/sublime-text/Packages/User/Package Control.last-run
+.config/sublime-text/Packages/User/Package Control.ca-list
+.config/sublime-text/Packages/User/Package Control.ca-bundle
+.config/sublime-text/Packages/User/Package Control.system-ca-bundle
+.config/sublime-text/Packages/User/Package Control.cache/
+.config/sublime-text/Packages/User/Package Control.ca-certs/

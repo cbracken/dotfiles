@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"Clang Format",
+		"Dartlight",
+		"GN",
+		"LSP",
+		"LSP-clangd",
+		"Package Control",
+		"Rust Enhanced",
+	],
+	"in_process_packages":
+	[
+	],
+}
