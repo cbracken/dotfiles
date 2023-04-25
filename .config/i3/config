@@ -16,7 +16,7 @@
 exec --no-startup-id xrdb ~/.config/Xresources
 
 # Use Japanese keyboard layout with caps-lock as control.
-exec --no-startup-id setxkbmap -layout us -option ctrl:nocaps
+exec --no-startup-id setxkbmap -layout jp -option ctrl:nocaps
 
 # Use 'natural' mouse-wheel scrolling.
 exec --no-startup-id xmodmap -e "pointer = 1 2 3 5 4 6 7 8 9 10 11 12"
