@@ -91,7 +91,7 @@ output * bg ~/Pictures/Desktops/current.png fill
 input * {
     # Use US keyboard layout (jp for Japanese layout) use caps as control,
     # right alt as AltGr/Compose for accents.
-    xkb_layout us
+    xkb_layout jp
     xkb_options ctrl:nocaps,compose:ralt
     repeat_delay 500
     repeat_rate 25
