@@ -54,8 +54,11 @@ if [[ -d "$HOME/.perl5/lib/perl5" ]]; then
   export PERL5LIB="$HOME/.perl5/lib/perl5:$PERL5LIB"
 fi
 
-# When not running under a FreeDesktop-compliant session manager, set
-# XDG_RUNTIME_DIR for programs (e.g. sway) that need it.
+# When not running under a FreeDesktop-compliant session manager, set XDG
+# variables for programs (e.g. git, sway) that use them.
+if [[ -z "$XDG_CONFIG_HOME" ]]; then
+  export XDG_CONFIG_HOME="$HOME/.config"
+fi
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
   export XDG_RUNTIME_DIR="/tmp/user/$(id -u)"
   mkdir -p "$XDG_RUNTIME_DIR"
