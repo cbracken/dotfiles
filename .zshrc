@@ -56,26 +56,26 @@ fi
 unset term_bin
 
 # Load path additions.
-if [ -f ~/.paths ]; then
-  . ~/.paths
+if [ -f "$XDG_CONFIG_HOME/zsh/paths" ]; then
+  . "$XDG_CONFIG_HOME/zsh/paths"
 fi
 
 # Load aliases.
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
+if [ -f "$XDG_CONFIG_HOME/zsh/aliases" ]; then
+  . "$XDG_CONFIG_HOME/zsh/aliases"
 fi
 
 # Load colour support.
-if [ -f ~/.colors ]; then
-  . ~/.colors
+if [ -f "$XDG_CONFIG_HOME/zsh/colors" ]; then
+  . "$XDG_CONFIG_HOME/zsh/colors"
 fi
 
 # Load custom functions.
-if [ -f ~/.sh_functions ]; then
-  . ~/.sh_functions
+if [ -f "$XDG_CONFIG_HOME/zsh/functions" ]; then
+  . "$XDG_CONFIG_HOME/zsh/functions"
 fi
 
 # Load tools.
-if [ -f ~/.tools ]; then
-  . ~/.tools
+if [ -f "$XDG_CONFIG_HOME/zsh/tools" ]; then
+  . "$XDG_CONFIG_HOME/zsh/tools"
 fi
