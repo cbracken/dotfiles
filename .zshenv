@@ -37,8 +37,8 @@ export GEM_HOME="$HOME/.gem"
 [[ -d "$HOME/Developer" ]] && SRC_ROOT="$HOME/Developer"
 
 # Flutter/Fuchsia stuff.
-export GOMA_DIR="$SRC_ROOT/goma"
-export GOMA_LOCAL_OUTPUT_CACHE_DIR="$GOMA_DIR/.goma_cache"
+[[ "$(uname)" == "Linux" ]] && export GOMA_DIR="$SRC_ROOT/flutter/engine/src/buildtools/linux-x64/goma"
+[[ "$(uname)" == "Darwin" ]] && export GOMA_DIR="$SRC_ROOT/flutter/engine/src/buildtools/mac-x64/goma"
 [[ "$(uname)" == "Darwin" ]] && export FLUTTER_GOMA_CREATE_XCODE_SYMLINKS=1
 
 # Set GOPATH.
