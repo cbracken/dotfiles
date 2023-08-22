@@ -7,7 +7,7 @@
 [commit]
   gpgsign = true
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.config/git/gitignore_global
   editor = vim
 [credential]
   helper = store
