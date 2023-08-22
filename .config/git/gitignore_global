@@ -5,6 +5,9 @@
 *.sw?
 *~
 
+# Editor project directories
+.nova/
+
 # Build outputs
 *.a
 *.class
