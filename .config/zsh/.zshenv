@@ -45,6 +45,9 @@ export LC_TIME=ja_JP.UTF-8
 export GNUPGHOME="$HOME/.gnupg"
 export GPG_TTY="$(tty)"
 
+# Lynx browser.
+export LYNX_CFG_PATH="$XDG_CONFIG_HOME/lynx/lynx.cfg"
+
 # Notmuch email indexer.
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/config"
 
