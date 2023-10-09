@@ -1,4 +1,7 @@
 # .zshenv
+#
+# Despite setting ZDOTDIR, this file will likely need to be symlinked to
+# ~/.zshenv, unless the OS itself defaults ZDOTDIR to the specified location.
 
 # Default read-only permissions for group/other.
 umask 022
@@ -14,6 +17,12 @@ if [[ -z "$XDG_RUNTIME_DIR" ]]; then
   mkdir -p "$XDG_RUNTIME_DIR"
   chmod 0700 "$XDG_RUNTIME_DIR"
 fi
+
+# Set location for remainder of zsh config files to avoid cluttering $HOME.
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# Add zsh completions directory.
+export FPATH="$ZDOTDIR/zfunc:$FPATH"
 
 # Basics
 export EDITOR=vim
