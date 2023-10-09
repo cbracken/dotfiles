@@ -6,12 +6,19 @@
 # Default read-only permissions for group/other.
 umask 022
 
-# If not running under a FreeDesktop session manager, set XDG_CONFIG_HOME.
+# If not running under a FreeDesktop session manager, set XDG variables.
 if [[ -z "$XDG_CONFIG_HOME" ]]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 fi
-
-# If not running under a FreeDesktop session manager, set XDG_RUNTIME_DIR.
+if [[ -z "$XDG_CACHE_HOME" ]]; then
+  export XDG_CACHE_HOME="$HOME/.cache"
+fi
+if [[ -z "$XDG_DATA_HOME" ]]; then
+  export XDG_DATA_HOME="$HOME/.local/share"
+fi
+if [[ -z "$XDG_STATE_HOME" ]]; then
+  export XDG_STATE_HOME="$HOME/.local/state"
+fi
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
   export XDG_RUNTIME_DIR="/tmp/user/$(id -u)"
   mkdir -p "$XDG_RUNTIME_DIR"
