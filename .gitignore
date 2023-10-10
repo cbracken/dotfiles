@@ -4,6 +4,10 @@
 # Ignore GTK 2.0 theme information
 .gtk-2.0
 
+# Ignore .local dir other than .local/bin and what's manually checked in.
+.local/*
+!.local/bin/
+
 # Ignore frequently-changing irrelevant files
 .config/sublime-text/Packages/User/Package Control.last-run
 .config/sublime-text/Packages/User/Package Control.ca-list
