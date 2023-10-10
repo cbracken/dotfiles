@@ -91,6 +91,9 @@ takeScreenshot() {
   FILE=$1
   GEOM=$2
   OUTPUT=$3
+
+  DIR="$(dirname "$FILE")"
+  mkdir -p "$DIR"
   if [ ! -z "$OUTPUT" ]; then
     grim -o "$OUTPUT" "$FILE" || die "Unable to invoke grim"
   elif [ -z "$GEOM" ]; then
