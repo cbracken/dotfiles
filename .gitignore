@@ -4,9 +4,42 @@
 # Ignore GTK 2.0 theme information
 .gtk-2.0
 
-# Ignore .local dir other than .local/bin and what's manually checked in.
-.local/*
-!.local/bin/
+# ========================================
+# .config
+# ========================================
+
+# Ignore files that contain one or more of the following types of data:
+# - machine-specific configuration
+# - local cached data that belongs in XDG_CACHE_HOME (e.g. last window size)
+.config/Signal
+.config/chromium
+
+# gitk viewer (cached data)
+.config/git/gitk
+
+# Symlink to wire up additional git config for the local machine.
+.config/git/local_config
+
+# Linux/GTK look and feel (machine-specific)
+.config/dconf
+.config/glib-2.0
+.config/gtk-3.0
+.config/pulse
+
+# IME-related (machine-specific, cached data)
+.config/fcitx
+.config/fcitx5/conf/cached_layouts
+.config/ibus
+.config/mozc
+
+# Flutter SDK (machine-specific)
+.config/flutter
+.config/tool_state
+
+# zsh cached data
+.config/zsh/.zcompdump
+.config/zsh/.zsh_history
+.config/zsh/.zsh_sessions/
 
 # Ignore frequently-changing irrelevant files
 .config/sublime-text/Packages/User/Package Control.last-run
@@ -15,3 +48,12 @@
 .config/sublime-text/Packages/User/Package Control.system-ca-bundle
 .config/sublime-text/Packages/User/Package Control.cache/
 .config/sublime-text/Packages/User/Package Control.ca-certs/
+
+# ========================================
+# .local
+# ========================================
+
+# Ignore .local dir other than .local/bin and what's manually checked in.
+.local/*
+.local/!bin/
+.local/bin/gn
