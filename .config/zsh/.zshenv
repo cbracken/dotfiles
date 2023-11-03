@@ -28,9 +28,6 @@ fi
 # Set location for remainder of zsh config files to avoid cluttering $HOME.
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-# Add zsh completions directory.
-export FPATH="$ZDOTDIR/zfunc:$FPATH"
-
 # Basics
 export EDITOR=vim
 export PAGER=less
