@@ -20,7 +20,7 @@ bindkey '^R' history-incremental-search-backward
 fpath=("$HOME/.local/zsh/site-functions" "$ZDOTDIR/site-functions" "${fpath[@]}")
 
 # Specify where compinstall writes cfg commands. Default, but saves checks.
-zstyle ':compinstall' filename "$HOME/.zshrc"
+zstyle ':compinstall' filename "$ZDOTDIR/.zshrc"
 
 # Use menu-style autocompletion.
 zstyle ':completion:*' menu select
