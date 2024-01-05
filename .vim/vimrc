@@ -11,10 +11,7 @@ Plug 'rhysd/vim-clang-format'   " clang-format.
 Plug 'vim-scripts/spacehi.vim'  " Highlight bad whitespace.
 
 " Language support plugins.
-Plug 'cespare/vim-toml'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'google/vim-ft-bzl'
 Plug 'keith/swift.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
@@ -83,15 +80,6 @@ let g:spacehi_tabcolor="ctermbg=red guibg=red"
 " Configure tag file locations.
 set tags+=~/.local/tags/system.tags
 set tags+=~/.local/tags/cxx.tags
-
-" Configure golang support.
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:syntastic_go_checkers = ["go", "golint", "errcheck"]
 
 " Snippets
 nmap <leader>sch :0r ~/.vim/snippets/cc.h<CR>
