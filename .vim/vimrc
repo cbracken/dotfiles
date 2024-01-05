@@ -74,8 +74,8 @@ set softtabstop=2   " Number of spaces per tab when editing.
 set expandtab       " Insert spaces in place of tabs.
 
 " Configure whitespace highlighting.
-let g:spacehi_spacecolor="ctermbg=red guibg=red"
-let g:spacehi_tabcolor="ctermbg=red guibg=red"
+let g:spacehi_spacecolor="ctermbg=red"
+let g:spacehi_tabcolor="ctermbg=red"
 
 " Configure tag file locations.
 set tags+=~/.local/tags/system.tags
@@ -113,8 +113,8 @@ if &t_Co > 2
 
   " Highlight cursor line, max column.
   set cursorline
-  hi ColorColumn guibg=grey24 ctermbg=235
-  hi CursorLine guibg=grey24 ctermbg=235 cterm=bold
+  hi ColorColumn ctermbg=235
+  hi CursorLine ctermbg=235 cterm=bold
   hi CursorLineNr ctermbg=235 cterm=bold
 
   if has("autocmd")
