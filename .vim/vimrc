@@ -11,10 +11,7 @@ Plug 'rhysd/vim-clang-format'   " clang-format.
 Plug 'vim-scripts/spacehi.vim'  " Highlight bad whitespace.
 
 " Language support plugins.
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'keith/swift.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
 call plug#end()
 
 " Bind fancier manpage plugin to Shift-k.
