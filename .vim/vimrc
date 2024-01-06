@@ -7,10 +7,12 @@ if has("autocmd")
 endif
 
 call plug#begin('~/.vim/plugged')
+" Formatting.
 Plug 'rhysd/vim-clang-format'   " clang-format.
 Plug 'vim-scripts/spacehi.vim'  " Highlight bad whitespace.
 
 " Language support plugins.
+Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
