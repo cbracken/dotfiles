@@ -141,19 +141,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
 
-" Apply clang-format to a range of lines (or all).
-function ClangFormat()
-  let l:line_start = getpos("'<")[1]
-  let l:line_end = getpos("'>")[1]
-  let l:lines = "all"
-  if l:line_start != 0 && l:line_end != 0
-    let l:lines = l:line_start . ":" . l:line_end
-  endif
-  py3f ~/share/clang/clang-format.py
-endfunction
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
-
 " Toggle absolute/relative numbering.
 function! ToggleNumbering()
   if (&number == 0)
