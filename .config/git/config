@@ -10,6 +10,7 @@
 [credential]
   helper = store
 [diff]
+  algorithm = histogram
   mnemonicprefix = true
   tool = vimdiff
 [filter "lfs"]
