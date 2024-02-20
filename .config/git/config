@@ -20,6 +20,7 @@
 [grep]
   lineNumber = true
 [merge]
+  conflictStyle = zdiff3
   stat = true
 [pull]
   rebase = true
