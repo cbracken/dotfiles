@@ -29,6 +29,8 @@
   default = simple
 [rebase]
   autosquash = true
+[rerere]
+  enabled = true
 [sendemail]
   smtpserver = smtp.gmail.com
   smtpuser = chris@bracken.jp
@@ -38,8 +40,6 @@
 [user]
   name = Chris Bracken
   email = chris@bracken.jp
-[http]
-  cookiefile = ~/.gitcookies
 
 # If a host-local config file is present, merge it into our config.
 [include]
