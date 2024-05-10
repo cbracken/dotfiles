@@ -15,10 +15,10 @@
   },
   "language_overrides": {
     "dart": {
-      "format_on_save": "off",
-      "tab_size": 2
+      "format_on_save": "off"
     }
   },
+  "tab_size": 2,
   "vim": {
     // "always": use system clipboard
     // "never": don't use system clipboard
