@@ -50,7 +50,7 @@ export GNUPGHOME="$HOME/.gnupg"
 export GPG_TTY="$(tty)"
 
 # Lynx browser.
-export LYNX_CFG_PATH="$XDG_CONFIG_HOME/lynx/lynx.cfg"
+export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 
 # Notmuch email indexer.
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/config"
