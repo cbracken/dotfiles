@@ -7,6 +7,9 @@ if has("autocmd")
 endif
 
 call plug#begin()
+" Colour scheme.
+Plug 'craftzdog/solarized-osaka.nvim'
+
 " Formatting.
 Plug 'rhysd/vim-clang-format'   " clang-format.
 Plug 'vim-scripts/spacehi.vim'  " Highlight bad whitespace.
@@ -92,6 +95,7 @@ nmap <leader>sjn :.-1r ~/.config/nvim/snippets/journal.md<CR>
 if &t_Co > 2
   syntax enable
   set background=dark
+  colorscheme solarized-osaka
 
   " No background colour in terminal.
   hi Normal ctermbg=none
