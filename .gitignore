@@ -36,6 +36,14 @@
 .config/flutter
 .config/tool_state
 
+# nvim
+.config/nvim/autoload/plug.vim
+.config/nvim/autoload/plug.vim.old
+.config/nvim/plugged
+.config/nvim/.netrwhist
+.config/nvim/*.spl
+.config/nvim/*.sug
+
 # zsh cached data
 .config/zsh/.zcompdump
 .config/zsh/.zcompdumps/

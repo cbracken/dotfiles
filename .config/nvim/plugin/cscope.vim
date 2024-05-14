@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " USAGE:
-" Stick this file in your ~/.vim/plugin directory (or in a
+" Stick this file in your vim `plugin` directory (or in a
 " 'plugin' directory in some other directory that is in your
 " 'runtimepath'.
 "

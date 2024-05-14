@@ -29,7 +29,7 @@ fi
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # Basics
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
 export LESS="-FRX"
 
@@ -57,7 +57,7 @@ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/config"
 
 # Google stuff.
 export P4CONFIG=.p4config
-export P4EDITOR=vim
+export P4EDITOR=nvim
 export GEM_HOME="$HOME/.gem"
 
 # Platform-specific source directory.

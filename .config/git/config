@@ -6,13 +6,13 @@
   ui = auto
 [core]
   excludesfile = ~/.config/git/gitignore_global
-  editor = vim
+  editor = nvim
 [credential]
   helper = store
 [diff]
   algorithm = histogram
   mnemonicprefix = true
-  tool = vimdiff
+  tool = nvimdiff
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f
