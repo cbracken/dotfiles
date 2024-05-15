@@ -1,11 +1,6 @@
 set nocompatible
 set encoding=utf-8
 
-" Remove any autocmds defined by the system for consistency.
-if has("autocmd")
-  autocmd!
-endif
-
 call plug#begin()
 " Colour scheme.
 Plug 'craftzdog/solarized-osaka.nvim'
@@ -23,8 +18,6 @@ runtime ftplugin/man.vim
 set keywordprg=:Man
 
 let mapleader=','
-let s:cpo_save=&cpo
-set cpo&vim
 
 " Enable middle-mouse paste.
 map!     <S-Insert> <MiddleMouse>
@@ -45,8 +38,6 @@ noremap  <Right>    <NOP>
 " Retain selection on <,>.
 vmap     < <gv
 vmap     > >gv
-let &cpo=s:cpo_save
-unlet s:cpo_save
 
 " Basic options
 set incsearch                " Turn on incrememental searching.
@@ -115,23 +106,21 @@ if &t_Co > 2
   hi CursorLine ctermbg=235 cterm=bold
   hi CursorLineNr ctermbg=235 cterm=bold
 
-  if has("autocmd")
-    " Cursor line highlighting
-    au WinLeave * setlocal nocursorline
-    au WinEnter * setlocal cursorline
-    au BufLeave * setlocal nocursorline
-    au BufEnter * setlocal cursorline
+  " Cursor line highlighting
+  au WinLeave * setlocal nocursorline
+  au WinEnter * setlocal cursorline
+  au BufLeave * setlocal nocursorline
+  au BufEnter * setlocal cursorline
 
-    " Highlight over-length lines
-    au BufEnter,InsertLeave * set colorcolumn=80
-    au BufEnter,InsertLeave *.txt,*.md,*.wiki set colorcolumn=80
-    au BufEnter,InsertLeave *.txt,*.md,*.wiki set textwidth=80
-    au BufEnter,InsertLeave *.java,*.m,*.mm set colorcolumn=100
-    au BufEnter,InsertLeave *.java,*.m,*.mm set textwidth=100
+  " Highlight over-length lines
+  au BufEnter,InsertLeave * set colorcolumn=80
+  au BufEnter,InsertLeave *.txt,*.md,*.wiki set colorcolumn=80
+  au BufEnter,InsertLeave *.txt,*.md,*.wiki set textwidth=80
+  au BufEnter,InsertLeave *.java,*.m,*.mm set colorcolumn=100
+  au BufEnter,InsertLeave *.java,*.m,*.mm set textwidth=100
 
-    " Fix python's indent overrides.
-    au FileType python setl ts=2 sw=2 sts=2 et
-  endif
+  " Fix python's indent overrides.
+  au FileType python setl ts=2 sw=2 sts=2 et
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
