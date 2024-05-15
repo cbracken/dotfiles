@@ -17,6 +17,10 @@ call plug#end()
 runtime ftplugin/man.vim
 set keywordprg=:Man
 
+" Disable visual-mode mouse select.
+set mouse=
+
+" Set <leader> to comma for convenience.
 let mapleader=','
 
 " Enable middle-mouse paste.
@@ -26,9 +30,6 @@ map      <S-Insert> <MiddleMouse>
 " Kill ex mode.
 noremap  Q          <NOP>
 
-" Disable visual-mode mouse select.
-set mouse=
-
 " Kill arrow keys, for great justice.
 noremap  <Up>       <NOP>
 noremap  <Down>     <NOP>
@@ -36,8 +37,16 @@ noremap  <Left>     <NOP>
 noremap  <Right>    <NOP>
 
 " Retain selection on <,>.
-vmap     < <gv
-vmap     > >gv
+vnoremap     < <gv
+vnoremap     > >gv
+
+" Snippets.
+nnoremap <leader>sch :0r   ~/.config/nvim/snippets/cc.h<CR>
+nnoremap <leader>sci :0r   ~/.config/nvim/snippets/cc.cc<CR>
+nnoremap <leader>scn :.-1r ~/.config/nvim/snippets/namespace.cc<CR>
+nnoremap <leader>scs :.-1r ~/.config/nvim/snippets/struct.cc<CR>
+nnoremap <leader>scc :.-1r ~/.config/nvim/snippets/class.cc<CR>
+nnoremap <leader>sjn :.-1r ~/.config/nvim/snippets/journal.md<CR>
 
 " Basic options.
 set incsearch                " Turn on incrememental searching.
@@ -71,14 +80,6 @@ au FileType python setl ts=2 sw=2 sts=2 et
 " Configure tag file locations.
 set tags+=~/.local/tags/system.tags
 set tags+=~/.local/tags/cxx.tags
-
-" Snippets.
-nmap <leader>sch :0r   ~/.config/nvim/snippets/cc.h<CR>
-nmap <leader>sci :0r   ~/.config/nvim/snippets/cc.cc<CR>
-nmap <leader>scn :.-1r ~/.config/nvim/snippets/namespace.cc<CR>
-nmap <leader>scs :.-1r ~/.config/nvim/snippets/struct.cc<CR>
-nmap <leader>scc :.-1r ~/.config/nvim/snippets/class.cc<CR>
-nmap <leader>sjn :.-1r ~/.config/nvim/snippets/journal.md<CR>
 
 " Configure colour scheme and syntax highlighting.
 if &t_Co > 2
@@ -117,4 +118,4 @@ function! ToggleNumbering()
     set nonumber
   endif
 endfunc
-nmap <C-n> :call ToggleNumbering()<CR>
+nnoremap <C-n> :call ToggleNumbering()<CR>
