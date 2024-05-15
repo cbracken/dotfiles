@@ -65,6 +65,9 @@ set shiftwidth=2    " Number of spaces for each step of autoindent.
 set softtabstop=2   " Number of spaces per tab when editing.
 set expandtab       " Insert spaces in place of tabs.
 
+" Fix python's indent overrides.
+au FileType python setl ts=2 sw=2 sts=2 et
+
 " Configure tag file locations.
 set tags+=~/.local/tags/system.tags
 set tags+=~/.local/tags/cxx.tags
@@ -98,9 +101,6 @@ if &t_Co > 2
   au BufEnter,InsertLeave *.txt,*.md,*.wiki set textwidth=80
   au BufEnter,InsertLeave *.java,*.m,*.mm set colorcolumn=100
   au BufEnter,InsertLeave *.java,*.m,*.mm set textwidth=100
-
-  " Fix python's indent overrides.
-  au FileType python setl ts=2 sw=2 sts=2 et
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
