@@ -97,8 +97,8 @@ if &t_Co > 2
 
   " Highlight over-length lines.
   au BufEnter,InsertLeave * set colorcolumn=80
-  au BufEnter,InsertLeave *.txt,*.md,*.wiki set colorcolumn=80
-  au BufEnter,InsertLeave *.txt,*.md,*.wiki set textwidth=80
+  au BufEnter,InsertLeave *.txt,*.md set colorcolumn=80
+  au BufEnter,InsertLeave *.txt,*.md set textwidth=80
   au BufEnter,InsertLeave *.java,*.m,*.mm set colorcolumn=100
   au BufEnter,InsertLeave *.java,*.m,*.mm set textwidth=100
 endif
