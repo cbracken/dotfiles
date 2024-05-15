@@ -83,28 +83,8 @@ if &t_Co > 2
   set background=dark
   colorscheme solarized-osaka
 
-  " No background colour in terminal.
-  hi Normal ctermbg=none
-
-  " Visual selection colour.
-  hi Visual ctermbg=237
-
-  " Spelling mistake hightlight colour.
-  hi SpellLocal cterm=underline ctermbg=58
-  hi SpellBad cterm=underline ctermbg=88
-
-  " Completion menu colour.
-  hi Pmenu ctermbg=0 ctermfg=8
-  hi PmenuSel ctermbg=8 ctermfg=15
-
-  " Line number colour.
-  hi LineNr ctermfg=7
-
   " Highlight cursor line, max column.
   set cursorline
-  hi ColorColumn ctermbg=235
-  hi CursorLine ctermbg=235 cterm=bold
-  hi CursorLineNr ctermbg=235 cterm=bold
 
   " Cursor line highlighting
   au WinLeave * setlocal nocursorline
