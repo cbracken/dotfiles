@@ -1,1 +1,5 @@
+# Layouts.
 set main-view = id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
+
+# Colours.
+color cursor			black	yellow	bold
