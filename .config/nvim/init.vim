@@ -39,7 +39,7 @@ noremap  <Right>    <NOP>
 vmap     < <gv
 vmap     > >gv
 
-" Basic options
+" Basic options.
 set incsearch                " Turn on incrememental searching.
 set hlsearch                 " Highlight search.
 set visualbell               " Less noise.
@@ -53,10 +53,10 @@ set wildmode=longest,full
 set wildignore=*.o,*.pyc     " Ignore some filetypes during completion.
 set spelllang=en_ca          " Set the spelling language.
 
-" Omnicomplete
+" Omnicomplete.
 set completeopt+=longest
 
-" Indentation/tabulation
+" Indentation/tabulation.
 set autoindent      " Copy indent from current line when starting a new line.
 set smartindent     " Attempt to autoindent when starting a new line.
 set smarttab        " Use shiftwidth rather than tabstop at start of line.
@@ -72,7 +72,7 @@ au FileType python setl ts=2 sw=2 sts=2 et
 set tags+=~/.local/tags/system.tags
 set tags+=~/.local/tags/cxx.tags
 
-" Snippets
+" Snippets.
 nmap <leader>sch :0r   ~/.config/nvim/snippets/cc.h<CR>
 nmap <leader>sci :0r   ~/.config/nvim/snippets/cc.cc<CR>
 nmap <leader>scn :.-1r ~/.config/nvim/snippets/namespace.cc<CR>
@@ -89,13 +89,13 @@ if &t_Co > 2
   " Highlight cursor line, max column.
   set cursorline
 
-  " Cursor line highlighting
+  " Cursor line highlighting.
   au WinLeave * setlocal nocursorline
   au WinEnter * setlocal cursorline
   au BufLeave * setlocal nocursorline
   au BufEnter * setlocal cursorline
 
-  " Highlight over-length lines
+  " Highlight over-length lines.
   au BufEnter,InsertLeave * set colorcolumn=80
   au BufEnter,InsertLeave *.txt,*.md,*.wiki set colorcolumn=80
   au BufEnter,InsertLeave *.txt,*.md,*.wiki set textwidth=80
