@@ -12,7 +12,6 @@ Plug 'craftzdog/solarized-osaka.nvim'
 
 " Formatting.
 Plug 'rhysd/vim-clang-format'   " clang-format.
-Plug 'vim-scripts/spacehi.vim'  " Highlight bad whitespace.
 
 " Language support plugins.
 Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
@@ -75,10 +74,6 @@ set shiftwidth=2    " Number of spaces for each step of autoindent.
 set softtabstop=2   " Number of spaces per tab when editing.
 set expandtab       " Insert spaces in place of tabs.
 
-" Configure whitespace highlighting.
-let g:spacehi_spacecolor="ctermbg=red"
-let g:spacehi_tabcolor="ctermbg=red"
-
 " Configure tag file locations.
 set tags+=~/.local/tags/system.tags
 set tags+=~/.local/tags/cxx.tags
@@ -133,9 +128,6 @@ if &t_Co > 2
     au BufEnter,InsertLeave *.txt,*.md,*.wiki set textwidth=80
     au BufEnter,InsertLeave *.java,*.m,*.mm set colorcolumn=100
     au BufEnter,InsertLeave *.java,*.m,*.mm set textwidth=100
-
-    " Highlight trailing space
-    au BufEnter,InsertLeave *.bzl,*.c,*.cc,*.cpp,*.cs,*.dart,*.h,*.java,*.m,*.mm,*.py,*.s SpaceHi
 
     " Fix python's indent overrides.
     au FileType python setl ts=2 sw=2 sts=2 et
