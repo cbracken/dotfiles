@@ -11,6 +11,9 @@ Plug 'rhysd/vim-clang-format'   " clang-format.
 " Language support plugins.
 Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
 Plug 'rust-lang/rust.vim'
+
+" Behaviour.
+Plug 'ibhagwan/fzf-lua'
 call plug#end()
 
 " Bind fancier manpage plugin to Shift-k.
@@ -80,6 +83,13 @@ au FileType python setl ts=2 sw=2 sts=2 et
 " Configure tag file locations.
 set tags+=~/.local/tags/system.tags
 set tags+=~/.local/tags/cxx.tags
+
+" Configure fzf-lua.
+nnoremap <C-^> <cmd>FzfLua buffers<CR>
+nnoremap <C-p> <cmd>FzfLua files<CR>
+nnoremap <C-g> <cmd>FzfLua grep<CR>
+nnoremap <C-l> <cmd>FzfLua live_grep<CR>
+nnoremap <C-k> <cmd>FzfLua builtin commands<CR>
 
 " Configure colour scheme and syntax highlighting.
 if &t_Co > 2
