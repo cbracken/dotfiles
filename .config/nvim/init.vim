@@ -87,11 +87,11 @@ set tags+=~/.local/tags/system.tags
 set tags+=~/.local/tags/cxx.tags
 
 " Configure fzf-lua.
-nnoremap <C-^> <cmd>FzfLua buffers<CR>
-nnoremap <C-p> <cmd>FzfLua files<CR>
-nnoremap <C-g> <cmd>FzfLua grep<CR>
-nnoremap <C-l> <cmd>FzfLua live_grep<CR>
-nnoremap <C-k> <cmd>FzfLua builtin commands<CR>
+nnoremap <C-^>   <cmd>FzfLua buffers<CR>
+nnoremap <C-p>   <cmd>FzfLua files<CR>
+nnoremap <C-S-G> <cmd>FzfLua grep<CR>
+nnoremap <C-l>   <cmd>FzfLua live_grep<CR>
+nnoremap <C-k>   <cmd>FzfLua builtin commands<CR>
 
 " Configure colour scheme and syntax highlighting.
 if &t_Co > 2
