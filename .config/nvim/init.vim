@@ -59,7 +59,7 @@ set hlsearch                 " Highlight search.
 set visualbell               " Less noise.
 set number                   " Use line numbering.
 set ruler                    " Show row/col in status.
-set laststatus=1             " Only show status line if > 1 window.
+set laststatus=2             " Always show status line.
 set showmatch                " Highlight matching bracket.
 set history=50               " Keep 50 lines of cmdline history.
 set wildmenu                 " Nicer autocomplete.
