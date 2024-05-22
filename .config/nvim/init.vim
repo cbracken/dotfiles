@@ -14,6 +14,8 @@ Plug 'rust-lang/rust.vim'
 
 " Behaviour.
 Plug 'ibhagwan/fzf-lua'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Bind fancier manpage plugin to Shift-k.
