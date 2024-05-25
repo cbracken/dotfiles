@@ -1,3 +1,8 @@
+import = [
+  # Colour scheme.
+  "~/.config/alacritty/solarized-osaka.toml",
+]
+
 [env]
 TERM = "xterm-256color"
 
