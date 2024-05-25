@@ -87,11 +87,11 @@ set tags+=~/.local/tags/system.tags
 set tags+=~/.local/tags/cxx.tags
 
 " Configure fzf-lua.
-nnoremap <C-^>   <cmd>FzfLua buffers<CR>
-nnoremap <C-p>   <cmd>FzfLua files<CR>
-nnoremap <C-S-G> <cmd>FzfLua grep<CR>
-nnoremap <C-l>   <cmd>FzfLua live_grep<CR>
-nnoremap <C-k>   <cmd>FzfLua builtin commands<CR>
+nnoremap <leader>^ <cmd>FzfLua buffers<CR>
+nnoremap <leader>p <cmd>FzfLua files<CR>
+nnoremap <leader>g <cmd>FzfLua grep<CR>
+nnoremap <leader>l <cmd>FzfLua live_grep<CR>
+nnoremap <leader>k <cmd>FzfLua builtin commands<CR>
 
 " Configure colour scheme and syntax highlighting.
 if &t_Co > 2
@@ -130,4 +130,4 @@ function! ToggleNumbering()
     set nonumber
   endif
 endfunc
-nnoremap <C-n> :call ToggleNumbering()<CR>
+nnoremap <leader>n :call ToggleNumbering()<CR>
