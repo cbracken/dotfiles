@@ -28,3 +28,13 @@ history = 10000
 
 [selection]
 save_to_clipboard = true
+
+# Japanese keyboards have a ¥ key, and \ is input via Option-¥.
+# Swap the mappings in the terminal for convenience when coding.
+[[keyboard.bindings]]
+chars="\\"
+key = "¥"
+[[keyboard.bindings]]
+chars="¥"
+key = "¥"
+mods = "Alt"
