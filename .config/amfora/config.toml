@@ -294,6 +294,49 @@ entries_per_page = 20
 
 
 [theme]
+hdg_1 = '#ed7d81'
+hdg_2 = '#cae697'
+hdg_3 = '#b99af8'
+
+btn_bg = '#838ab4'
+btn_text = '#454970'
+
+bkmk_modal_bg = '#8aa8f8'
+bkmk_modal_text = '#cad2f2'
+bkmk_modal_label = '#f6c982'
+bkmk_modal_field_bg = '#222334'
+bkmk_modal_field_text = '#cad2f2'
+
+dl_choice_modal_bg = '#8aa8f8'
+dl_choice_modal_text = '#222334'
+
+dl_modal_bg = '#8aa8f8'
+dl_modal_text = '#222334'
+
+error_modal_bg = '#ed7d81'
+error_modal_text = '#cad2f2'
+
+info_modal_bg = '#8aa8f8'
+info_modal_text = '#222334'
+
+input_modal_bg = '#8aa8f8'
+input_modal_text = '#cad2f2'
+input_modal_field_bg = '#222334'
+input_modal_field_text = '#cad2f2'
+
+subscription_modal_bg = '#8aa8f8'
+subscription_modal_text = '#cad2f2'
+
+tofu_modal_bg = '#8aa8f8'
+tofu_modal_text = '#cad2f2'
+
+yesno_modal_bg = '#8aa8f8'
+yesno_modal_text = '#cad2f2'
+
+bottombar_bg = '#454970'
+bottombar_text = '#cad2f2'
+bottombar_label = '#cad2f2'
+
 # This section is for changing the COLORS used in Amfora.
 # These colors only apply if 'color' is enabled above.
 # Colors can be set using a W3C color name, or a hex value such as "#ffffff".
