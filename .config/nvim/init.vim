@@ -41,6 +41,9 @@ noremap  <Down>     <NOP>
 noremap  <Left>     <NOP>
 noremap  <Right>    <NOP>
 
+" In terminal, ESC returns to normal mode.
+tnoremap <Esc> <C-\><C-n>
+
 " Retain selection on <,>.
 vnoremap     < <gv
 vnoremap     > >gv
