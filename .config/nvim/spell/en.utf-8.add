@@ -38,6 +38,7 @@ FPU
 FTDI
 Firefox
 FreeBSD
+FreeBSD's
 GPG
 GPIO
 GeForce
@@ -60,6 +61,8 @@ LGTM
 M1
 MBR
 MMU
+Makefile
+Makefiles
 MiB
 Microcontrollers
 Mérida
@@ -78,6 +81,7 @@ OpenBSD
 OpenGL
 PCI
 PCjr
+POSIX
 POSTed
 PS2
 QEMU
@@ -166,6 +170,7 @@ ghee
 github
 google3
 homebrew
+homonymous
 hostname
 https
 i3
@@ -180,6 +185,7 @@ lifecycle
 localhost
 mL
 macOS
+manpage
 masala
 metadata
 microcontroller
@@ -199,6 +205,8 @@ passata
 pfctl
 plaintext
 plugin
+prepended
+preprocessor
 programmes
 purée
 rebase
@@ -238,6 +246,7 @@ underclocked
 underclocking
 unformatted
 unicode
+uninstallation
 unmapped
 unpopulated
 unregister
