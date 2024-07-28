@@ -10,6 +10,7 @@ Plug 'rhysd/vim-clang-format'   " clang-format.
 
 " Language support plugins.
 Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
+Plug 'nathangrigg/vim-beancount'
 Plug 'rust-lang/rust.vim'
 Plug 'neovim/nvim-lspconfig'
 
