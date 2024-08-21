@@ -25,3 +25,6 @@ alias g='egrep -i'
 alias cp='cp -ip'
 alias mv='mv -i'
 alias rm='rm -i'
+
+# work
+alias fbug='gh -R flutter/flutter issue'
