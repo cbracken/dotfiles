@@ -11,12 +11,16 @@ Plug 'rhysd/vim-clang-format'   " clang-format.
 " Language support plugins.
 Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
 Plug 'rust-lang/rust.vim'
+Plug 'neovim/nvim-lspconfig'
 
 " Behaviour.
 Plug 'ibhagwan/fzf-lua'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+" Configure language servers.
+source $HOME/.config/nvim/lsp.lua
 
 " Bind fancier manpage plugin to Shift-k.
 runtime ftplugin/man.vim
