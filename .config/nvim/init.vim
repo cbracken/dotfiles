@@ -100,6 +100,7 @@ nnoremap <leader>f <cmd>FzfLua files<CR>
 nnoremap <leader>g <cmd>FzfLua grep<CR>
 nnoremap <leader>l <cmd>FzfLua live_grep<CR>
 nnoremap <leader>c <cmd>FzfLua builtin commands<CR>
+nnoremap <leader>q <cmd>lua vim.diagnostic.setqflist()<CR>
 
 " Configure colour scheme and syntax highlighting.
 if &t_Co > 2
