@@ -9,13 +9,15 @@
 {
   "theme": "Ayu Mirage",
   "ui_font_size": 15,
-  "buffer_font_size": 15,
+  "buffer_font_family": "SF Mono",
+  "buffer_font_size": 14,
   "buffer_font_features": {
     "calt": false
   },
   "language_overrides": {
-    "dart": {
-      "format_on_save": "off"
+    "Dart": {
+      "format_on_save": "off",
+      "use_on_type_format": false
     }
   },
   "tab_size": 2,
