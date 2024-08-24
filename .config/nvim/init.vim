@@ -20,8 +20,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-" Configure language servers.
-source $HOME/.config/nvim/lsp.lua
+" Configure plugins that require Lua-based setup.
+source $HOME/.config/nvim/plugins.lua
 
 " Bind fancier manpage plugin to Shift-k.
 runtime ftplugin/man.vim
