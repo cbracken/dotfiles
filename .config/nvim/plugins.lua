@@ -1,8 +1,16 @@
 -- Git add/modify/removed signs in the gutter.
-require('gitsigns').setup{}
+require('gitsigns').setup({})
 
 -- Language server configuration.
-require('lspconfig').clangd.setup{}
-require('lspconfig').dartls.setup{}
-require('lspconfig').rust_analyzer.setup{}
-vim.diagnostic.config{virtual_text = false, signs = false, underline = false, update_in_insert = false};
+local lspconfig = require('lspconfig')
+lspconfig.clangd.setup({})
+lspconfig.dartls.setup({})
+lspconfig.rust_analyzer.setup({})
+
+-- Don't show warnings, errors, etc. by default.
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = false,
+  underline = false,
+  update_in_insert = false,
+});
