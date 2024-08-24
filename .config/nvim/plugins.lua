@@ -6,6 +6,15 @@ local lspconfig = require('lspconfig')
 lspconfig.clangd.setup({})
 lspconfig.dartls.setup({})
 lspconfig.rust_analyzer.setup({})
+lspconfig.sourcekit.setup({
+  capabilities = {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+    },
+  },
+})
 
 -- Don't show warnings, errors, etc. by default.
 vim.diagnostic.config({
