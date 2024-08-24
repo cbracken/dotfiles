@@ -17,7 +17,7 @@ Plug 'neovim/nvim-lspconfig'
 " Behaviour.
 Plug 'ibhagwan/fzf-lua'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 " Configure plugins that require Lua-based setup.

@@ -1,3 +1,6 @@
+-- Git add/modify/removed signs in the gutter.
+require('gitsigns').setup{}
+
 -- Language server configuration.
 require('lspconfig').clangd.setup{}
 require('lspconfig').dartls.setup{}
