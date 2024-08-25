@@ -8,7 +8,7 @@ return {
   { "nathangrigg/vim-beancount" },
   {
     "neovim/nvim-lspconfig",
-    config = function(plugin)
+    config = function()
       local lspconfig = require('lspconfig')
       lspconfig.clangd.setup({})
       lspconfig.dartls.setup({})
