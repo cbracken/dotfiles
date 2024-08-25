@@ -1,6 +1,5 @@
 -- Globals.
 vim.g.mouse = 0                        -- Disable visual-mode mouse select.
-vim.g.mapleader=' '                    -- Set <leader> key.
 
 -- Basic options
 vim.opt.incsearch = true               -- Turn on incremental searching.

@@ -1,3 +1,6 @@
+-- Globals.
+vim.g.mapleader=' '                    -- Set <leader> key.
+
 -- Kill arrow keys, for great justice.
 vim.keymap.set('n', '<Up>', '<NOP>')
 vim.keymap.set('n', '<Down>', '<NOP>')
