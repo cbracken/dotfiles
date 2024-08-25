@@ -1,2 +1,0 @@
-namespace foo {
-}  // namespace foo
