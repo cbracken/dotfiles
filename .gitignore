@@ -40,9 +40,6 @@
 .config/iterm2/AppSupport
 
 # nvim
-.config/nvim/autoload/plug.vim
-.config/nvim/autoload/plug.vim.old
-.config/nvim/plugged
 .config/nvim/.netrwhist
 .config/nvim/*.spl
 .config/nvim/*.sug
