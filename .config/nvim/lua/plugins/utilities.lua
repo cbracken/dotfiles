@@ -13,5 +13,31 @@ return {
   },
   { "ibhagwan/fzf-lua" },
   { "lewis6991/gitsigns.nvim" },
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        custom = { ".DS_Store" }
+      },
+      renderer = {
+        indent_markers = {
+          enable = true,
+        },
+      },
+      view = {
+        width = 35,
+      },
+    },
+    init = function()
+      -- Disable default netrw explorer.
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeFindFileToggle<CR>")
+      vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>")
+      vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>")
+    end,
+    dependencies = "nvim-tree/nvim-web-devicons",
+  },
   { "tpope/vim-fugitive" },
 }
