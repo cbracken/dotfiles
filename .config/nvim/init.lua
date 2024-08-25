@@ -1,6 +1,6 @@
 -- Core configuration options.
 require('config.options')
-require('config.keymappings')
+require('config.keymaps')
 require('config.colorscheme')
 require('config.snippets')
 
