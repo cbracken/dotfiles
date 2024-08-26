@@ -16,11 +16,11 @@ vim.keymap.set('v', '>', '>gv')
 
 -- Configure fzf-lua.
 vim.keymap.set('n', '<leader>b', '<cmd>FzfLua buffers<CR>')
-vim.keymap.set('n', '<leader>f', '<cmd>FzfLua files<CR>')
-vim.keymap.set('n', '<leader>g', '<cmd>FzfLua grep<CR>')
-vim.keymap.set('n', '<leader>l', '<cmd>FzfLua live_grep<CR>')
-vim.keymap.set('n', '<leader>c', '<cmd>FzfLua builtin commands<CR>')
-vim.keymap.set('n', '<leader>q', function() vim.diagnostic.setqflist() end)
+vim.keymap.set('n', '<leader>fg', '<cmd>FzfLua grep<CR>')
+vim.keymap.set('n', '<leader>fl', '<cmd>FzfLua live_grep<CR>')
+vim.keymap.set('n', '<leader>fc', '<cmd>FzfLua builtin commands<CR>')
+vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<CR>')
+vim.keymap.set('n', '<leader>fr', '<cmd>FzfLua lsp_references<CR>')
 
 -- Toggle diagnostics.
 vim.keymap.set('n', '<leader>d', function()
