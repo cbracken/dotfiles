@@ -29,7 +29,7 @@ return {
         },
       },
       view = {
-        width = 35,
+        width = 50,
       },
     },
     init = function()
