@@ -22,8 +22,8 @@ vim.keymap.set('n', '<leader>l', '<cmd>FzfLua live_grep<CR>')
 vim.keymap.set('n', '<leader>c', '<cmd>FzfLua builtin commands<CR>')
 vim.keymap.set('n', '<leader>q', function() vim.diagnostic.setqflist() end)
 
--- Function to toggle absolute/relative numbering
-local function toggle_numbering()
+-- Key mapping to toggle absolute/relative numbering.
+vim.keymap.set('n', '<leader>n', function()
   local opt = vim.opt
   if opt.number:get() == false then
     opt.number = true
@@ -33,7 +33,4 @@ local function toggle_numbering()
     opt.relativenumber = false
     opt.number = false
   end
-end
-
--- Key mapping to toggle numbering
-vim.keymap.set('n', '<leader>n', toggle_numbering)
+end)
