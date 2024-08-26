@@ -22,6 +22,11 @@ vim.keymap.set('n', '<leader>l', '<cmd>FzfLua live_grep<CR>')
 vim.keymap.set('n', '<leader>c', '<cmd>FzfLua builtin commands<CR>')
 vim.keymap.set('n', '<leader>q', function() vim.diagnostic.setqflist() end)
 
+-- Toggle diagnostics.
+vim.keymap.set('n', '<leader>d', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { silent = true })
+
 -- Key mapping to toggle absolute/relative numbering.
 vim.keymap.set('n', '<leader>n', function()
   local opt = vim.opt

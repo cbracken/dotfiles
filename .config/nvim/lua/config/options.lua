@@ -35,9 +35,4 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Don't show warnings, errors, etc. by default.
-vim.diagnostic.config({
-  virtual_text = false,
-  signs = false,
-  underline = false,
-  update_in_insert = false,
-});
+vim.diagnostic.enable(false)
