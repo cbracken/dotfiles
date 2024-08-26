@@ -14,9 +14,13 @@ return {
   },
   {
     "ibhagwan/fzf-lua",
+    opts = {},
     dependencies = "nvim-tree/nvim-web-devicons",
   },
-  { "lewis6991/gitsigns.nvim" },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {},
+  },
   {
     "nvim-tree/nvim-tree.lua",
     opts = {

@@ -1,6 +1,7 @@
 return {
   {
     "https://gn.googlesource.com/gn",
+    opts = {},
     config = function(plugin)
       vim.opt.rtp:append(plugin.dir .. "/misc/vim")
     end
@@ -8,6 +9,7 @@ return {
   { "nathangrigg/vim-beancount" },
   {
     "neovim/nvim-lspconfig",
+    opts = {},
     config = function()
       local lspconfig = require('lspconfig')
       lspconfig.clangd.setup({})
