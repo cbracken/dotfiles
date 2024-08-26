@@ -26,6 +26,8 @@ vim.keymap.set('n', '<leader>fr', '<cmd>FzfLua lsp_references<CR>')
 vim.keymap.set('n', '<leader>d', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { silent = true })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
 -- Key mapping to toggle absolute/relative numbering.
 vim.keymap.set('n', '<leader>n', function()
