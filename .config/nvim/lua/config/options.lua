@@ -36,3 +36,9 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- Don't show warnings, errors, etc. by default.
 vim.diagnostic.enable(false)
+
+-- Use fancy diagnostics icons.
+for type, icon in pairs({ Error = "✘", Warn = "▲", Hint = "⚑", Info = "»" }) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
