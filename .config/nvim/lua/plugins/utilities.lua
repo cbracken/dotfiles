@@ -47,5 +47,10 @@ return {
     end,
     dependencies = "nvim-tree/nvim-web-devicons",
   },
+  {
+    "stevearc/dressing.nvim",
+    opts = {},
+    event = "VeryLazy",
+  },
   { "tpope/vim-fugitive" },
 }
