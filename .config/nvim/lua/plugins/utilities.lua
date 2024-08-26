@@ -22,6 +22,11 @@ return {
     opts = {},
   },
   {
+    "numToStr/Comment.nvim",
+    opts = {},
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     opts = {
       filters = {
