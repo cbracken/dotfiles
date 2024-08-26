@@ -10,8 +10,12 @@ return {
       { "<leader>ql", "<cmd>Trouble lsp toggle focus=true win.size=0.3<cr>",      desc = "LSP Definitions / references / ...", },
       { "<leader>qs", "<cmd>Trouble symbols toggle focus=false win.size=0.3<cr>", desc = "Symbols", },
     },
+    dependencies = "nvim-tree/nvim-web-devicons",
   },
-  { "ibhagwan/fzf-lua" },
+  {
+    "ibhagwan/fzf-lua",
+    dependencies = "nvim-tree/nvim-web-devicons",
+  },
   { "lewis6991/gitsigns.nvim" },
   {
     "nvim-tree/nvim-tree.lua",
