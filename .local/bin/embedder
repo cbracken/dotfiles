@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Sets the compile_commands.json symlink at the root of the Flutter engine
+# repo, to one from the debug unopt build directory for the specified OS.
+# Useful for letting your editor know which embedder/engine configuration you'd
+# like clangd analysis for.
+
+COMPILE_COMMANDS="$HOME/Developer/flutter/engine/src/compile_commands.json"
+
+OS=$1
+case $OS in
+  ios)
+    rm -f "$COMPILE_COMMANDS"
+    ln -s out/ios_debug_unopt/compile_commands.json "$COMPILE_COMMANDS"
+    ;;
+  macos)
+    rm -f "$COMPILE_COMMANDS"
+    ln -s out/host_debug_unopt_arm64/compile_commands.json "$COMPILE_COMMANDS"
+    ;;
+esac
