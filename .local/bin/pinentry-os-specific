@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+PINENTRY=pinentry
+if [[ "$(uname)" == "Darwin" ]] && command -v "$(brew --prefix)/bin/pinentry-mac" &> /dev/null; then
+  PINENTRY="$(brew --prefix)/bin/pinentry-mac"
+fi
+
+$PINENTRY
