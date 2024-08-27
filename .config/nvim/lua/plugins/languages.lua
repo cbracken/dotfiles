@@ -13,18 +13,6 @@ return {
     config = function()
       local lspkind = require("lspkind")
       local cmp = require("cmp")
-
-      -- Only override <C-n>, <C-p> if the cmp menu is visible.
-      local function custom_select(select_fn)
-        return cmp.mapping(function(fallback)
-          if cmp.visible() then
-            select_fn()
-          else
-            fallback()
-          end
-        end, { 'i', 'c' })
-      end
-
       cmp.setup({
         completion = {
           autocomplete = false,
@@ -39,11 +27,7 @@ return {
           ['<C-j>'] = cmp.mapping.select_next_item(),
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
-          ['<C-n>'] = custom_select(cmp.select_next_item),
-          ['<C-p>'] = custom_select(cmp.select_prev_item),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
