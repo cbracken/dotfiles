@@ -21,6 +21,7 @@ vim.keymap.set('n', '<leader>fl', '<cmd>FzfLua live_grep<CR>')
 vim.keymap.set('n', '<leader>fc', '<cmd>FzfLua builtin commands<CR>')
 vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<CR>')
 vim.keymap.set('n', '<leader>fr', '<cmd>FzfLua lsp_references<CR>')
+vim.keymap.set('n', '<leader>fs', '<cmd>FzfLua lsp_document_symbols<CR>')
 
 -- Toggle diagnostics.
 vim.keymap.set('n', '<leader>d', function()
