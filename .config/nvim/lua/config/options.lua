@@ -1,7 +1,5 @@
--- Globals.
-vim.g.mouse = 0                        -- Disable visual-mode mouse select.
-
 -- Basic options
+vim.opt.mouse = ''                     -- Disable visual-mode mouse select.
 vim.opt.incsearch = true               -- Turn on incremental searching.
 vim.opt.hlsearch = true                -- Highlight search.
 vim.opt.visualbell = true              -- Less noise.
