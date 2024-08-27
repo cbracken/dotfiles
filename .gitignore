@@ -1,7 +1,7 @@
 # Ignore compiled python.
 *.pyc
 
-# Ignore GTK 2.0 theme information
+# Ignore GTK 2.0 theme information.
 .gtk-2.0
 
 # ========================================
@@ -9,57 +9,65 @@
 # ========================================
 
 # Ignore files that contain one or more of the following types of data:
-# - machine-specific configuration
-# - local cached data that belongs in XDG_CACHE_HOME (e.g. last window size)
+# - machine-specific configuration.
+# - local cached data that belongs in XDG_CACHE_HOME (e.g. last window size).
 .config/Signal
 .config/chromium
 
-# gitk viewer (cached data)
+# gitk viewer (cached data).
 .config/git/gitk
 
 # Symlink to wire up additional git config for the local machine.
 .config/git/local_config
 
-# Linux/GTK look and feel (machine-specific)
+# Linux/GTK look and feel (machine-specific).
 .config/dconf
 .config/glib-2.0
 .config/gtk-3.0
 .config/pulse
 
-# IME-related (machine-specific, cached data)
+# IME-related (machine-specific, cached data).
 .config/fcitx
 .config/fcitx5/conf/cached_layouts
 .config/ibus
 .config/mozc
 
-# Flutter SDK (machine-specific)
+# Flutter SDK (machine-specific).
 .config/flutter
 .config/tool_state
+.config/settings
 
-# iTerm
+# iTerm.
 .config/iterm2/AppSupport
 
-# nvim
+# nvim.
 .config/nvim/.netrwhist
 .config/nvim/*.spl
 .config/nvim/*.sug
 
-# zsh cached data
+# zsh cached data.
 .config/zsh/.zcompdump
 .config/zsh/.zcompdumps/
 .config/zsh/.zsh_history
 .config/zsh/.zsh_sessions/
 
-# Ignore frequently-changing irrelevant files
+# Badly-behaved apps.
 .config/sublime-text/Packages/User/Package Control.last-run
 .config/sublime-text/Packages/User/Package Control.ca-list
 .config/sublime-text/Packages/User/Package Control.ca-bundle
 .config/sublime-text/Packages/User/Package Control.system-ca-bundle
 .config/sublime-text/Packages/User/Package Control.cache/
 .config/sublime-text/Packages/User/Package Control.ca-certs/
+.config/phetch/
+.config/zed/prompts/
 
 # Swift package manager.
 .config/swiftpm
+
+# Work stuff.
+.config/chrome_infra/
+.config/gbackup/
+.config/gcloud/
 
 # ========================================
 # .local
