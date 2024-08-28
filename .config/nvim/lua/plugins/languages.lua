@@ -56,19 +56,29 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lspconfig = require('lspconfig')
-      lspconfig.clangd.setup({})
-      lspconfig.dartls.setup({})
-      lspconfig.lua_ls.setup({})
-      lspconfig.rust_analyzer.setup({})
-      lspconfig.sourcekit.setup({
-        capabilities = {
-          workspace = {
-            didChangeWatchedFiles = {
-              dynamicRegistration = true,
+      if vim.fn.executable('clangd') == 1 then
+        lspconfig.clangd.setup({})
+      end
+      if vim.fn.executable('dart') == 1 then
+        lspconfig.dartls.setup({})
+      end
+      if vim.fn.executable('lua-language-server') == 1 then
+        lspconfig.lua_ls.setup({})
+      end
+      if vim.fn.executable('rust-analyzer') == 1 then
+        lspconfig.rust_analyzer.setup({})
+      end
+      if vim.fn.executable('sourcekit-lsp') == 1 then
+        lspconfig.sourcekit.setup({
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
             },
           },
-        },
-      })
+        })
+      end
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
