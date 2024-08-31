@@ -10,12 +10,10 @@ return {
       { "<leader>ql", "<cmd>Trouble lsp toggle focus=true win.size=0.3<cr>",      desc = "LSP Definitions / references / ...", },
       { "<leader>qs", "<cmd>Trouble symbols toggle focus=false win.size=0.3<cr>", desc = "Symbols", },
     },
-    dependencies = "nvim-tree/nvim-web-devicons",
   },
   {
     "ibhagwan/fzf-lua",
     opts = {},
-    dependencies = "nvim-tree/nvim-web-devicons",
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -25,32 +23,6 @@ return {
     "numToStr/Comment.nvim",
     opts = {},
     event = { "BufReadPre", "BufNewFile" },
-  },
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = {
-      filters = {
-        custom = { ".DS_Store" }
-      },
-      renderer = {
-        indent_markers = {
-          enable = true,
-        },
-      },
-      view = {
-        width = 50,
-      },
-    },
-    init = function()
-      -- Disable default netrw explorer.
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-
-      vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeFindFileToggle<CR>")
-      vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>")
-      vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>")
-    end,
-    dependencies = "nvim-tree/nvim-web-devicons",
   },
   {
     "stevearc/dressing.nvim",

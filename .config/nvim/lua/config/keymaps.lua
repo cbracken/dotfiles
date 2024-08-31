@@ -14,6 +14,12 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
+-- Configure netrw.
+vim.g.netrw_banner=0
+vim.g.netrw_liststyle=3
+vim.keymap.set('n', '<leader>ee', '<cmd>35Lexplore<CR>')
+vim.keymap.set('n', '<leader>ef', '<cmd>35Lexplore %:p:h<CR>')
+
 -- Configure fzf-lua.
 vim.keymap.set('n', '<leader>b', '<cmd>FzfLua buffers<CR>')
 vim.keymap.set('n', '<leader>fg', '<cmd>FzfLua grep<CR>')
