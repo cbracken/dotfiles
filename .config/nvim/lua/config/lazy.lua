@@ -26,4 +26,32 @@ require("lazy").setup({
   install = { colorscheme = { "solarized-osaka" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  -- lazy.nvim wants a nerd font installed. I don't.
+  ui = {
+    icons = {
+      cmd = "🏷️",
+      config = "🔧",
+      event = "⚡️",
+      favorite = "⭐️",
+      ft = "📄",
+      init = "⚙️ ",
+      import = "⬇️ ",
+      keys = "💻",
+      lazy = "💤",
+      loaded = "●",
+      not_loaded = "⚪︎",
+      plugin = "📦",
+      runtime = "🚅",
+      require = "📋",
+      source = "</> ",
+      start = "▶️ ",
+      task = "✅",
+      list = {
+        "•",
+        "◦",
+        "⁃",
+        "‣",
+      },
+    },
+  },
 })
