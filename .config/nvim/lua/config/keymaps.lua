@@ -30,10 +30,10 @@ vim.keymap.set('n', '<leader>fr', '<cmd>FzfLua lsp_references<CR>')
 vim.keymap.set('n', '<leader>fs', '<cmd>FzfLua lsp_document_symbols<CR>')
 
 -- Toggle diagnostics.
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
 vim.keymap.set('n', '<leader>dd', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { silent = true })
+vim.keymap.set("n", "<leader>qf", vim.diagnostic.setqflist, {silent = true})
 
 -- Key mapping to toggle absolute/relative numbering.
 vim.keymap.set('n', '<leader>n', function()
