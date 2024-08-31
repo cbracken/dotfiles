@@ -11,7 +11,6 @@ return {
     opts = {},
     event = "InsertEnter",
     config = function()
-      local lspkind = require("lspkind")
       local cmp = require("cmp")
       cmp.setup({
         completion = {
@@ -35,18 +34,21 @@ return {
           { name = "path" },
         }),
         formatting = {
-          format = lspkind.cmp_format({
-            maxwidth = 60,
-            elipsis_char = "...",
-          }),
-        },
+          format = function(entry, vim_item)
+            -- Truncate completions to some maximum length.
+            local max_width = 60
+            if vim.fn.strchars(vim_item.abbr) > max_width then
+              vim_item.abbr = vim.fn.strcharpart(vim_item.abbr, 0, max_width) .. "…"
+            end
+            return vim_item
+          end
+        }
       })
     end,
     dependencies = {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
-      "onsails/lspkind.nvim",
     },
   },
   { "nathangrigg/vim-beancount" },
