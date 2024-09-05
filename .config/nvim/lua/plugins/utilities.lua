@@ -8,11 +8,6 @@ return {
     opts = {},
   },
   {
-    "numToStr/Comment.nvim",
-    opts = {},
-    event = { "BufReadPre", "BufNewFile" },
-  },
-  {
     "stevearc/dressing.nvim",
     opts = {},
     event = "VeryLazy",
