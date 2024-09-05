@@ -6,51 +6,6 @@ return {
       vim.opt.rtp:append(plugin.dir .. "/misc/vim")
     end
   },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = {},
-    event = "InsertEnter",
-    config = function()
-      local cmp = require("cmp")
-      cmp.setup({
-        completion = {
-          autocomplete = false,
-          completeopt = "menu,menuone,preview,noselect",
-        },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
-        mapping = cmp.mapping.preset.insert({
-          ['<C-k>'] = cmp.mapping.select_prev_item(),
-          ['<C-j>'] = cmp.mapping.select_next_item(),
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-        formatting = {
-          format = function(entry, vim_item)
-            -- Truncate completions to some maximum length.
-            local max_width = 60
-            if vim.fn.strchars(vim_item.abbr) > max_width then
-              vim_item.abbr = vim.fn.strcharpart(vim_item.abbr, 0, max_width) .. "…"
-            end
-            return vim_item
-          end
-        }
-      })
-    end,
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-    },
-  },
   { "nathangrigg/vim-beancount" },
   {
     "neovim/nvim-lspconfig",
