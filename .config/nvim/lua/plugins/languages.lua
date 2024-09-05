@@ -86,8 +86,6 @@ return {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(ev)
           local opts = { buffer = ev.buf, silent = true }
-          opts.desc = "Show documentation for what is under cursor"
-          vim.keymap.set("n", "<leader>cd", vim.lsp.buf.hover, opts)
           opts.desc = "See available code actions"
           vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
           opts.desc = "Smart rename"
