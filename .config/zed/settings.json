@@ -14,6 +14,10 @@
   "buffer_font_features": {
     "calt": false
   },
+  "file_types": {
+    "C": ["c", "m"],
+    "C++": ["cc", "cpp", "mm"]
+  },
   "language_overrides": {
     "Dart": {
       "format_on_save": "off",
