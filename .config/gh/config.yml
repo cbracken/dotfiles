@@ -12,6 +12,8 @@ pager:
 aliases:
     autosubmit: pr edit --add-label autosubmit $1
     reviewer: pr edit --add-reviewer $1
+    assigned: issue list -R flutter/flutter --assignee '@me'
+    fissue: issue -R flutter/flutter $1
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
 # What web browser gh should use when opening URLs. If blank, will refer to environment.
