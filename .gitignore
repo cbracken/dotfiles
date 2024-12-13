@@ -45,6 +45,7 @@
 
 # nvim.
 .config/nvim/.netrwhist
+.config/nvim/lazy-lock.json
 .config/nvim/*.spl
 .config/nvim/*.sug
 
