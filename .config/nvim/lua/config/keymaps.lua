@@ -11,6 +11,11 @@ vim.keymap.set('n', '<Right>', '<NOP>')
 -- Remap C-] to return to normal mode like C-[ does by default.
 vim.keymap.set('t', '<C-]>', '<C-\\><C-n>')
 
+-- Launch a terminal in a new vertical split, focus it and enter insert mode.
+vim.keymap.set('n', '<leader>t',
+               '<cmd>vsplit | wincmd l | terminal<CR><cmd>startinsert<CR>',
+               { noremap = true, silent = true })
+
 -- Retain selection on <,>.
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
