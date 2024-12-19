@@ -7,8 +7,9 @@ vim.keymap.set('n', '<Down>', '<NOP>')
 vim.keymap.set('n', '<Left>', '<NOP>')
 vim.keymap.set('n', '<Right>', '<NOP>')
 
--- In terminal, ESC returns to normal mode.
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+-- In terminal, C-[ (ESC) is passed through to the terminal by default.
+-- Remap C-] to return to normal mode like C-[ does by default.
+vim.keymap.set('t', '<C-]>', '<C-\\><C-n>')
 
 -- Retain selection on <,>.
 vim.keymap.set('v', '<', '<gv')
