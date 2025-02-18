@@ -29,7 +29,7 @@ alias rm='rm -i'
 # work
 alias fbug='gh -R flutter/flutter issue'
 
-CC_FLUTTER="$HOME/Developer/flutter/engine/src/compile_commands.json"
+CC_FLUTTER="$HOME/Developer/flutter/flutter/engine/src/compile_commands.json"
 alias cc_host="rm -f $CC_FLUTTER && ln -s out/host_debug_unopt_arm64/compile_commands.json $CC_FLUTTER"
 alias cc_ios="rm -f $CC_FLUTTER && ln -s out/ios_debug_unopt/compile_commands.json $CC_FLUTTER"
 alias cc_sim="rm -f $CC_FLUTTER && ln -s out/ios_debug_sim_unopt_arm64/compile_commands.json $CC_FLUTTER"
