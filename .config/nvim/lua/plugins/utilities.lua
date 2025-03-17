@@ -1,7 +1,14 @@
 return {
   {
     "ibhagwan/fzf-lua",
-    opts = {},
+    opts = function(_, opts)
+      opts.winopts = {
+        preview = {
+          vertical = "down:65%",
+          layout = "vertical",
+        },
+      }
+    end,
   },
   {
     "lewis6991/gitsigns.nvim",
