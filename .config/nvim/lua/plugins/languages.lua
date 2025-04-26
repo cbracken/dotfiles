@@ -1,3 +1,51 @@
+-- Sourcekit SDK map.
+local sdk_map = {
+  iOS = {
+    path = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk',
+    target = 'arm64-apple-ios13.0'
+  },
+  macOS = {
+    path = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk',
+    target = 'arm64-apple-macosx10.15'
+  }
+}
+-- Returns the sourcekit config for the specified SDK.
+local function create_sourcekit_cfg(sdk)
+  local sourcekit_lsp_config = {
+    cmd = {
+      'sourcekit-lsp',
+      '-Xswiftc',
+      '-sdk',
+      '-Xswiftc',
+      sdk.path,
+      '-Xswiftc',
+      '-target',
+      '-Xswiftc',
+      sdk.target,
+    },
+    capabilities = {
+      workspace = {
+        didChangeWatchedFiles = {
+          dynamicRegistration = true,
+        },
+      },
+    },
+  }
+  return sourcekit_lsp_config
+end
+
+-- UseIosSdk: configures sourcekit for iOS development.
+vim.api.nvim_create_user_command('UseIosSdk', function()
+  local cfg = create_sourcekit_cfg(sdk_map.iOS)
+  require'lspconfig'.sourcekit.setup(cfg)
+end, {})
+
+-- UseMacosSdk: configures sourcekit for macOS development.
+vim.api.nvim_create_user_command('UseMacosSdk', function()
+  local cfg = create_sourcekit_cfg(sdk_map.macOS)
+  require'lspconfig'.sourcekit.setup(cfg)
+end, {})
+
 return {
   {
     "https://gn.googlesource.com/gn",
@@ -26,15 +74,8 @@ return {
         lspconfig.rust_analyzer.setup({})
       end
       if vim.fn.executable('sourcekit-lsp') == 1 then
-        lspconfig.sourcekit.setup({
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
-              },
-            },
-          },
-        })
+        local cfg = create_sourcekit_cfg(sdk_map.iOS)
+        lspconfig.sourcekit.setup(cfg)
       end
 
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -45,6 +86,8 @@ return {
           vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
           opts.desc = "Smart rename"
           vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+          opts.desc = "Show documentation for what is under cursor"
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         end,
       })
     end,
