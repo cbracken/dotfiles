@@ -1,10 +1,12 @@
 -- Sourcekit SDK map.
 local sdk_map = {
   iOS = {
+    platform = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform',
     path = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk',
     target = 'arm64-apple-ios13.0'
   },
   macOS = {
+    platform = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform',
     path = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk',
     target = 'arm64-apple-macosx10.15'
   }
@@ -22,6 +24,10 @@ local function create_sourcekit_cfg(sdk)
       '-target',
       '-Xswiftc',
       sdk.target,
+      '-Xswiftc',
+      '-I' .. sdk.platform .. '/Developer/usr/lib',
+      '-Xswiftc',
+      '-F' .. sdk.platform .. '/Developer/Library/Frameworks',
     },
     capabilities = {
       workspace = {
