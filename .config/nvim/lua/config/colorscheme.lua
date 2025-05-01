@@ -30,7 +30,7 @@ if vim.fn.has('termguicolors') == 1 then
     command = 'set colorcolumn=80 | set textwidth=80'
   })
   vim.api.nvim_create_autocmd({'BufEnter', 'InsertLeave'}, {
-    pattern = {'*.java', '*.m', '*.mm'},
+    pattern = {'*.java', '*.m', '*.mm', '*.swift'},
     command = 'set colorcolumn=100 | set textwidth=100'
   })
 end

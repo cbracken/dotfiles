@@ -23,7 +23,7 @@ vim.opt.expandtab = true               -- Insert spaces in place of tabs.
 
 -- Fix Python's indent overrides.
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'python',
+  pattern = {'python', 'swift'},
   callback = function()
     vim.opt_local.tabstop = 2
     vim.opt_local.shiftwidth = 2
