@@ -2,6 +2,13 @@
   lol = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%ci%C(reset) %C(blue)%an%C(reset) %C(yellow)%d%C(reset) %s'
   logstats = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%cr%C(reset) %C(blue)%an%C(reset): %s' --stat
   vimdiff = difftool
+
+  # Output the diff stats + patch for the current patch.
+  patch-diff = !git diff --patch --stat $(git merge-base HEAD $(git branch | cut -c 3- | grep -E '^master$|^main$'))
+  # Output just the diff stats for the current patch.
+  patch-stats = !git diff --stat $(git merge-base HEAD $(git branch | cut -c 3- | grep -E '^master$|^main$'))
+  # Output just the files modified for the current patch.
+  patch-files = !git diff --name-only $(git merge-base HEAD $(git branch | cut -c 3- | grep -E '^master$|^main$'))
 [color]
   ui = auto
 [core]
