@@ -1,14 +1,10 @@
-import = [
-  # Colour scheme.
-  "~/.config/alacritty/solarized-osaka.toml",
-]
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-normal = { family = "SF Mono", style = "Regular" }
-size = 14.0
+normal = { family = "monospace", style = "Regular" }
+size = 12.0
 
 [[hints.enabled]]
 command = "xdg-open"
@@ -38,3 +34,9 @@ key = "¥"
 chars="¥"
 key = "¥"
 mods = "Alt"
+
+[general]
+import = [
+  # Colour scheme.
+  "~/.config/alacritty/solarized-osaka.toml",
+]
