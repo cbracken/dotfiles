@@ -1,5 +1,6 @@
 -- Basic options
 vim.opt.mouse = ''                     -- Disable visual-mode mouse select.
+vim.opt.clipboard = 'unnamedplus'      -- Use the system clipboard on macOS.
 vim.opt.incsearch = true               -- Turn on incremental searching.
 vim.opt.hlsearch = true                -- Highlight search.
 vim.opt.visualbell = true              -- Less noise.
