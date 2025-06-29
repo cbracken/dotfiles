@@ -34,16 +34,16 @@ export PAGER=less
 export LESS="-FRX"
 
 # Set language, date/time, currency, etc. to Japanese.
-export LANG=fr_CA.UTF-8
-export LANGUAGE=fr_CA.UTF-8
-export LC_COLLATE=fr_CA.UTF-8
-export LC_CTYPE=fr_CA.UTF-8
-export LC_MEASUREMENT=fr_CA.UTF-8
-export LC_MESSAGES=fr_CA.UTF-8
+export LANG=ja_JP.UTF-8
+export LANGUAGE=ja_JP.UTF-8
+export LC_COLLATE=ja_JP.UTF-8
+export LC_CTYPE=ja_JP.UTF-8
+export LC_MEASUREMENT=ja_JP.UTF-8
+export LC_MESSAGES=ja_JP.UTF-8
 export LC_MONETARY=ja_JP.UTF-8
-export LC_NUMERIC=fr_CA.UTF-8
+export LC_NUMERIC=ja_JP.UTF-8
 export LC_PAPER=ja_JP.UTF-8
-export LC_TIME=fr_CA.UTF-8
+export LC_TIME=ja_JP.UTF-8
 
 # GPG directory and TTY used for pinentry.
 export GNUPGHOME="$HOME/.gnupg"
