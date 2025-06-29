@@ -1,0 +1,8 @@
+[commit]
+  gpgsign = true
+[gpg]
+  program = gpg
+[tag]
+  gpgsign = true
+[user]
+  signingkey = A675C99848CEF8642180465EE15C4E854923C76C
