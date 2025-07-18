@@ -76,3 +76,8 @@ fi
 if [[ -d "$HOME/.perl5/lib/perl5" ]]; then
   export PERL5LIB="$HOME/.perl5/lib/perl5:$PERL5LIB"
 fi
+
+# Source any machine-local environment.
+if [[ -f "$HOME/.local/config/zsh/zshenv" ]]; then
+  . "$HOME/.local/config/zsh/zshenv"
+fi
