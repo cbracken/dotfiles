@@ -27,12 +27,6 @@
     "C": ["c", "m"],
     "C++": ["cc", "cpp", "mm"]
   },
-  "language_overrides": {
-    "Dart": {
-      "format_on_save": "off",
-      "use_on_type_format": false
-    }
-  },
   "tab_size": 2,
   "vim": {
     // "always": use system clipboard
