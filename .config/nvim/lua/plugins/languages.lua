@@ -70,9 +70,6 @@ return {
       if vim.fn.executable('clangd') == 1 then
         lspconfig.clangd.setup({})
       end
-      if vim.fn.executable('dart') == 1 then
-        lspconfig.dartls.setup({})
-      end
       if vim.fn.executable('lua-language-server') == 1 then
         lspconfig.lua_ls.setup({})
       end
