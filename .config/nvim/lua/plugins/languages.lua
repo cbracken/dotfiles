@@ -91,6 +91,8 @@ return {
           vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
           opts.desc = "Show documentation for what is under cursor"
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          opts.desc = "Format buffer"
+          vim.keymap.set("n", "<leader>F", vim.lsp.buf.format, opts)
         end,
       })
     end,
