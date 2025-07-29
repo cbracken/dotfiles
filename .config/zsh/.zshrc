@@ -1,7 +1,8 @@
 # .zshrc
 
 # History.
-HISTFILE="$XDG_CACHE_HOME/zsh_histfile"
+[[ ! -d "$XDG_CACHE_HOME/zsh" ]] && mkdir -p "$XDG_CACHE_HOME/zsh"
+HISTFILE="$XDG_CACHE_HOME/zsh/zsh_histfile"
 HISTSIZE=10000
 SAVEHIST=10000
 
