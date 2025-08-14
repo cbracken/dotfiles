@@ -76,6 +76,15 @@ return {
       if vim.fn.executable('rust-analyzer') == 1 then
         lspconfig.rust_analyzer.setup({})
       end
+      if vim.fn.executable('beancount-lsp') == 1 then
+        lspconfig.beancount.setup({
+          init_options = {
+            journal_file = (function()
+              return vim.fn.findfile('main.beancount', '.')
+            end)(),
+          },
+        })
+      end
       if vim.fn.executable('sourcekit-lsp') == 1 then
         local cfg = create_sourcekit_cfg(sdk_map.iOS)
         lspconfig.sourcekit.setup(cfg)
