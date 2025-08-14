@@ -56,6 +56,7 @@
 .config/zsh/.zsh_sessions/
 
 # Badly-behaved apps.
+.config/configstore/update-notifier-@google/
 .config/sublime-text/Packages/User/Package Control.last-run
 .config/sublime-text/Packages/User/Package Control.ca-list
 .config/sublime-text/Packages/User/Package Control.ca-bundle
