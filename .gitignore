@@ -64,7 +64,10 @@
 .config/sublime-text/Packages/User/Package Control.cache/
 .config/sublime-text/Packages/User/Package Control.ca-certs/
 .config/phetch/
-.config/zed/prompts/
+.config/zed/.tmp*
+.config/zed/conversations/**
+.config/zed/embeddings/**
+.config/zed/prompts/**
 
 # Swift package manager.
 .config/swiftpm
