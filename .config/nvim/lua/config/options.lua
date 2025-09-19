@@ -22,17 +22,6 @@ vim.opt.shiftwidth = 2                 -- Number of spaces for each step of auto
 vim.opt.softtabstop = 2                -- Number of spaces per tab when editing.
 vim.opt.expandtab = true               -- Insert spaces in place of tabs.
 
--- Fix Python's indent overrides.
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = {'python', 'swift'},
-  callback = function()
-    vim.opt_local.tabstop = 2
-    vim.opt_local.shiftwidth = 2
-    vim.opt_local.softtabstop = 2
-    vim.opt_local.expandtab = true
-  end
-})
-
 -- Don't show warnings, errors, etc. by default.
 vim.diagnostic.enable(false)
 
