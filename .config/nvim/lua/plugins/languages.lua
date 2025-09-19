@@ -87,6 +87,19 @@ return {
         local cfg = create_sourcekit_cfg(sdk_map.iOS)
         vim.lsp.config.sourcekit = cfg
       end
+      if vim.fn.executable('basedpyright-langserver') == 1 then
+        vim.lsp.config.basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                autoImportCompletions = true,
+                typeCheckingMode = "basic",
+                diagnosticMode = "openFilesOnly",
+              },
+            },
+          },
+        }
+      end
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
