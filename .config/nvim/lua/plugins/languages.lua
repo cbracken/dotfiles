@@ -43,13 +43,13 @@ end
 -- UseIosSdk: configures sourcekit for iOS development.
 vim.api.nvim_create_user_command('UseIosSdk', function()
   local cfg = create_sourcekit_cfg(sdk_map.iOS)
-  require'lspconfig'.sourcekit.setup(cfg)
+  vim.lsp.config.sourcekit = cfg
 end, {})
 
 -- UseMacosSdk: configures sourcekit for macOS development.
 vim.api.nvim_create_user_command('UseMacosSdk', function()
   local cfg = create_sourcekit_cfg(sdk_map.macOS)
-  require'lspconfig'.sourcekit.setup(cfg)
+  vim.lsp.config.sourcekit = cfg
 end, {})
 
 return {
@@ -63,31 +63,29 @@ return {
   { "nathangrigg/vim-beancount" },
   {
     "neovim/nvim-lspconfig",
-    opts = {},
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      local lspconfig = require('lspconfig')
       if vim.fn.executable('clangd') == 1 then
-        lspconfig.clangd.setup({})
+        vim.lsp.config.clangd = {}
       end
       if vim.fn.executable('lua-language-server') == 1 then
-        lspconfig.lua_ls.setup({})
+        vim.lsp.config.lua_ls = {}
       end
       if vim.fn.executable('rust-analyzer') == 1 then
-        lspconfig.rust_analyzer.setup({})
+        vim.lsp.config.rust_analyzer = {}
       end
       if vim.fn.executable('beancount-lsp') == 1 then
-        lspconfig.beancount.setup({
+        vim.lsp.config.beancount = {
           init_options = {
             journal_file = (function()
               return vim.fn.findfile('main.beancount', '.')
             end)(),
           },
-        })
+        }
       end
       if vim.fn.executable('sourcekit-lsp') == 1 then
         local cfg = create_sourcekit_cfg(sdk_map.iOS)
-        lspconfig.sourcekit.setup(cfg)
+        vim.lsp.config.sourcekit = cfg
       end
 
       vim.api.nvim_create_autocmd("LspAttach", {
