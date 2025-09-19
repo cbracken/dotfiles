@@ -3,39 +3,18 @@ if vim.fn.has('termguicolors') == 1 then
   vim.opt.cursorline = true            -- Highlight cursor line, max column.
   vim.opt.termguicolors = true         -- Enable 24-bit colour.
 
-  vim.api.nvim_create_autocmd({'WinLeave'}, {
-    pattern = '*',
-    command = 'setlocal nocursorline'
+  vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+    callback = function()
+      vim.opt_local.cursorline = true
+    end,
   })
-  vim.api.nvim_create_autocmd({'WinEnter'}, {
-    pattern = '*',
-    command = 'setlocal cursorline'
-  })
-  vim.api.nvim_create_autocmd({'BufLeave'}, {
-    pattern = '*',
-    command = 'setlocal nocursorline'
-  })
-  vim.api.nvim_create_autocmd({'BufEnter'}, {
-    pattern = '*',
-    command = 'setlocal cursorline'
+  vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+    callback = function()
+      vim.opt_local.cursorline = false
+    end,
   })
 
   -- Highlight over-length lines.
-  vim.api.nvim_create_autocmd({'BufEnter', 'InsertLeave'}, {
-    pattern = '*',
-    command = 'set colorcolumn=80'
-  })
-  vim.api.nvim_create_autocmd({'BufEnter', 'InsertLeave'}, {
-    pattern = {'*.txt', '*.md'},
-    command = 'set colorcolumn=80 | set textwidth=80'
-  })
-  vim.api.nvim_create_autocmd({'BufEnter', 'InsertLeave'}, {
-    pattern = {'*.py'},
-    command = 'set colorcolumn=88 | set textwidth=88'
-  })
-  vim.api.nvim_create_autocmd({'BufEnter', 'InsertLeave'}, {
-    pattern = {'*.java', '*.m', '*.mm', '*.swift'},
-    command = 'set colorcolumn=100 | set textwidth=100'
-  })
+  vim.opt_local.colorcolumn = "80"
+  vim.opt_local.textwidth = 80
 end
-
