@@ -28,6 +28,8 @@ alias rm='rm -i'
 
 # work
 alias fbug='gh -R flutter/flutter issue'
+alias gemini='gemini --gfg'
+alias gf="sed -e 's%.*google3/%@%;s/:.*$//"
 
 CC_FLUTTER="$HOME/Developer/flutter/flutter/engine/src/compile_commands.json"
 alias cc_host="rm -f $CC_FLUTTER && ln -s out/host_debug_unopt_arm64/compile_commands.json $CC_FLUTTER"

@@ -80,3 +80,8 @@ fi
 if [ -f "$XDG_CONFIG_HOME/zsh/tools" ]; then
   . "$XDG_CONFIG_HOME/zsh/tools"
 fi
+
+# Work.
+if [ -f "/etc/bash_completion.d/hgd" ]; then
+  . "/etc/bash_completion.d/hgd"
+fi
