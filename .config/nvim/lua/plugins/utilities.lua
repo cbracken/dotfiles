@@ -11,8 +11,10 @@ return {
     end,
   },
   {
-    "lewis6991/gitsigns.nvim",
-    opts = {},
+    "mhinz/vim-signify",
+    config = function()
+      vim.g.signify_vcs_list = { "git", "hg" }
+    end,
   },
   {
     "stevearc/dressing.nvim",
