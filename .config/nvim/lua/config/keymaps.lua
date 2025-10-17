@@ -38,6 +38,39 @@ vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<CR>')
 vim.keymap.set('n', '<leader>fr', '<cmd>FzfLua lsp_references<CR>')
 vim.keymap.set('n', '<leader>fs', '<cmd>FzfLua lsp_document_symbols<CR>')
 
+-- Searches user-specified directories and pastes selected path relative to pwd.
+-- vim.g.fzf_search_base: the directory relative to which fzf-lua results are presented.
+-- vim.g.fzf_search_paths: the paths to search relative to fzf_search_base.
+vim.keymap.set('i', '<C-x>@', function()
+  local opts = {}
+  local search_base = vim.g.fzf_search_base
+  local search_paths = vim.g.fzf_search_paths
+  if search_base and search_paths and #search_paths > 0 then
+    opts.cwd = search_base
+
+    local paths = table.concat(search_paths, " ")
+    if vim.fn.executable('fd') == 1 then
+      opts.cmd = "fd --type f . " .. paths
+    else
+      opts.cmd = "find " .. paths .. " -type f"
+    end
+  end
+
+  opts.actions = {
+    ['default'] = function(selected)
+      local file_path = selected[1]
+      if file_path then
+        if vim.startswith(file_path, "./") then
+          file_path = file_path:sub(3)
+        end
+        vim.api.nvim_put({'@' .. search_base .. '/' .. file_path .. ' ' }, 'c', false, true)
+        vim.api.nvim_feedkeys('a', 'n', false)
+      end
+    end,
+  }
+  require('fzf-lua').files(opts)
+end, { silent = true })
+
 -- Toggle diagnostics.
 vim.keymap.set('n', '<leader>dd', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
