@@ -13,8 +13,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
       -- prices_* are formatted without a hardcoded currency column.
       cmd = string.format("silent !bean-format %s -o %s", vim.fn.shellescape(filepath), vim.fn.shellescape(filepath))
     else
-      -- other beancount files are formatted with currency on 100th column.
-      cmd = string.format("silent !bean-format -c 100 %s -o %s", vim.fn.shellescape(filepath), vim.fn.shellescape(filepath))
+      -- other beancount files are formatted with currency on 80th column.
+      cmd = string.format("silent !bean-format -c 80 %s -o %s", vim.fn.shellescape(filepath), vim.fn.shellescape(filepath))
     end
     vim.cmd(cmd)
   end,
