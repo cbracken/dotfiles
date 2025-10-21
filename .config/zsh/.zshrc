@@ -81,7 +81,7 @@ if [ -f "$XDG_CONFIG_HOME/zsh/tools" ]; then
   . "$XDG_CONFIG_HOME/zsh/tools"
 fi
 
-# Work.
-if [ -f "/etc/bash_completion.d/hgd" ]; then
-  . "/etc/bash_completion.d/hgd"
+# Source any machine-local config.
+if [[ -f "$HOME/.local/config/zsh/zshrc" ]]; then
+  . "$HOME/.local/config/zsh/zshrc"
 fi
