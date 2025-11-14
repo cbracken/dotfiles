@@ -8,10 +8,6 @@ email = "chris@bracken.jp"
 l = ["log", "-T", "fmt_lol", "-r", "ancestors(trunk() | mutable(), 3)"]
 ll = ["log", "-T", "fmt_lol", "-r", "::"]
 
-[colors]
-"committer timestamp" = "cyan"
-"working_copy committer timestamp" = "bright cyan"
-
 [template-aliases]
 # 1. Define the content format
 fmt_lol_content = '''
@@ -32,3 +28,7 @@ separate(" ",
 '''
 # 2. Wrap the content in the "working_copy" label if applicable
 fmt_lol = 'if(current_working_copy, label("working_copy", fmt_lol_content), fmt_lol_content)'
+
+[colors]
+"committer timestamp" = "cyan"
+"working_copy committer timestamp" = "bright cyan"
