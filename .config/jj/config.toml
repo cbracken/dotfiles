@@ -5,8 +5,8 @@ name = "Chris Bracken"
 email = "chris@bracken.jp"
 
 [aliases]
-l = ["log", "-T", "fmt_lol"]
-ll = ["l", "-r", "::"]
+l = ["log", "-T", "fmt_lol", "-r", "ancestors(trunk() | mutable(), 3)"]
+ll = ["log", "-T", "fmt_lol", "-r", "::"]
 
 [colors]
 "committer timestamp" = "cyan"
