@@ -6,6 +6,7 @@ email = "chris@bracken.jp"
 
 [aliases]
 l = ["log", "-T", "fmt_lol"]
+ll = ["l", "-r", "::"]
 
 [colors]
 "committer timestamp" = "cyan"
