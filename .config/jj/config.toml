@@ -6,3 +6,29 @@ email = "chris@bracken.jp"
 
 [aliases]
 l = ["log"]
+lol = ["log", "-T", "fmt_lol"]
+
+[colors]
+"committer timestamp" = "cyan"
+"working_copy committer timestamp" = "bright cyan"
+
+[template-aliases]
+# 1. Define the content format
+fmt_lol_content = '''
+change_id.shortest(8) ++ " " ++
+commit_id.shortest(8) ++ " " ++
+label("timestamp", committer.timestamp().local().format("%Y-%m-%d %H:%M:%S")) ++ " " ++
+label("author", author.name()) ++ "  " ++
+separate(" ",
+  bookmarks,
+  tags,
+  if(git_head, label("git_head", "git_head()")),
+  if(empty, label("empty", "(empty)")),
+  if(description, 
+    description.first_line(), 
+    label("description placeholder", "(no description set)")
+  )
+)
+'''
+# 2. Wrap the content in the "working_copy" label if applicable
+fmt_lol = 'if(current_working_copy, label("working_copy", fmt_lol_content), fmt_lol_content)'
