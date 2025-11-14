@@ -29,8 +29,15 @@ zstyle ':completion:*' menu select
 # Initialize completion for current session.
 autoload -Uz compinit && compinit
 
-# Current git branch (for prompt).
-git_branch() {
+# Current VCS branch (for prompt).
+vcs_branch() {
+  # If in a jj repo, indicate that we're in a repo.
+  if (( $+commands[jj] )) && jj root > /dev/null 2>&1; then
+    echo -n " ◉ "
+    return
+  fi
+
+  # If we're in a git repo, output the current branch name.
   local branch
   branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
   if [[ -n $branch ]]; then
@@ -41,7 +48,7 @@ git_branch() {
 # Prompt.
 setopt prompt_subst
 autoload -Uz colors && colors
-PROMPT='%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$fg[yellow]%}$(git_branch)%{$reset_color%}%# '
+PROMPT='%{$fg[yellow]%}%T %{$fg[green]%}%n@%m%{$reset_color%}:%{$fg_bold[blue]%}%c%{$fg[yellow]%}$(vcs_branch)%{$reset_color%}%# '
 
 # Set TERM for known terminals, and as a fallback when specified term is
 # unavailable.
