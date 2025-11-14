@@ -5,8 +5,7 @@ name = "Chris Bracken"
 email = "chris@bracken.jp"
 
 [aliases]
-l = ["log"]
-lol = ["log", "-T", "fmt_lol"]
+l = ["log", "-T", "fmt_lol"]
 
 [colors]
 "committer timestamp" = "cyan"
