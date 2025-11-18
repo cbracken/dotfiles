@@ -73,9 +73,13 @@
 .config/swiftpm
 
 # Work stuff.
+.config/.gsd-keyboard.settings-ported
+.config/chrome-remote-desktop/
 .config/chrome_infra/
+.config/evolution/
 .config/gbackup/
 .config/gcloud/
+.config/lri-notifications-count-lock
 
 # ========================================
 # .local
