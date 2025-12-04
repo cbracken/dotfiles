@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     local filepath = vim.api.nvim_buf_get_name(args.buf)
     local filename = vim.fn.fnamemodify(filepath, ":t") -- just the tail name
     local cmd
-    if vim.startswith(filename, "prices_") then
+    if filepath:match("[\\/]prices[\\/]") then
       -- prices_* are formatted without a hardcoded currency column.
       cmd = string.format("silent !bean-format %s -o %s", vim.fn.shellescape(filepath), vim.fn.shellescape(filepath))
     else
