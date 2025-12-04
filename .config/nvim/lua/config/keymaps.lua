@@ -16,6 +16,11 @@ vim.keymap.set('n', '<leader>t',
                '<cmd>vsplit | wincmd l | set nonumber | terminal<CR><cmd>startinsert<CR>',
                { noremap = true, silent = true })
 
+-- Launch a terminal in a new horizontal split, focus it and enter insert mode.
+vim.keymap.set('n', '<leader>T',
+               '<cmd>split | wincmd j | set nonumber | terminal<CR><cmd>startinsert<CR>',
+               { noremap = true, silent = true })
+
 -- Retain selection on <,>.
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
