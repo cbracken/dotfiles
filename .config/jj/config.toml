@@ -8,6 +8,9 @@ email = "chris@bracken.jp"
 l = ["log", "-T", "fmt_lol", "-r", "ancestors(trunk() | mutable(), 3)"]
 ll = ["log", "-T", "fmt_lol", "-r", "::"]
 
+[ui]
+diff-formatter = ":git"
+
 [template-aliases]
 # 1. Define the content format
 fmt_lol_content = '''
