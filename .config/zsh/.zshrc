@@ -83,11 +83,6 @@ if [ -f "$XDG_CONFIG_HOME/zsh/functions" ]; then
   . "$XDG_CONFIG_HOME/zsh/functions"
 fi
 
-# Load tools.
-if [ -f "$XDG_CONFIG_HOME/zsh/tools" ]; then
-  . "$XDG_CONFIG_HOME/zsh/tools"
-fi
-
 # Source any machine-local config.
 if [[ -f "$HOME/.local/config/zsh/zshrc" ]]; then
   . "$HOME/.local/config/zsh/zshrc"
