@@ -39,7 +39,7 @@ vcs_branch() {
 
   # If we're in a git repo, output the current branch name.
   local branch
-  branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+  branch="$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)"
   if [[ -n $branch ]]; then
     echo -n " ($branch)"
   fi
