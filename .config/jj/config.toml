@@ -10,6 +10,7 @@ ll = ["log", "-T", "fmt_lol", "-r", "::"]
 
 [ui]
 diff-formatter = ":git"
+revsets-use-glob-by-default = true
 
 [template-aliases]
 # 1. Define the content format
