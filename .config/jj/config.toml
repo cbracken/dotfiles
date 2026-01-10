@@ -22,7 +22,7 @@ label("author", author.name()) ++ "  " ++
 separate(" ",
   bookmarks,
   tags,
-  if(git_head, label("git_head", "git_head()")),
+  if(self.contained_in("first_parent(@)"), label("git_head", "git_head()")),
   if(empty, label("empty", "(empty)")),
   if(description, 
     description.first_line(), 
