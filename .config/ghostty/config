@@ -58,7 +58,7 @@ font-feature = -dlig
 cursor-style = block
 cursor-style-blink = false
 
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor, ssh-env
 
 # Don't show a folder icon in the title bar.
 macos-titlebar-proxy-icon = hidden
