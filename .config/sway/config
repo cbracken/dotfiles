@@ -18,7 +18,7 @@ exec fcitx5 -d -r
 exec mako
 
 # Set the window title font.
-font pango:IPAGothic 14, DejaVu Sans Mono 12
+font pango:IPAGothic 10, DejaVu Sans Mono 9 
 
 
 ############################################################
@@ -71,6 +71,7 @@ exec swayidle -w \
 
 # Default wallpaper (more resolutions in /usr/share/backgrounds/sway/).
 output * bg ~/Pictures/Desktops/current.png fill
+output DP-2 scale 2
 
 
 ############################################################
@@ -283,7 +284,7 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     pango_markup disabled
-    font pango:IPAGothic 16, DejaVu Sans Mono 14
+    font pango:IPAGothic 10, DejaVu Sans Mono 9
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
