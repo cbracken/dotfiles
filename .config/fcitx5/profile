@@ -2,19 +2,19 @@
 # Group Name
 Name=Default
 # Layout
-Default Layout=us
+Default Layout=jp-mac
 # Default Input Method
-DefaultIM=mozc
+DefaultIM=anthy
 
 [Groups/0/Items/0]
 # Name
-Name=keyboard-us
+Name=keyboard-jp-mac
 # Layout
 Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=mozc
+Name=anthy
 # Layout
 Layout=
 

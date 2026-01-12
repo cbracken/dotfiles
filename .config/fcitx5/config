@@ -1,13 +1,13 @@
 [Hotkey]
-# Enumerate when press trigger key repeatedly
+# トリガーキーを押すたびに切り替える
 EnumerateWithTriggerKeys=True
-# Skip first input method while enumerating
+# 切り替え時は第1入力メソッドをスキップする
 EnumerateSkipFirst=False
+# Time limit in milliseconds for triggering modifier key shortcuts
+ModifierOnlyKeyTimeout=250
 
 [Hotkey/TriggerKeys]
 0=Control+space
-1=Zenkaku_Hankaku
-2=Hangul
 
 [Hotkey/AltTriggerKeys]
 0=Shift_L
@@ -25,10 +25,10 @@ EnumerateSkipFirst=False
 0=Shift+Super+space
 
 [Hotkey/ActivateKeys]
-0=Hangul_Hanja
+0=Hangul
 
 [Hotkey/DeactivateKeys]
-0=Hangul_Romaja
+0=Hangul_Hanja
 
 [Hotkey/PrevPage]
 0=Up
@@ -46,26 +46,38 @@ EnumerateSkipFirst=False
 0=Control+Alt+P
 
 [Behavior]
-# Active By Default
+# デフォルトで有効にする
 ActiveByDefault=False
-# Share Input State
+# フォーカス時に状態をリセット
+resetStateWhenFocusIn=No
+# 入力状態を共有する
 ShareInputState=No
-# Show preedit in application
+# アプリケーションにプリエディットを表示する
 PreeditEnabledByDefault=True
-# Show Input Method Information when switch input method
+# 入力メソッドを切り替える際に入力メソッドの情報を表示する
 ShowInputMethodInformation=True
-# Show Input Method Information when changing focus
+# フォーカスを変更する際に入力メソッドの情報を表示する
 showInputMethodInformationWhenFocusIn=False
-# Show compact input method information
+# 入力メソッドの情報をコンパクトに表示する
 CompactInputMethodInformation=True
-# Show first input method information
+# 第1入力メソッドの情報を表示する
 ShowFirstInputMethodInformation=True
-# Default page size
+# デフォルトのページサイズ
 DefaultPageSize=5
+# XKB オプションより優先する
+OverrideXkbOption=False
+# カスタム XKB オプション
+CustomXkbOption=
 # Force Enabled Addons
 EnabledAddons=
 # Force Disabled Addons
 DisabledAddons=
 # Preload input method to be used by default
 PreloadInputMethod=True
+# パスワード欄に入力メソッドを許可する
+AllowInputMethodForPassword=False
+# パスワード入力時にプリエディットテキストを表示する
+ShowPreeditForPassword=False
+# ユーザーデータを保存する間隔（分）
+AutoSavePeriod=30
 
