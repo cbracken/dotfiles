@@ -44,7 +44,8 @@ set $menu wofi --show run
 set $lock_screen swaylock -f -c 000000
 
 # Set the suspend command.
-set $suspend_system systemctl suspend
+set $suspend_display swaymsg "output * dpms off"
+set $resume_display swaymsg "output * dpms on"
 
 
 ############################################################
@@ -56,7 +57,8 @@ set $suspend_system systemctl suspend
 # the computer goes to sleep.
 exec swayidle -w \
          timeout 600 '$lock_screen' \
-         timeout 660 '$suspend_system' \
+         timeout 660 '$suspend_display' \
+         resume '$resume_display' \
          before-sleep '$lock_screen'
 
 ############################################################
