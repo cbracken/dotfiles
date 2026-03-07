@@ -13,7 +13,7 @@ diff-formatter = ":git"
 revsets-use-glob-by-default = true
 
 [template-aliases]
-# 1. Define the content format
+# Define the content format.
 fmt_lol_content = '''
 change_id.shortest(8) ++ " " ++
 commit_id.shortest(8) ++ " " ++
@@ -30,9 +30,13 @@ separate(" ",
   )
 )
 '''
-# 2. Wrap the content in the "working_copy" label if applicable
+# Wrap the content in the "working_copy" label if applicable.
 fmt_lol = 'if(current_working_copy, label("working_copy", fmt_lol_content), fmt_lol_content)'
 
 [colors]
 "committer timestamp" = "cyan"
 "working_copy committer timestamp" = "bright cyan"
+
+[revsets]
+# Advance bookmarks to the most recent non-empty ancestor by default.
+bookmark-advance-to = "latest(ancestors(.. ~ empty()) & ~empty())"
