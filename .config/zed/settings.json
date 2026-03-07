@@ -24,8 +24,8 @@
     "calt": false,
   },
   "file_types": {
-    "C": ["c", "m"],
-    "C++": ["cc", "cpp", "mm"]
+    "C": ["c"],
+    "C++": ["cc", "cpp"],
   },
   "tab_size": 2,
   "vim": {
