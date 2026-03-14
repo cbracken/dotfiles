@@ -44,12 +44,14 @@ end
 vim.api.nvim_create_user_command('UseIosSdk', function()
   local cfg = create_sourcekit_cfg(sdk_map.iOS)
   vim.lsp.config.sourcekit = cfg
+  vim.lsp.enable('sourcekit')
 end, {})
 
 -- UseMacosSdk: configures sourcekit for macOS development.
 vim.api.nvim_create_user_command('UseMacosSdk', function()
   local cfg = create_sourcekit_cfg(sdk_map.macOS)
   vim.lsp.config.sourcekit = cfg
+  vim.lsp.enable('sourcekit')
 end, {})
 
 return {
@@ -60,32 +62,43 @@ return {
       vim.opt.rtp:append(plugin.dir .. "/misc/vim")
     end
   },
-  { "nathangrigg/vim-beancount" },
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       if vim.fn.executable('clangd') == 1 then
         vim.lsp.config.clangd = {}
+        vim.lsp.enable('clangd')
       end
       if vim.fn.executable('lua-language-server') == 1 then
         vim.lsp.config.lua_ls = {}
+        vim.lsp.enable('lua_ls')
       end
       if vim.fn.executable('rust-analyzer') == 1 then
         vim.lsp.config.rust_analyzer = {}
+        vim.lsp.enable('rust_analyzer')
       end
-      if vim.fn.executable('beancount-lsp') == 1 then
+      if vim.fn.executable('beancount-language-server') == 1 then
         vim.lsp.config.beancount = {
+          cmd = { "beancount-language-server", "--stdio" },
           init_options = {
             journal_file = (function()
-              return vim.fn.findfile('main.beancount', '.')
+              -- Search upwards for main.beancount starting from the current working directory
+              local file = vim.fn.findfile('main.beancount', '.;')
+              if file ~= '' then
+                -- Expand the relative result into a full absolute path
+                return vim.fn.fnamemodify(file, ':p')
+              end
+              return ""
             end)(),
           },
         }
+        vim.lsp.enable('beancount')
       end
       if vim.fn.executable('sourcekit-lsp') == 1 then
         local cfg = create_sourcekit_cfg(sdk_map.iOS)
         vim.lsp.config.sourcekit = cfg
+        vim.lsp.enable('sourcekit')
       end
       if vim.fn.executable('basedpyright-langserver') == 1 then
         vim.lsp.config.basedpyright = {
@@ -99,6 +112,7 @@ return {
             },
           },
         }
+        vim.lsp.enable('basedpyright')
       end
 
       vim.api.nvim_create_autocmd("LspAttach", {
