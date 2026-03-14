@@ -7,13 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
   "edit_predictions": {
-    "provider": "zed"
+    "provider": "zed",
   },
   "agent": {
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest",
+      "model": "claude-sonnet-4-6",
     },
   },
   "theme": "Ayu Mirage",
