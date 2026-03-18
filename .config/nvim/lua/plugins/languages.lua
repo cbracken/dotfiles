@@ -74,6 +74,10 @@ return {
         vim.lsp.config.lua_ls = {}
         vim.lsp.enable('lua_ls')
       end
+      if vim.fn.executable('zls') == 1 then
+        vim.lsp.config.zls = {}
+        vim.lsp.enable('zls')
+      end
       if vim.fn.executable('rust-analyzer') == 1 then
         vim.lsp.config.rust_analyzer = {}
         vim.lsp.enable('rust_analyzer')
@@ -133,4 +137,5 @@ return {
   },
   { "rhysd/vim-clang-format" },
   { "rust-lang/rust.vim" },
+  { "ziglang/zig.vim" },
 }
