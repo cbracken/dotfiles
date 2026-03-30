@@ -25,6 +25,12 @@ vim.opt.expandtab = true               -- Insert spaces in place of tabs.
 -- Don't show warnings, errors, etc. by default.
 vim.diagnostic.enable(false)
 
+-- Don't try loading non-vimscript/lua plugins.
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- Use fancy diagnostics icons.
 for type, icon in pairs({ Error = "✘", Warn = "▲", Hint = "⚑", Info = "»" }) do
   local hl = "DiagnosticSign" .. type

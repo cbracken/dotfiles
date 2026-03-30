@@ -26,6 +26,10 @@ require("lazy").setup({
   install = { colorscheme = { "solarized-osaka" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  -- disable LuaRocks/hererocks
+  rocks = {
+    enabled = false,
+  },
   -- lazy.nvim wants a nerd font installed. I don't.
   ui = {
     icons = {
