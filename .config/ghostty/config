@@ -60,6 +60,9 @@ cursor-style-blink = false
 
 shell-integration-features = no-cursor, ssh-env
 
+# Allow reading from the clipboard without prompting each time.
+clipboard-read = allow
+
 # Don't show a folder icon in the title bar.
 macos-titlebar-proxy-icon = hidden
 
