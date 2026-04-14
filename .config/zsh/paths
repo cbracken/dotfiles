@@ -58,6 +58,10 @@ fi
 # Rust packages
 path_prepend "$HOME/.cargo/bin"
 
+# Work: Node.js (why... just why...)
+[ -s "$HOME/.homebrew/opt/nvm/nvm.sh" ] && \. "$HOME/.homebrew/opt/nvm/nvm.sh"
+[ -s "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOME/.homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
 # Personal bin directory
 path_prepend "$HOME/.local/bin"
 path_prepend "$HOME/bin"
