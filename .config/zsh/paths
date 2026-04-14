@@ -36,8 +36,9 @@ path_prepend "$SRC_ROOT/google-cloud-sdk/bin"
 # Flutter
 path_prepend "$SRC_ROOT/depot_tools"
 path_prepend "$SRC_ROOT/goma"
-path_prepend "$SRC_ROOT/flutter/flutter/bin"
 path_prepend "$SRC_ROOT/flutter/flutter/bin/cache/dart-sdk/bin"
+path_prepend "$SRC_ROOT/flutter/flutter/bin"
+path_prepend "$SRC_ROOT/flutter/flutter/engine/src/flutter/bin"
 
 # Homebrew
 if [[ "$(uname)" == "Darwin" ]]; then
