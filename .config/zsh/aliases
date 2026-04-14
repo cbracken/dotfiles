@@ -13,12 +13,19 @@ if [[ "$(uname)" == FreeBSD || "$(uname)" == Darwin || "$(uname)" == Linux ]]; t
 fi
 alias ag='ag --color-line-number "30;33" --color-path "30;32" --color-match "1;31"'
 
+# ls/eza
+if command -v eza >/dev/null 2>&1; then
+  alias l='eza -gl --time-style=long-iso --group-directories-first'
+  alias ll='eza -gla --time-style=long-iso --group-directories-first'
+else
+  alias l='ls -l'
+  alias ll='ls -la'
+fi
+
 # some useful aliases
 alias h='fc -l'
 alias j=jobs
 alias m="$PAGER"
-alias ll='ls -lA'
-alias l='ls -l'
 alias g='egrep -i'
 
 # be paranoid
