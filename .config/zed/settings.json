@@ -12,25 +12,25 @@
   "ui_font_size": 15,
   // Panels.
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   // AI/LLMs.
   "agent_servers": {
     "claude-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "edit_predictions": {
-    "provider": "zed"
+    "provider": "zed",
   },
   "agent": {
     "dock": "right",
@@ -38,19 +38,19 @@
     "default_model": {
       "enable_thinking": false,
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6-latest"
-    }
+      "model": "claude-sonnet-4-6-latest",
+    },
   },
   // Fonts.
   "buffer_font_family": "SF Mono",
   "buffer_font_size": 14,
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
   },
   // Filetype handling.
   "file_types": {
     "C": ["c"],
-    "C++": ["cc", "cpp"]
+    "C++": ["cc", "cpp"],
   },
   // Editing.
   "tab_size": 2,
@@ -58,7 +58,7 @@
     // "always": use system clipboard
     // "never": don't use system clipboard
     // "on_yank": use system clipboard for yank operations
-    "use_system_clipboard": "always"
+    "use_system_clipboard": "always",
   },
-  "vim_mode": true
+  "vim_mode": true,
 }
