@@ -52,6 +52,21 @@
     "C": ["c"],
     "C++": ["cc", "cpp"],
   },
+  // Languages.
+  "languages": {
+    "C": {
+      "wrap_guides": [80],
+    },
+    "C++": {
+      "wrap_guides": [80],
+    },
+    "Objective-C": {
+      "wrap_guides": [100],
+    },
+    "Swift": {
+      "wrap_guides": [100],
+    },
+  },
   // Editing.
   "tab_size": 2,
   "vim": {
