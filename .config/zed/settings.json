@@ -8,7 +8,16 @@
 // from the command palette or from `Zed` application menu.
 {
   // Theme.
-  "theme": "Ayu Mirage",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Solarized Osaka Dark",
+  },
   "ui_font_size": 15,
   // Panels.
   "project_panel": {
