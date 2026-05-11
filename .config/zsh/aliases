@@ -14,7 +14,7 @@ fi
 alias ag='ag --color-line-number "30;33" --color-path "30;32" --color-match "1;31"'
 
 # ls/eza
-if command -v eza >/dev/null 2>&1; then
+if command -v eza &> /dev/null; then
   alias l='eza -gl --time-style=long-iso --group-directories-first'
   alias ll='eza -gla --time-style=long-iso --group-directories-first'
 else
