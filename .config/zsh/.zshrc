@@ -86,6 +86,11 @@ if [ -f "$XDG_CONFIG_HOME/zsh/functions" ]; then
   . "$XDG_CONFIG_HOME/zsh/functions"
 fi
 
+# If fzf is installed, enable it.
+if command -v fzf &> /dev/null; then
+  . <(fzf --zsh)
+fi
+
 # Source any machine-local config.
 if [[ -f "$HOME/.local/config/zsh/zshrc" ]]; then
   . "$HOME/.local/config/zsh/zshrc"

@@ -60,6 +60,9 @@ export P4CONFIG=.p4config
 export P4EDITOR=nvim
 export GEM_HOME="$HOME/.gem"
 
+# fzf config.
+FZF_DEFAULT_OPTS='--layout=reverse'
+
 # Platform-specific source directory.
 [[ -d "$HOME/src" ]] && SRC_ROOT="$HOME/src"
 [[ -d "$HOME/Developer" ]] && SRC_ROOT="$HOME/Developer"
