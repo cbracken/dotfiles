@@ -26,8 +26,10 @@
 # Linux/GTK look and feel (machine-specific).
 .config/dconf
 .config/glib-2.0
+.config/gnome-xdg-terminals.list
 .config/gtk-3.0
 .config/pulse
+.config/xdg-terminals.list
 
 # IME-related (machine-specific, cached data).
 .config/fcitx
