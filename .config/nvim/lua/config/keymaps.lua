@@ -43,6 +43,12 @@ vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<CR>')
 vim.keymap.set('n', '<leader>fr', '<cmd>FzfLua lsp_references<CR>')
 vim.keymap.set('n', '<leader>fs', '<cmd>FzfLua lsp_document_symbols<CR>')
 
+-- Copy the current file path (relative to pwd) to the clipboard
+vim.keymap.set('n', '<leader>cf', function()
+  vim.fn.setreg('+', vim.fn.expand('%'))
+  print('Copied full file path to clipboard')
+end, { noremap = true, silent = true, desc = 'Copy file path to clipboard' })
+
 -- Searches user-specified directories and pastes selected path relative to pwd.
 -- vim.g.fzf_search_base: the directory relative to which fzf-lua results are presented.
 -- vim.g.fzf_search_paths: the paths to search relative to fzf_search_base.
