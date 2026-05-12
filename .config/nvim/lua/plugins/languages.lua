@@ -67,36 +67,18 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       if vim.fn.executable('clangd') == 1 then
-        vim.lsp.config.clangd = {}
         vim.lsp.enable('clangd')
       end
       if vim.fn.executable('lua-language-server') == 1 then
-        vim.lsp.config.lua_ls = {}
         vim.lsp.enable('lua_ls')
       end
       if vim.fn.executable('zls') == 1 then
-        vim.lsp.config.zls = {}
         vim.lsp.enable('zls')
       end
       if vim.fn.executable('rust-analyzer') == 1 then
-        vim.lsp.config.rust_analyzer = {}
         vim.lsp.enable('rust_analyzer')
       end
       if vim.fn.executable('beancount-language-server') == 1 then
-        vim.lsp.config.beancount = {
-          cmd = { "beancount-language-server", "--stdio" },
-          init_options = {
-            journal_file = (function()
-              -- Search upwards for main.beancount starting from the current working directory
-              local file = vim.fn.findfile('main.beancount', '.;')
-              if file ~= '' then
-                -- Expand the relative result into a full absolute path
-                return vim.fn.fnamemodify(file, ':p')
-              end
-              return ""
-            end)(),
-          },
-        }
         vim.lsp.enable('beancount')
       end
       if vim.fn.executable('sourcekit-lsp') == 1 then
@@ -105,17 +87,6 @@ return {
         vim.lsp.enable('sourcekit')
       end
       if vim.fn.executable('basedpyright-langserver') == 1 then
-        vim.lsp.config.basedpyright = {
-          settings = {
-            basedpyright = {
-              analysis = {
-                autoImportCompletions = true,
-                typeCheckingMode = "basic",
-                diagnosticMode = "openFilesOnly",
-              },
-            },
-          },
-        }
         vim.lsp.enable('basedpyright')
       end
 
@@ -123,6 +94,15 @@ return {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(ev)
           local opts = { buffer = ev.buf, silent = true }
+
+          -- Enable auto-completion if supported/enabled by the client.
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+          if client and client:supports_method("textDocument/completion") then
+            vim.lsp.completion.enable(true, ev.data.client_id, ev.buf, {
+              autotrigger = false,
+            })
+          end
+
           opts.desc = "See available code actions"
           vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
           opts.desc = "Smart rename"

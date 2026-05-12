@@ -13,7 +13,8 @@ vim.opt.wildmenu = true                -- Nicer autocomplete.
 vim.opt.wildmode = {'longest', 'full'}
 vim.opt.wildignore = {'*.o', '*.pyc'}  -- Ignore some filetypes during completion.
 vim.opt.spelllang = 'en_ca'            -- Set the spelling language.
-vim.opt.completeopt:append('longest')  -- Insert longest common prefix of options.
+vim.opt.autocomplete = false             -- Enable native auto-completion.
+vim.opt.completeopt = 'menu,menuone,noselect,popup,longest' -- Improved completion behaviour.
 vim.opt.autoindent = true              -- Copy indent from current line when starting a new line.
 vim.opt.smartindent = true             -- Attempt to autoindent when starting a new line.
 vim.opt.smarttab = true                -- Use shiftwidth rather than tabstop at start of line.
