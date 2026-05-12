@@ -5,7 +5,7 @@ name = "Chris Bracken"
 email = "chris@bracken.jp"
 
 [aliases]
-l = ["log", "-T", "fmt_lol", "-r", "ancestors(trunk() | mutable(), 3)"]
+l = ["log"]
 ll = ["log", "-T", "fmt_lol", "-r", "::"]
 
 [ui]
@@ -16,9 +16,9 @@ revsets-use-glob-by-default = true
 # Define the content format.
 fmt_lol_content = '''
 change_id.shortest(8) ++ " " ++
-commit_id.shortest(8) ++ " " ++
+label("author", author.email()) ++ "  " ++
 label("timestamp", committer.timestamp().local().format("%Y-%m-%d %H:%M:%S")) ++ " " ++
-label("author", author.name()) ++ "  " ++
+commit_id.shortest(8) ++ " " ++
 separate(" ",
   bookmarks,
   tags,
