@@ -37,3 +37,18 @@ for type, icon in pairs({ Error = "✘", Warn = "▲", Hint = "⚑", Info = "»"
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+-- Set UI options.
+vim.opt.background = 'dark'
+vim.opt.termguicolors = true
+vim.opt.cursorline = true
+vim.opt.colorcolumn = "80"
+vim.opt.textwidth = 80
+
+-- Highlight cursor line only in the active window.
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter", "WinLeave", "BufLeave" }, {
+  callback = function(ev)
+    local enable_cursorline = ev.event == "WinEnter" or ev.event == "BufEnter"
+    vim.opt_local.cursorline = enable_cursorline
+  end
+})
