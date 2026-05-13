@@ -6,36 +6,13 @@ email = "chris@bracken.jp"
 
 [aliases]
 l = ["log"]
-ll = ["log", "-T", "fmt_lol", "-r", "::"]
+ll = ["log", "-T", "builtin_log_oneline", "-r", "::"]
+ld = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n'", "-r", "::", "--no-graph"]
+lp = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n' ++ diff.git() ++ '\n'", "-r", "::", "--no-graph"]
 
 [ui]
 diff-formatter = ":git"
 revsets-use-glob-by-default = true
-
-[template-aliases]
-# Define the content format.
-fmt_lol_content = '''
-change_id.shortest(8) ++ " " ++
-label("author", author.email()) ++ "  " ++
-label("timestamp", committer.timestamp().local().format("%Y-%m-%d %H:%M:%S")) ++ " " ++
-commit_id.shortest(8) ++ " " ++
-separate(" ",
-  bookmarks,
-  tags,
-  if(self.contained_in("first_parent(@)"), label("git_head", "git_head()")),
-  if(empty, label("empty", "(empty)")),
-  if(description, 
-    description.first_line(), 
-    label("description placeholder", "(no description set)")
-  )
-)
-'''
-# Wrap the content in the "working_copy" label if applicable.
-fmt_lol = 'if(current_working_copy, label("working_copy", fmt_lol_content), fmt_lol_content)'
-
-[colors]
-"committer timestamp" = "cyan"
-"working_copy committer timestamp" = "bright cyan"
 
 [revsets]
 # Advance bookmarks to the most recent non-empty ancestor by default.
