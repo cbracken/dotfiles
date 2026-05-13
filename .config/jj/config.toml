@@ -9,6 +9,7 @@ l = ["log"]
 ll = ["log", "-T", "builtin_log_oneline", "-r", "::"]
 ld = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n'", "-r", "::", "--no-graph"]
 lp = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n' ++ diff.git() ++ '\n'", "-r", "::", "--no-graph"]
+format = ["util", "exec", "--", "jj-format"]
 
 [ui]
 diff-formatter = ":git"
