@@ -9,7 +9,6 @@ l = ["log"]
 ll = ["log", "-T", "builtin_log_oneline", "-r", "::"]
 ld = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n'", "-r", "::", "--no-graph"]
 lp = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n' ++ diff.git() ++ '\n'", "-r", "::", "--no-graph"]
-format = ["util", "exec", "--", "jj-format"]
 ws-add = ["util", "exec", "--", "jj-ws-add"]
 
 [ui]
@@ -19,3 +18,19 @@ revsets-use-glob-by-default = true
 [revsets]
 # Advance bookmarks to the most recent non-empty ancestor by default.
 bookmark-advance-to = "latest(ancestors(.. ~ empty()) & ~empty())"
+
+[fix.tools.clang-format]
+command = ["clang-format", "--assume-filename=$path"]
+patterns = ["glob:'**/*.c'", "glob:'**/*.cc'", "glob:'**/*.m'", "glob:'**/*.mm'"]
+
+[fix.tools.dart]
+command = ["dart", "format", "--output=show", "--stdin-name=$path"]
+patterns = ["glob:'**/*.dart'"]
+
+[fix.tools.gn]
+command = ["gn", "format", "--stdin"]
+patterns = ["glob:'**/*.gn'", "glob:'**/*.gni'"]
+
+[fix.tools.swift-format]
+command = ["swift-format", "format", "--assume-filename=$path", "-"]
+patterns = ["glob:'**/*.swift'"]
