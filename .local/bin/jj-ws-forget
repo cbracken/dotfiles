@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+set -euo pipefail
+
+if (( # == 0 )); then
+  print -u2 "Usage: jj-ws-forget <destination_path>"
+  exit 1
+fi
+
+#  Resolve absolute workspace path and name.
+DEST_ABS="${1:a}"
+WS_NAME="${DEST_ABS:t}"
+
+# Forget the workspace and delete the git worktree.
+jj workspace forget "$WS_NAME"
+git worktree remove -f "$DEST_ABS"

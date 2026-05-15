@@ -10,6 +10,7 @@ ll = ["log", "-T", "builtin_log_oneline", "-r", "::"]
 ld = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n'", "-r", "::", "--no-graph"]
 lp = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n' ++ diff.git() ++ '\n'", "-r", "::", "--no-graph"]
 ws-add = ["util", "exec", "--", "jj-ws-add"]
+ws-forget = ["util", "exec", "--", "jj-ws-forget"]
 
 [ui]
 diff-formatter = ":git"
