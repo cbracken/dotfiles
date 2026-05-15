@@ -4,3 +4,20 @@
 tt() {
   echo -n "\033]0;$*\007"
 }
+
+use_flutter() {
+  if (( $# == 0 )); then
+    print -u2 "Usage: use_flutter <path_to_workspace>"
+    return 1
+  fi
+  local LINK_PATH="$HOME/Developer/flutter/flutter"
+  local TARGET_ABS="${1:A}"
+  if [[ -h "$LINK_PATH" || -e "$LINK_PATH" ]]; then
+    rm -f "$LINK_PATH"
+  fi
+  ln -s "$TARGET_ABS" "$LINK_PATH"
+  # If we're currently under the symlink, reattach to the new inode.
+  if [[ "$PWD" = "$LINK_PATH"* ]]; then
+    cd .
+  fi
+}
