@@ -1,6 +1,6 @@
 # .sh_functions
 
 # Sets xterm title to $1.
-function tt {
+tt() {
   echo -n "\033]0;$*\007"
 }
