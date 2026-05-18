@@ -1,34 +1,25 @@
 # .aliases
 
-# add colour
-if [[ "$(uname)" == FreeBSD || "$(uname)" == Darwin ]]; then
-  alias ls='ls -FG'
-elif [[ "$(uname)" == Linux ]]; then
-  alias ls='ls -F --color=auto'
-fi
+# grep: add colour.
 if [[ "$(uname)" == FreeBSD || "$(uname)" == Darwin || "$(uname)" == Linux ]]; then
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 fi
-alias ag='ag --color-line-number "30;33" --color-path "30;32" --color-match "1;31"'
 
-# ls/eza
-if command -v eza &> /dev/null; then
-  alias l='eza -gl --time-style=long-iso --group-directories-first'
-  alias ll='eza -gla --time-style=long-iso --group-directories-first'
-else
-  alias l='ls -l'
-  alias ll='ls -la'
+# ls: add colour and file type hints.
+if [[ "$(uname)" == FreeBSD || "$(uname)" == Darwin ]]; then
+  alias ls='ls -FG'
+elif [[ "$(uname)" == Linux ]]; then
+  alias ls='ls -F --color=auto'
 fi
+alias l='ls -l'
+alias ll='ls -la'
 
-# some useful aliases
+# Recent history.
 alias h='fc -l'
-alias j=jobs
-alias m="$PAGER"
-alias g='egrep -i'
 
-# be paranoid
+# Be paranoid.
 alias cp='cp -ip'
 alias mv='mv -i'
 alias rm='rm -i'
