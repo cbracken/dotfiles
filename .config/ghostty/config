@@ -72,3 +72,6 @@ macos-titlebar-proxy-icon = hidden
 # JIS keyboard: default ¥ to \ and option-¥ to ¥.
 keybind = ¥=text:\\
 keybind = option+¥=text:¥
+
+# Fix poor double-click behaviour in 1.3.x
+link-url = false
