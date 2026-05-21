@@ -115,7 +115,31 @@ return {
       })
     end,
   },
-  { "rhysd/vim-clang-format" },
-  { "rust-lang/rust.vim" },
-  { "ziglang/zig.vim" },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        desc = "Automatically start Tree-sitter highlighting if a parser is available",
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match)
+          if not lang then return end
+      
+          local parser = vim.treesitter.get_parser(args.buf, lang)
+          if not parser then return end
+      
+          vim.treesitter.start(args.buf, lang)
+        end,
+      })
+    end,
+    config = function()
+      require("nvim-treesitter").install({
+        -- Bash, C, C++, Markdown, Lua, Markdown, Python supported by default.
+        "rust",
+        "swift",
+        "zig",
+      })
+    end,
+  },
 }
+
