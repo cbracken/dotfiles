@@ -6,6 +6,7 @@
 *~
 
 # Editor project directories
+.cache/
 .nova/
 .jetskicli
 
@@ -17,3 +18,4 @@
 *.o
 *.pyc
 *.so
+compile_commands.json
