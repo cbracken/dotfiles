@@ -6,8 +6,8 @@ email = "chris@bracken.jp"
 
 [aliases]
 l = ["log"]
-ll = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n'", "-r", "::", "--no-graph"]
-lp = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n' ++ diff.git() ++ '\n'", "-r", "::", "--no-graph"]
+ll = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n'", "-r", "::@ | @::", "--no-graph"]
+lp = ["log", "-T", "builtin_log_detailed ++ diff.stat() ++ '\n' ++ diff.git() ++ '\n'", "-r", "::@ | @::", "--no-graph"]
 lol = ["log", "-T", "builtin_log_oneline", "-r", "::"]
 ws-add = ["util", "exec", "--", "jj-ws-add"]
 ws-forget = ["util", "exec", "--", "jj-ws-forget"]
