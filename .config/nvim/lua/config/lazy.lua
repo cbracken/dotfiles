@@ -21,15 +21,11 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "solarized-osaka" } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = { enabled = true, notify = false },
   -- disable LuaRocks/hererocks
-  rocks = {
-    enabled = false,
-  },
+  rocks = { enabled = false },
+--[[
   -- lazy.nvim wants a nerd font installed. I don't.
   ui = {
     icons = {
@@ -58,4 +54,5 @@ require("lazy").setup({
       },
     },
   },
+--]]
 })
